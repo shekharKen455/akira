@@ -16,7 +16,7 @@
                                         <div class="item-info horizontal-start vertical-middle">
                                             <div class="content">
                                                 <h2 class="title-slider">Discover a <br>world of jewelry</h2>
-                                                <a class="button-slider button button-white button-outline thick-border" href="shop-grid-left.html">Explore Bestseller</a>
+                                                <a class="button-slider button button-white button-outline thick-border" href="{{route('catelog') }}">Explore Bestseller</a>
                                             </div>
                                         </div>
                                     </div>
@@ -29,7 +29,7 @@
                                         <div class="item-info horizontal-start vertical-middle">
                                             <div class="content">
                                                 <h2 class="title-slider">Discover the<br> Best of the Best</h2>
-                                                <a class="button-slider button button-white button-outline thick-border" href="shop-grid-left.html">Explore Bestseller</a>
+                                                <a class="button-slider button button-white button-outline thick-border" href="{{route('catelog') }}">Explore Bestseller</a>
                                             </div>
                                         </div>
                                     </div>
@@ -42,7 +42,7 @@
                                         <div class="item-info horizontal-start vertical-middle">
                                             <div class="content">
                                                 <h2 class="title-slider">Oh,<br> Hello Newness!</h2>
-                                                <a class="button-slider button button-white button-outline thick-border" href="shop-grid-left.html">Explore Bestseller</a>
+                                                <a class="button-slider button button-white button-outline thick-border" href="{{route('catelog') }}">Explore Bestseller</a>
                                             </div>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@
                                         <div class="product-cats-list slick-wrap">
                                             <div class="slick-sliders content-category" data-dots="0" data-slidestoscroll="true" data-nav="1" data-columns4="2" data-columns3="3" data-columns2="3" data-columns1="5" data-columns1440="5" data-columns="5">
                                                 @foreach ($cats as $cat)
-                                                    <div class="item item-product-cat slick-slide">
+                                                <div class="item item-product-cat slick-slide">
                                                     <div class="item-product-cat-content">
                                                         <a href="{{ route('category', $cat->id) }}">
                                                             <div class="item-image animation-horizontal">
@@ -72,7 +72,7 @@
                                                         </a>
                                                         <div class="product-cat-content-info">
                                                             <h2 class="item-title">
-                                                                <a href="shop-grid-left.html">{{ ucfirst($cat->name) }}</a>
+                                                                <a href="#">{{ ucfirst($cat->name) }}</a>
                                                             </h2>
                                                         </div>
                                                     </div>
@@ -81,84 +81,84 @@
 
                                                 {{-- <div class="item item-product-cat slick-slide">
                                                     <div class="item-product-cat-content">
-                                                        <a href="shop-grid-left.html">
+                                                        <a href="#">
                                                             <div class="item-image animation-horizontal">
                                                                 <img width="258" height="258" src="media/product/cat-1.jpg" alt="Bracelets">
                                                             </div>
                                                         </a>
                                                         <div class="product-cat-content-info">
                                                             <h2 class="item-title">
-                                                                <a href="shop-grid-left.html">Bracelets</a>
+                                                                <a href="#">Bracelets</a>
                                                             </h2>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="item item-product-cat slick-slide">
                                                     <div class="item-product-cat-content">
-                                                        <a href="shop-grid-left.html">
+                                                        <a href="#">
                                                             <div class="item-image animation-horizontal">
                                                                 <img width="258" height="258" src="media/product/cat-2.jpg" alt="Charms">
                                                             </div>
                                                         </a>
                                                         <div class="product-cat-content-info">
                                                             <h2 class="item-title">
-                                                                <a href="shop-grid-left.html">Charms</a>
+                                                                <a href="#">Charms</a>
                                                             </h2>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="item item-product-cat slick-slide">
                                                     <div class="item-product-cat-content">
-                                                        <a href="shop-grid-left.html">
+                                                        <a href="#">
                                                             <div class="item-image animation-horizontal">
                                                                 <img width="258" height="258" src="media/product/cat-3.jpg" alt="Earrings">
                                                             </div>
                                                         </a>
                                                         <div class="product-cat-content-info">
                                                             <h2 class="item-title">
-                                                                <a href="shop-grid-left.html">Earrings</a>
+                                                                <a href="#">Earrings</a>
                                                             </h2>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="item item-product-cat slick-slide">
                                                     <div class="item-product-cat-content">
-                                                        <a href="shop-grid-left.html">
+                                                        <a href="#">
                                                             <div class="item-image animation-horizontal">
                                                                 <img width="258" height="258" src="media/product/cat-4.jpg" alt="Necklaces">
                                                             </div>
                                                         </a>
                                                         <div class="product-cat-content-info">
                                                             <h2 class="item-title">
-                                                                <a href="shop-grid-left.html">Necklaces</a>
+                                                                <a href="#">Necklaces</a>
                                                             </h2>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="item item-product-cat slick-slide">
                                                     <div class="item-product-cat-content">
-                                                        <a href="shop-grid-left.html">
+                                                        <a href="#">
                                                             <div class="item-image animation-horizontal">
                                                                 <img width="258" height="258" src="media/product/cat-5.jpg" alt="Rings">
                                                             </div>
                                                         </a>
                                                         <div class="product-cat-content-info">
                                                             <h2 class="item-title">
-                                                                <a href="shop-grid-left.html">Rings</a>
+                                                                <a href="#">Rings</a>
                                                             </h2>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="item item-product-cat slick-slide">
                                                     <div class="item-product-cat-content">
-                                                        <a href="shop-grid-left.html">
+                                                        <a href="#">
                                                             <div class="item-image animation-horizontal">
                                                                 <img width="258" height="258" src="media/product/cat-1.jpg" alt="Bracelets">
                                                             </div>
                                                         </a>
                                                         <div class="product-cat-content-info">
                                                             <h2 class="item-title">
-                                                                <a href="shop-grid-left.html">Bracelets</a>
+                                                                <a href="#">Bracelets</a>
                                                             </h2>
                                                         </div>
                                                     </div>
@@ -182,7 +182,7 @@
                                                 <div class="bg-banner">
                                                     <div class="banner-wrapper banners">
                                                         <div class="banner-image">
-                                                            <a href="shop-grid-left.html">
+                                                            <a href="#">
                                                                 <img width="630" height="457" src="media/banner/banner-1-1.jpg" alt="Banner Image">
                                                             </a>
                                                         </div>
@@ -190,7 +190,7 @@
                                                             <div class="info">
                                                                 <div class="content">
                                                                     <h3 class="title-banner">New Arrivals</h3>
-                                                                    <a class="button" href="shop-grid-left.html">Shop Now</a>
+                                                                    <a class="button" href="#">Shop Now</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -203,7 +203,7 @@
                                                 <div class="bg-banner">
                                                     <div class="banner-wrapper banners">
                                                         <div class="banner-image">
-                                                            <a href="shop-grid-left.html">
+                                                            <a href="#">
                                                                 <img width="450" height="457" src="media/banner/banner-1-2.jpg" alt="Banner Image">
                                                             </a>
                                                         </div>
@@ -211,7 +211,7 @@
                                                             <div class="info">
                                                                 <div class="content">
                                                                     <h3 class="title-banner">Best Seller</h3>
-                                                                    <a class="button center" href="shop-grid-left.html">Shop Now</a>
+                                                                    <a class="button center" href="#">Shop Now</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -224,7 +224,7 @@
                                                 <div class="bg-banner">
                                                     <div class="banner-wrapper banners">
                                                         <div class="banner-image">
-                                                            <a href="shop-grid-left.html">
+                                                            <a href="#">
                                                                 <img width="630" height="457" src="media/banner/banner-1-3.jpg" alt="Banner Image">
                                                             </a>
                                                         </div>
@@ -232,7 +232,7 @@
                                                             <div class="info">
                                                                 <div class="content">
                                                                     <h3 class="title-banner">Great Discounts</h3>
-                                                                    <a class="button" href="shop-grid-left.html">Shop Now</a>
+                                                                    <a class="button" href="#">Shop Now</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -333,6 +333,8 @@
                                     <div class="block-content">
                                         <div class="content-product-list slick-wrap">
                                             <div class="slick-sliders products-list grid" data-slidestoscroll="true" data-dots="false" data-nav="1" data-columns4="1" data-columns3="2" data-columns2="2" data-columns1="3" data-columns1440="4" data-columns="4">
+
+                                                @foreach ($trending as $pro)
                                                 <div class="item-product slick-slide">
                                                     <div class="items">
                                                         <div class="products-entry clearfix product-wapper">
@@ -341,12 +343,12 @@
                                                                     <div class="hot">Hot</div>
                                                                 </div>
                                                                 <div class="product-thumb-hover">
-                                                                    <a href="shop-details.html">
-                                                                        <img width="600" height="600" src="media/product/1.jpg" class="post-image" alt="">
-                                                                        <img width="600" height="600" src="media/product/1-2.jpg" class="hover-image back" alt="">
+                                                                    <a href="#">
+                                                                        <img width="600" height="600" src="{{ asset('storage/'. $pro->image) }}" class="post-image" alt="">
+                                                                        <img width="600" height="600" src="{{ asset('storage/'. $pro->image) }}" class="hover-image back" alt="">
                                                                     </a>
                                                                 </div>
-                                                                <div class="product-button">
+                                                                {{-- <div class="product-button">
                                                                     <div class="btn-add-to-cart" data-title="Add to cart">
                                                                         <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
                                                                     </div>
@@ -359,193 +361,21 @@
                                                                     <span class="product-quickview" data-title="Quick View">
                                                                         <a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
                                                                     </span>
-                                                                </div>
+                                                                </div> --}}
                                                             </div>
                                                             <div class="products-content">
                                                                 <div class="contents">
                                                                     <div class="rating">
-                                                                        <div class="star star-0"></div><span class="count">(0 review)</span>
+                                                                        <div class="star star-{{ $pro->rating }}"></div>
                                                                     </div>
-                                                                    <h3 class="product-title"><a href="shop-details.html">Medium Flat Hoops</a></h3>
-                                                                    <span class="price">$100.00</span>
+                                                                    <h3 class="product-title"><a href="#">{{ $pro->name }}</a></h3>
+                                                                    <span class="price">${{ $pro->price }}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="item-product slick-slide">
-                                                    <div class="items">
-                                                        <div class="products-entry clearfix product-wapper">
-                                                            <div class="products-thumb">
-                                                                <div class="product-lable">
-                                                                    <div class="onsale">-10%</div>
-                                                                    <div class="hot">Hot</div>
-                                                                </div>
-                                                                <div class="product-thumb-hover">
-                                                                    <a href="shop-details.html">
-                                                                        <img width="600" height="600" src="media/product/2.jpg" class="post-image" alt="">
-                                                                        <img width="600" height="600" src="media/product/2-2.jpg" class="hover-image back" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-button">
-                                                                    <div class="btn-add-to-cart" data-title="Add to cart">
-                                                                        <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-                                                                    </div>
-                                                                    <div class="btn-wishlist" data-title="Wishlist">
-                                                                        <button class="product-btn">Add to wishlist</button>
-                                                                    </div>
-                                                                    <div class="btn-compare" data-title="Compare">
-                                                                        <button class="product-btn">Compare</button>
-                                                                    </div>
-                                                                    <span class="product-quickview" data-title="Quick View">
-                                                                        <a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="products-content">
-                                                                <div class="contents">
-                                                                    <div class="rating">
-                                                                        <div class="star star-5"></div><span class="count">(1 review)</span>
-                                                                    </div>
-                                                                    <h3 class="product-title"><a href="shop-details.html">Bold Pearl Hoop Earrings</a></h3>
-                                                                    <span class="price">
-                                                                        <del aria-hidden="true"><span>$200.00</span></del>
-                                                                        <ins><span>$180.00</span></ins>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item-product slick-slide">
-                                                    <div class="items">
-                                                        <div class="products-entry clearfix product-wapper">
-                                                            <div class="products-thumb">
-                                                                <div class="product-lable">
-                                                                    <div class="hot">Hot</div>
-                                                                </div>
-                                                                <div class="product-thumb-hover">
-                                                                    <a href="shop-details.html">
-                                                                        <img width="600" height="600" src="media/product/3.jpg" class="post-image" alt="">
-                                                                        <img width="600" height="600" src="media/product/3-2.jpg" class="hover-image back" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-button">
-                                                                    <div class="btn-add-to-cart" data-title="Add to cart">
-                                                                        <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-                                                                    </div>
-                                                                    <div class="btn-wishlist" data-title="Wishlist">
-                                                                        <button class="product-btn">Add to wishlist</button>
-                                                                    </div>
-                                                                    <div class="btn-compare" data-title="Compare">
-                                                                        <button class="product-btn">Compare</button>
-                                                                    </div>
-                                                                    <span class="product-quickview" data-title="Quick View">
-                                                                        <a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="products-content">
-                                                                <div class="contents">
-                                                                    <div class="rating">
-                                                                        <div class="star star-0"></div><span class="count">(0 review)</span>
-                                                                    </div>
-                                                                    <h3 class="product-title"><a href="shop-details.html">Twin Hoops</a></h3>
-                                                                    <span class="price">$150.00</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item-product slick-slide">
-                                                    <div class="items">
-                                                        <div class="products-entry clearfix product-wapper">
-                                                            <div class="products-thumb">
-                                                                <div class="product-lable">
-                                                                    <div class="onsale">-33%</div>
-                                                                </div>
-                                                                <div class="product-thumb-hover">
-                                                                    <a href="shop-details.html">
-                                                                        <img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
-                                                                        <img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-button">
-                                                                    <div class="btn-add-to-cart" data-title="Add to cart">
-                                                                        <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-                                                                    </div>
-                                                                    <div class="btn-wishlist" data-title="Wishlist">
-                                                                        <button class="product-btn">Add to wishlist</button>
-                                                                    </div>
-                                                                    <div class="btn-compare" data-title="Compare">
-                                                                        <button class="product-btn">Compare</button>
-                                                                    </div>
-                                                                    <span class="product-quickview" data-title="Quick View">
-                                                                        <a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="products-content">
-                                                                <div class="contents">
-                                                                    <div class="rating">
-                                                                        <div class="star star-4"></div><span class="count">(2 reviews)</span>
-                                                                    </div>
-                                                                    <h3 class="product-title"><a href="shop-details.html">Yilver And Turquoise Earrings</a></h3>
-                                                                    <span class="price">
-                                                                        <del aria-hidden="true"><span>$150.00</span></del>
-                                                                        <ins><span>$100.00</span></ins>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="item-product slick-slide">
-                                                    <div class="items">
-                                                        <div class="products-entry clearfix product-wapper">
-                                                            <div class="products-thumb">
-                                                                <div class="product-lable">
-                                                                    <div class="onsale">-7%</div>
-                                                                </div>
-                                                                <div class="product-thumb-hover">
-                                                                    <a href="shop-details.html">
-                                                                        <img width="600" height="600" src="media/product/13.jpg" class="post-image" alt="">
-                                                                        <img width="600" height="600" src="media/product/13-2.jpg" class="hover-image back" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-button">
-                                                                    <div class="btn-add-to-cart" data-title="Add to cart">
-                                                                        <a rel="nofollow" href="#" class="product-btn button">Add to cart</a>
-                                                                    </div>
-                                                                    <div class="btn-wishlist" data-title="Wishlist">
-                                                                        <button class="product-btn">Add to wishlist</button>
-                                                                    </div>
-                                                                    <div class="btn-compare" data-title="Compare">
-                                                                        <button class="product-btn">Compare</button>
-                                                                    </div>
-                                                                    <span class="product-quickview" data-title="Quick View">
-                                                                        <a href="#" class="quickview quickview-button">Quick View <i class="icon-search"></i></a>
-                                                                    </span>
-                                                                </div>
-                                                                <div class="product-stock">
-                                                                    <span class="stock">Out Of Stock</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="products-content">
-                                                                <div class="contents">
-                                                                    <div class="rating">
-                                                                        <div class="star star-5"></div><span class="count">(1 review)</span>
-                                                                    </div>
-                                                                    <h3 class="product-title"><a href="shop-details.html">Medium Flat Hoops</a></h3>
-                                                                    <span class="price">
-                                                                        <del aria-hidden="true"><span>$150.00</span></del>
-                                                                        <ins><span>$140.00</span></ins>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -565,7 +395,7 @@
                                                 <div class="bg-banner">
                                                     <div class="banner-wrapper banners">
                                                         <div class="banner-image">
-                                                            <a href="shop-grid-left.html">
+                                                            <a href="#">
                                                                 <img width="856" height="496" src="media/banner/banner-1-4.jpg" alt="Banner Image">
                                                             </a>
                                                         </div>
@@ -576,7 +406,7 @@
                                                                     <div class="banner-image-description">
                                                                         Freshwater pearl necklace and earrings
                                                                     </div>
-                                                                    <a class="button button-outline thick-border border-white button-arrow" href="shop-grid-left.html">Explore</a>
+                                                                    <a class="button button-outline thick-border border-white button-arrow" href="{{route('catelog') }}">Explore</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -589,7 +419,7 @@
                                                 <div class="bg-banner">
                                                     <div class="banner-wrapper banners">
                                                         <div class="banner-image">
-                                                            <a href="shop-grid-left.html">
+                                                            <a href="#">
                                                                 <img width="856" height="496" src="media/banner/banner-1-5.jpg" alt="Banner Image">
                                                             </a>
                                                         </div>
@@ -600,7 +430,7 @@
                                                                     <div class="banner-image-description">
                                                                         Freshwater pearl necklace and earrings
                                                                     </div>
-                                                                    <a class="button button-outline thick-border border-white button-arrow" href="shop-grid-left.html">Explore</a>
+                                                                    <a class="button button-outline thick-border border-white button-arrow" href="{{route('catelog') }}">Explore</a>
                                                                 </div>
                                                             </div>
                                                         </div>

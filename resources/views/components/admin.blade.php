@@ -14,7 +14,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('admin/assets/imgs/theme/favicon.svg')}}">
     <!-- Template CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="{{ asset('admin/assets/css/main.css')}}" rel="stylesheet" type="text/css" />
 </head>
@@ -32,8 +32,8 @@
         </div>
         <nav>
             <ul class="menu-aside">
-                <li class="menu-item active">
-                    <a class="menu-link" href="{{ route('home') }}" target="_blank"> <i class="fa fa-home" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
+                <li class="menu-item">
+                    <a class="menu-link" href="{{ route('home') }}" target="_blank" style="border-bottom: 2px solid #088178; border-radius:0"> <i class="fa fa-globe" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Website</span>
                     </a>
                 </li>
@@ -43,22 +43,22 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a class="menu-link" href="{{ route('admin.category') }}"> <i class="fa fa-home" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
+                    <a class="menu-link" href="{{ route('admin.category') }}"> <i class="fa fa-list-alt" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Categories</span>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a class="menu-link" href="{{ route('admin.product') }}"> <i class="fa fa-home" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
+                    <a class="menu-link" href="{{ route('admin.product') }}"> <i class="fa fa-list" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Product</span>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a class="menu-link" href="{{ route('admin.order') }}"> <i class="fa fa-home" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
+                    <a class="menu-link" href="{{ route('admin.order') }}"> <i class="fa fa-credit-card" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Order</span>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a class="menu-link" href="{{ route('home') }}"> <i class="fa fa-home" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
+                    <a class="menu-link" href="{{ route('admin.logout') }}"> <i class="fa fa-sign-out" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Logout</span>
                     </a>
                 </li>
@@ -124,7 +124,7 @@
             <div class="col-nav">
                 <button class="btn btn-icon btn-mobile me-auto" data-trigger="#offcanvas_aside"> <i class="material-icons md-apps"></i> </button>
                 <ul class="nav">
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link btn-icon" href="#">
                             <i class="fa fa-bell"></i>
                             <span class="badge rounded-pill">3</span>
@@ -138,24 +138,26 @@
                         <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownLanguage" aria-expanded="false"><i class="fa fa-user"></i></a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
                             <a class="dropdown-item text-brand" href="#"><img src="{{ asset('admin/assets/imgs/theme/flag-us.png') }}" alt="English">English</a>
-                            <a class="dropdown-item" href="#"><img src="{{ asset('admin/assets/imgs/theme/flag-fr.png') }}" alt="Français">Français</a>
-                            <a class="dropdown-item" href="#"><img src="{{ asset('admin/assets/imgs/theme/flag-jp.png') }}" alt="Français">日本語</a>
-                            <a class="dropdown-item" href="#"><img src="{{ asset('admin/assets/imgs/theme/flag-cn.png') }}" alt="Français">中国人</a>
-                        </div>
-                    </li>
-                    <li class="dropdown nav-item">
-                        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false"> <img class="img-xs rounded-circle" src="{{ asset('admin/assets/imgs/people/avatar2.jpg') }}" alt="User"></a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
-                            <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
-                            <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
-                            <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
-                            <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
-                            <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="#"><i class="material-icons md-exit_to_app"></i>Logout</a>
-                        </div>
-                    </li>
-                </ul>
+                    <a class="dropdown-item" href="#"><img src="{{ asset('admin/assets/imgs/theme/flag-fr.png') }}" alt="Français">Français</a>
+                    <a class="dropdown-item" href="#"><img src="{{ asset('admin/assets/imgs/theme/flag-jp.png') }}" alt="Français">日本語</a>
+                    <a class="dropdown-item" href="#"><img src="{{ asset('admin/assets/imgs/theme/flag-cn.png') }}" alt="Français">中国人</a>
+            </div>
+            </li> --}}
+            <li class="dropdown nav-item">
+                <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false">
+                    <img class="img-xs rounded-circle" src="{{ asset('admin/assets/imgs/people/avatar2.jpg') }}" alt="User">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
+                    {{-- <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a> --}}
+                    <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                    {{-- <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a> --}}
+                    {{-- <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a> --}}
+                    {{-- <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a> --}}
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="{{ route('admin.logout') }}"><i class="material-icons md-exit_to_app fa fa-logout"></i>Logout</a>
+                </div>
+            </li>
+            </ul>
             </div>
         </header>
 
@@ -163,20 +165,20 @@
 
         <!-- content-main end// -->
         <footer class=" main-footer font-xs">
-                                <div class="row pb-30 pt-15">
-                                    <div class="col-sm-6">
-                                        <script>
-                                            document.write(new Date().getFullYear())
+            <div class="row pb-30 pt-15">
+                <div class="col-sm-6">
+                    <script>
+                        document.write(new Date().getFullYear())
 
-                                        </script> ©, Evara - HTML Ecommerce Template .
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="text-sm-end">
-                                            All rights reserved
-                                        </div>
-                                    </div>
-                                </div>
-                                </footer>
+                    </script> ©, Evara - HTML Ecommerce Template .
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-sm-end">
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="{{ asset('admin/assets/js/vendors/jquery-3.6.0.min.js') }}"></script>

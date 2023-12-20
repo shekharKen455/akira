@@ -24,8 +24,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('register', [UserController::class, 'register'])->name('register');
-Route::get('acount', [UserController::class, 'account'])->middleware('auth')->name('account');
+Route::get('account', [UserController::class, 'account'])->middleware('auth')->name('account');
 Route::get('logout', [UserController::class, 'logout'])->middleware('auth')->name('logout');
+Route::post('profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
+Route::post('password', [UserController::class, 'changePassword'])->middleware('auth')->name('password');
 
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
 Route::get('about', [WebsiteController::class, 'about'])->name('about');
@@ -49,22 +51,26 @@ Route::group(['prefix' => 'checkout', 'middleware' => ['auth']], function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('login', [AuthController::class, 'login'])->name('admin.login');
+    Route::post('login', [AuthController::class, 'checkLogin'])->name('admin.check');
+    Route::get('logout', [AuthController::class, 'logout'])->name('admin.logout');
 
-    Route::get('dashboard', [AuthController::class, 'index'])->name('admin.dashboard');
+    Route::group(['middleware' => ['admin.auth']], function () {
+        Route::get('dashboard', [AuthController::class, 'index'])->name('admin.dashboard');
 
-    Route::get('category', [CategoryController::class, 'index'])->name('admin.category');
-    Route::get('category/{id}', [CategoryController::class, 'edit'])->name('category.edit');
-    Route::get('category-add', [CategoryController::class, 'addCategory'])->name('category.add');
-    Route::post('category-add', [CategoryController::class, 'store'])->name('category.store');
-    Route::get('category-delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
-    Route::put('category-update/{id}', [CategoryController::class, 'update'])->name('category.update');
+        Route::get('category', [CategoryController::class, 'index'])->name('admin.category');
+        Route::get('category/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+        Route::get('category-add', [CategoryController::class, 'addCategory'])->name('category.add');
+        Route::post('category-add', [CategoryController::class, 'store'])->name('category.store');
+        Route::get('category-delete/{id}', [CategoryController::class, 'delete'])->name('category.delete');
+        Route::put('category-update/{id}', [CategoryController::class, 'update'])->name('category.update');
 
-    Route::get('product', [ProductController::class, 'index'])->name('admin.product');
-    Route::get('product/{id}', [ProductController::class, 'edit'])->name('product.edit');
-    Route::get('product-add', [ProductController::class, 'add'])->name('product.add');
-    Route::post('product-add', [ProductController::class, 'store'])->name('product.store');
-    Route::get('product-delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
-    Route::put('product-update/{id}', [ProductController::class, 'update'])->name('product.update');
+        Route::get('product', [ProductController::class, 'index'])->name('admin.product');
+        Route::get('product/{id}', [ProductController::class, 'edit'])->name('product.edit');
+        Route::get('product-add', [ProductController::class, 'add'])->name('product.add');
+        Route::post('product-add', [ProductController::class, 'store'])->name('product.store');
+        Route::get('product-delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+        Route::put('product-update/{id}', [ProductController::class, 'update'])->name('product.update');
 
-    Route::get('order', [AdminOrderController::class, 'index'])->name('admin.order');
+        Route::get('order', [AdminOrderController::class, 'index'])->name('admin.order');
+    });
 });

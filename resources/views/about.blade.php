@@ -29,7 +29,7 @@
                                                     <div class="bg-banner">
                                                         <div class="banner-wrapper banners">
                                                             <div class="banner-image hover-opacity">
-                                                                <a href="shop-grid-left.html">
+                                                                <a href="#">
                                                                     <img src="media/banner/banner-about-1.jpg" alt="Banner Image">
                                                                 </a>
                                                             </div>
@@ -42,7 +42,7 @@
                                                     <div class="bg-banner">
                                                         <div class="banner-wrapper banners">
                                                             <div class="banner-image hover-opacity">
-                                                                <a href="shop-grid-left.html">
+                                                                <a href="#">
                                                                     <img src="media/banner/banner-about-2.jpg" alt="Banner Image">
                                                                 </a>
                                                             </div>
@@ -55,7 +55,7 @@
                                                     <div class="bg-banner">
                                                         <div class="banner-wrapper banners">
                                                             <div class="banner-image hover-opacity">
-                                                                <a href="shop-grid-left.html">
+                                                                <a href="#">
                                                                     <img src="media/banner/banner-about-3.jpg" alt="Banner Image">
                                                                 </a>
                                                             </div>

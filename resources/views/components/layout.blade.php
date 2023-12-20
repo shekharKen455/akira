@@ -54,14 +54,71 @@
                                     <div class="dropdown mini-cart top-cart">
                                         <div class="remove-cart-shadow"></div>
                                         <a class="dropdown-toggle cart-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <div class="icons-cart"><i class="icon-large-paper-bag"></i><span class="cart-count">2</span></div>
+                                            <div class="icons-cart"><i class="icon-large-paper-bag"></i><span class="cart-count">{{ $cnt }}</span></div>
                                         </a>
                                         <div class="dropdown-menu cart-popup">
+                                            {{-- <div class="cart-empty-wrap">
+                                            <ul class="cart-list">
+                                                <li class="empty">
+                                                    <span>No products in the cart.</span>
+                                                    <a class="go-shop" href="#">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div> --}}
+                                            <div class="cart-list-wrap">
+                                                <style>
+                                                    .removed-new {
+                                                        text-indent: -1px;
+                                                        line-height: 17px;
+                                                        color: #000;
+                                                        border-image: none;
+                                                        border-color: #000;
+                                                        text-align: center;
+                                                        border-style: solid;
+                                                        border-width: 0.75pt;
+                                                        -webkit-border-radius: 50%;
+                                                        height: 0.1875in;
+                                                        width: 18px;
+                                                        top: 0.020833333in;
+                                                        right: 0.3125pc;
+                                                        position: absolute;
+                                                    }
+
+                                                </style>
+                                                <ul class="cart-list ">
+                                                    @foreach ($cart as $item)
+                                                    <?php $price += $item->product->price; ?>
+                                                    <li class="mini-cart-item">
+                                                        <a href="{{ route('cart.delete', $item->id) }}" class="removed-new" title="Remove this item"><i class="icon_close"></i></a>
+                                                        <a href="{{ route('product', $item->product->slug) }}" class="product-image"><img width="600" height="600" src="{{ asset('storage/' . $item->product->image) }}" alt=""></a>
+                                                        <a href="#" class="product-name">{{ $item->product->name }}</a>
+                                                        {{-- <div class="quantity">Qty: 1</div> --}}
+                                                        <div class="price">${{ $item->product->price }}</div>
+                                                    </li>
+                                                    @endforeach
+                                                </ul>
+                                                <div class="total-cart">
+                                                    <div class="title-total">Total: </div>
+                                                    <div class="total-price"><span>${{ $price }}</span></div>
+                                                </div>
+                                                {{-- <div class="free-ship">
+                                                <div class="title-ship">Buy <strong>$400</strong> more to enjoy <strong>FREE Shipping</strong></div>
+                                                <div class="total-percent">
+                                                    <div class="percent" style="width:20%"></div>
+                                                </div>
+                                            </div> --}}
+                                                <div class="buttons">
+                                                    <a href="{{ route('cart.show') }}" class="button btn view-cart btn-primary">View cart</a>
+                                                    {{-- <a href="#" class="button btn checkout btn-default">Check out</a> --}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="dropdown-menu cart-popup">
                                             <div class="cart-empty-wrap">
                                                 <ul class="cart-list">
                                                     <li class="empty">
                                                         <span>No products in the cart.</span>
-                                                        <a class="go-shop" href="shop-grid-left.html">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
+                                                        <a class="go-shop" href="#">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -69,15 +126,15 @@
                                                 <ul class="cart-list ">
                                                     <li class="mini-cart-item">
                                                         <a href="#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-                                                        <a href="shop-details.html" class="product-image"><img width="600" height="600" src="media/product/3.jpg" alt=""></a>
-                                                        <a href="shop-details.html" class="product-name">Twin Hoops</a>
+                                                        <a href="#" class="product-image"><img width="600" height="600" src="media/product/3.jpg" alt=""></a>
+                                                        <a href="#" class="product-name">Twin Hoops</a>
                                                         <div class="quantity">Qty: 1</div>
                                                         <div class="price">$150.00</div>
                                                     </li>
                                                     <li class="mini-cart-item">
                                                         <a href="#" class="remove" title="Remove this item"><i class="icon_close"></i></a>
-                                                        <a href="shop-details.html" class="product-image"><img width="600" height="600" src="media/product/1.jpg" alt=""></a>
-                                                        <a href="shop-details.html" class="product-name">Medium Flat Hoops</a>
+                                                        <a href="#" class="product-image"><img width="600" height="600" src="media/product/1.jpg" alt=""></a>
+                                                        <a href="#" class="product-name">Medium Flat Hoops</a>
                                                         <div class="quantity">Qty: 1</div>
                                                         <div class="price">$100.00</div>
                                                     </li>
@@ -93,11 +150,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="buttons">
-                                                    <a href="shop-cart.html" class="button btn view-cart btn-primary">View cart</a>
-                                                    <a href="shop-checkout.html" class="button btn checkout btn-default">Check out</a>
+                                                    <a href="#" class="button btn view-cart btn-primary">View cart</a>
+                                                    <a href="#" class="button btn checkout btn-default">Check out</a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -109,19 +166,81 @@
                     <!-- Login -->
                     <div class="my-account">
                         <div class="login-header">
-                            <a href="page-my-account.html"><i class="wpb-icon-user"></i></a>
+                            @if(auth() && auth()->user() && auth()->user()->email != "admin@user.com")
+                            <a href="{{ route('account') }}"><i class="wpb-icon-user"></i> {{ auth()->user()->name  }} </a>
+                            @else
+                            <div class="login-header icon">
+                                <a class="active-login" href="#"><i class="wpb-icon-user"></i></a>
+                                <div class="form-login-register {{ session('test') }}">
+                                    <div class="box-form-login">
+                                        <div class="active-login"></div>
+                                        <div class="box-content">
+                                            <div class="form-login active">
+                                                <form id="login_ajax" action="{{ route('login') }}" method="post" class="login">
+                                                    @csrf
+                                                    <h2>Sign in</h2>
+                                                    <p class="status"></p>
+                                                    <div class="content">
+                                                        <div class="username">
+                                                            <input type="email" required="required" class="input-text" name="email" id="username" placeholder="Your email" />
+                                                        </div>
+                                                        <div class="password">
+                                                            <input class="input-text" required="required" type="password" name="password" id="password" placeholder="Password" />
+                                                        </div>
+                                                        {{-- <div class="rememberme-lost"> --}}
+                                                        {{-- <div class="rememberme">
+                                                                <input name="rememberme" type="checkbox" id="rememberme" value="forever" />
+                                                                <label for="rememberme" class="inline">Remember me</label>
+                                                            </div> --}}
+                                                        {{-- <div class="lost_password">
+                                                                <a href="forgot-password.html">Lost your password?</a>
+                                                            </div> --}}
+                                                        {{-- </div> --}}
+                                                        <div class="button-login">
+                                                            <input type="submit" class="button" name="login" value="Login" />
+                                                        </div>
+                                                        <div class="button-next-reregister">Create An Account</div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="form-register">
+                                                <form action="{{ route('register') }}" method="post" class="register">
+                                                    @csrf
+                                                    <h2>REGISTER</h2>
+                                                    <div class="content">
+                                                        <div class="email">
+                                                            <input type="text" class="input-text" placeholder="Full name" name="name" />
+                                                        </div>
+                                                        <div class="email">
+                                                            <input type="email" class="input-text" placeholder="Email" name="email" id="reg_email" value="" />
+                                                        </div>
+                                                        <div class="password">
+                                                            <input type="password" class="input-text" placeholder="Password" name="password" id="reg_password" />
+                                                        </div>
+                                                        <div class="button-register">
+                                                            <input type="submit" class="button" name="register" value="Register" />
+                                                        </div>
+                                                        <div class="button-next-login">Already has an account</div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endif
                         </div>
                     </div>
 
                     <!-- Shop -->
-                    <div class="shop-page">
-                        <a href="shop-grid-left.html"><i class="wpb-icon-shop"></i></a>
-                    </div>
+                    {{-- <div class="shop-page">
+                        <a href="#"><i class="wpb-icon-shop"></i></a>
+                    </div> --}}
 
                     <!-- Search -->
-                    <div class="search-box">
+                    {{-- <div class="search-box">
                         <div class="search-toggle"><i class="wpb-icon-magnifying-glass"></i></div>
-                    </div>
+                    </div> --}}
 
                     <!-- Wishlist -->
                     {{-- <div class="wishlist-box">
@@ -234,19 +353,19 @@
                                                 @endforeach
 
                                                 {{-- <li>
-                                                    <a href="shop-grid-left.html">Necklaces</a>
+                                                    <a href="#">Necklaces</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-grid-left.html">Bracelets</a>
+                                                    <a href="#">Bracelets</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-grid-left.html">Rings</a>
+                                                    <a href="#">Rings</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-grid-left.html">Jewelry Box</a>
+                                                    <a href="#">Jewelry Box</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-grid-left.html">Studs</a>
+                                                    <a href="#">Studs</a>
                                                 </li> --}}
                                             </ul>
                                         </div>
@@ -327,13 +446,13 @@
                             <tr class="wishlist-item">
                                 <td class="wishlist-item-remove"><span></span></td>
                                 <td class="wishlist-item-image">
-                                    <a href="shop-details.html">
+                                    <a href="#">
                                         <img width="600" height="600" src="media/product/3.jpg" alt="">
                                     </a>
                                 </td>
                                 <td class="wishlist-item-info">
                                     <div class="wishlist-item-name">
-                                        <a href="shop-details.html">Twin Hoops</a>
+                                        <a href="#">Twin Hoops</a>
                                     </div>
                                     <div class="wishlist-item-price">
                                         <span>$150.00</span>
@@ -354,13 +473,13 @@
                             <tr class="wishlist-item">
                                 <td class="wishlist-item-remove"><span></span></td>
                                 <td class="wishlist-item-image">
-                                    <a href="shop-details.html">
+                                    <a href="#">
                                         <img width="600" height="600" src="media/product/4.jpg" alt="">
                                     </a>
                                 </td>
                                 <td class="wishlist-item-info">
                                     <div class="wishlist-item-name">
-                                        <a href="shop-details.html">Yilver And Turquoise Earrings</a>
+                                        <a href="#">Yilver And Turquoise Earrings</a>
                                     </div>
                                     <div class="wishlist-item-price">
                                         <del aria-hidden="true"><span>$150.00</span></del>
@@ -413,13 +532,13 @@
                                         <a href="#" class="compare-table-settings">Settings</a>
                                     </th>
                                     <th>
-                                        <a href="shop-details.html">Twin Hoops</a> <span class="remove">remove</span>
+                                        <a href="#">Twin Hoops</a> <span class="remove">remove</span>
                                     </th>
                                     <th>
-                                        <a href="shop-details.html">Medium Flat Hoops</a> <span class="remove">remove</span>
+                                        <a href="#">Medium Flat Hoops</a> <span class="remove">remove</span>
                                     </th>
                                     <th>
-                                        <a href="shop-details.html">Bold Pearl Hoop Earrings</a> <span class="remove">remove</span>
+                                        <a href="#">Bold Pearl Hoop Earrings</a> <span class="remove">remove</span>
                                     </th>
                                 </tr>
                             </thead>
@@ -427,17 +546,17 @@
                                 <tr class="tr-image">
                                     <td class="td-label">Image</td>
                                     <td>
-                                        <a href="shop-details.html">
+                                        <a href="#">
                                             <img width="600" height="600" src="media/product/3.jpg" alt="">
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="shop-details.html">
+                                        <a href="#">
                                             <img width="600" height="600" src="media/product/1.jpg" alt="">
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="shop-details.html">
+                                        <a href="#">
                                             <img width="600" height="600" src="media/product/2.jpg" alt="">
                                         </a>
                                     </td>

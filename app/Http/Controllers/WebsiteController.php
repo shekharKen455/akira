@@ -11,8 +11,9 @@ class WebsiteController extends Controller
 {
     public function index()
     {
-        $cats = Categories::where('status', 'active')->get();
-        return view('index', compact('cats'));
+        $cats = Categories::where('status', 'active')->where('name', '<>', 'CUSTOM ITEMS')->get();
+        $trending = Product::orderBy('created_at', 'desc')->limit(8)->get();
+        return view('index', compact('cats', 'trending'));
     }
 
     public function catelog()
@@ -33,7 +34,7 @@ class WebsiteController extends Controller
     {
         $product = Product::with('category')->where('slug', $slug)->first();
         $product->others = explode(',', $product->other_images);
-        
+
         return view('product', compact('product'));
     }
 

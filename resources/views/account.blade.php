@@ -50,6 +50,19 @@
                                         </p>
                                     </div>
                                 </div> --}}
+                                @if(session('success'))
+                                <p class="form-row">
+                                    <span class="text text-success"><em>. {{ session('success') }} </em></span>
+                                </p>
+                                @endif
+
+                                @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                <p class="form-row">
+                                    <span class="text text-danger"><em>. {{ $error }} </em></span>
+                                </p>
+                                @endforeach
+                                @endif
                                 <div class="tab-pane fade show active" id="orders" role="tabpanel">
                                     <div class="my-account-orders">
                                         <div class="table-responsive">
@@ -113,10 +126,12 @@
                                 </div>
                                 <div class="tab-pane fade" id="account-details" role="tabpanel">
                                     <div class="my-account-account-details">
-                                        <form class="edit-account" action="#" method="post">
+                                        <form class="edit-account" action="{{ route('profile') }}" method="post">
+                                            @csrf
+
                                             <p class="form-row">
                                                 <label>Display name <span class="required">*</span></label>
-                                                <input type="text" class="input-text" name="name">
+                                                <input type="text" class="input-text" name="name" value="{{ auth()->user()->name }}">
                                                 <span><em>This will be how your name will be displayed in the account section and in reviews</em></span>
                                             </p>
                                             <div class="clear"></div>
@@ -124,29 +139,30 @@
                                                 <label>Email address <span class="required">*</span></label>
                                                 <input type="email" class="input-text" name="email" value="{{ auth()->user()->email }}">
                                             </p>
-											<p class="form-row">
+                                            <p class="form-row">
                                                 <button type="submit" class="button" name="save_account_details" value="Save changes">Save changes</button>
                                             </p>
                                         </form>
-                                        <form class="edit-account" action="#" method="post">
+                                        <form class="edit-account" action="{{ route('password') }}" method="post">
+                                            @csrf
                                             <fieldset>
                                                 <legend>Password change</legend>
                                                 <p class="form-row">
                                                     <label>Current password (leave blank to leave unchanged)</label>
-                                                    <input type="password" class="input-text" name="password_current" autocomplete="off">
+                                                    <input type="password" class="input-text" name="old_password" autocomplete="off" required>
                                                 </p>
                                                 <p class="form-row">
                                                     <label>New password (leave blank to leave unchanged)</label>
-                                                    <input type="password" class="input-text" name="password_1" autocomplete="off">
+                                                    <input type="password" class="input-text" name="new_password" autocomplete="off" required>
                                                 </p>
                                                 <p class="form-row">
                                                     <label>Confirm new password</label>
-                                                    <input type="password" class="input-text" name="password_2" autocomplete="off">
+                                                    <input type="password" class="input-text" name="new_password_confirmation" autocomplete="off" required>
                                                 </p>
                                             </fieldset>
                                             <div class="clear"></div>
                                             <p class="form-row">
-                                                <button type="submit" class="button" name="save_account_details" value="Save changes">Update</button>
+                                                <button type="submit" class="button" name="save_account_details" value="Save changes">Update Password</button>
                                             </p>
                                         </form>
                                     </div>

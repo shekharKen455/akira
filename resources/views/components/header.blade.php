@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 header-left">
                         <div class="site-logo">
-                            <a href="index.html">
+                            <a href="{{ route('home') }}">
                                 <img width="400" height="140" src="media/logo-white.png" alt="Akira – Jewellery" />
                             </a>
                         </div>
@@ -97,7 +97,7 @@
                                             <ul class="cart-list">
                                                 <li class="empty">
                                                     <span>No products in the cart.</span>
-                                                    <a class="go-shop" href="shop-grid-left.html">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
+                                                    <a class="go-shop" href="#">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></a>
                                                 </li>
                                             </ul>
                                         </div> --}}
@@ -127,7 +127,7 @@
                                                 <li class="mini-cart-item">
                                                     <a href="{{ route('cart.delete', $item->id) }}" class="removed-new" title="Remove this item"><i class="icon_close"></i></a>
                                                     <a href="{{ route('product', $item->product->slug) }}" class="product-image"><img width="600" height="600" src="{{ asset('storage/' . $item->product->image) }}" alt=""></a>
-                                                    <a href="shop-details.html" class="product-name">{{ $item->product->name }}</a>
+                                                    <a href="#" class="product-name">{{ $item->product->name }}</a>
                                                     {{-- <div class="quantity">Qty: 1</div> --}}
                                                     <div class="price">${{ $item->product->price }}</div>
                                                 </li>
@@ -145,7 +145,7 @@
                                             </div> --}}
                                             <div class="buttons">
                                                 <a href="{{ route('cart.show') }}" class="button btn view-cart btn-primary">View cart</a>
-                                                {{-- <a href="shop-checkout.html" class="button btn checkout btn-default">Check out</a> --}}
+                                                {{-- <a href="#" class="button btn checkout btn-default">Check out</a> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +153,7 @@
                             </div>
 
                             <!-- Login -->
-                            @if(auth()->user())
+                            @if(auth() && auth()->user() && auth()->user()->email != "admin@user.com")
                             {{-- <div class="login-header icon">
                                 <a class="active-login" href="#"><i class="icon-user"></i> {{ auth()->user()->name }} </a>
                         </div> --}}
@@ -196,6 +196,13 @@
                                                 @csrf
                                                 <h2>Sign in</h2>
                                                 <p class="status"></p>
+                                                @if ($errors->any())
+                                                @foreach ($errors->all() as $error)
+                                                <p class="form-row">
+                                                    <span class="text text-danger"><em>. {{ $error }} </em></span>
+                                                </p>
+                                                @endforeach
+                                                @endif
                                                 <div class="content">
                                                     <div class="username">
                                                         <input type="email" required="required" class="input-text" name="email" id="username" placeholder="Your email" />

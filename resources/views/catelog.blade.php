@@ -26,7 +26,7 @@
                                         <div class="post-entry clearfix post-wapper">
                                             <div class="post-image">
                                                 <a href="{{ route('category', $cat->id) }}">
-                                                    <img src="media/blog/1.jpg" alt="">
+                                                    <img src="media/product/{{ $cat->name }}.jpg" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-content">

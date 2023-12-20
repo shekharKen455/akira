@@ -172,8 +172,8 @@
                                             </div>
                                             <div class="product-meta">
                                                 {{-- <span class="sku-wrapper">SKU: <span class="sku">D2300-3-2-2</span></span> --}}
-                                                <span class="posted-in">Category: <a href="shop-grid-left.html" rel="tag">{{ $product->category->name }}</a></span>
-                                                <span class="tagged-as">Tags: <a href="shop-grid-left.html" rel="tag">Hot</a>, <a href="shop-grid-left.html" rel="tag">Trend</a></span>
+                                                <span class="posted-in">Category: <a href="#" rel="tag">{{ $product->category->name }}</a></span>
+                                                <span class="tagged-as">Tags: <a href="#" rel="tag">Hot</a>, <a href="#" rel="tag">Trend</a></span>
                                             </div>
                                             <div class="social-share">
                                                 <a href="#" title="Facebook" class="share-facebook" target="_blank"><i class="fa fa-facebook"></i>Facebook</a>
@@ -206,7 +206,7 @@
                                                                                 <div class="hot">Hot</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/2.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/2-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -228,7 +228,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Bold Pearl Hoop Earrings</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Bold Pearl Hoop Earrings</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-4"></div>
                                                                                 </div>
@@ -246,7 +246,7 @@
                                                                                 <div class="hot">Hot</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/3.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/3-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -268,7 +268,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Twin Hoops</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Twin Hoops</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-0"></div>
                                                                                 </div>
@@ -286,7 +286,7 @@
                                                                                 <div class="onsale">-33%</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -308,7 +308,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Yilver And Turquoise Earrings</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Yilver And Turquoise Earrings</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-5"></div>
                                                                                 </div>
@@ -329,7 +329,7 @@
                                                                                 <div class="onsale">-7%</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/5.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/5-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -354,7 +354,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Amp Pendant Light Large</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Amp Pendant Light Large</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-4"></div>
                                                                                 </div>
@@ -375,7 +375,7 @@
                                                                                 <div class="hot">Hot</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="0">
+                                                                                <a href="#" tabindex="0">
                                                                                     <img width="600" height="600" src="media/product/13.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/13-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -397,7 +397,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="0">Medium Flat Hoops</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="0">Medium Flat Hoops</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-5"></div>
                                                                                 </div>
@@ -415,7 +415,7 @@
                                                                                 <div class="hot">Hot</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="0">
+                                                                                <a href="#" tabindex="0">
                                                                                     <img width="600" height="600" src="media/product/2.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/2-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -437,7 +437,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="0">Bold Pearl Hoop Earrings</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="0">Bold Pearl Hoop Earrings</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-4"></div>
                                                                                 </div>
@@ -455,7 +455,7 @@
                                                                                 <div class="hot">Hot</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="0">
+                                                                                <a href="#" tabindex="0">
                                                                                     <img width="600" height="600" src="media/product/3.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/3-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -477,7 +477,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="0">Twin Hoops</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="0">Twin Hoops</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-0"></div>
                                                                                 </div>
@@ -495,7 +495,7 @@
                                                                                 <div class="onsale">-33%</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="0">
+                                                                                <a href="#" tabindex="0">
                                                                                     <img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -517,7 +517,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="0">Yilver And Turquoise Earrings</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="0">Yilver And Turquoise Earrings</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-5"></div>
                                                                                 </div>
@@ -538,7 +538,7 @@
                                                                                 <div class="onsale">-7%</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/5.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/5-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -563,7 +563,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Amp Pendant Light Large</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Amp Pendant Light Large</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-4"></div>
                                                                                 </div>
@@ -584,7 +584,7 @@
                                                                                 <div class="hot">Hot</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/13.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/13-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -606,7 +606,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Medium Flat Hoops</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Medium Flat Hoops</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-5"></div>
                                                                                 </div>
@@ -624,7 +624,7 @@
                                                                                 <div class="hot">Hot</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/2.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/2-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -646,7 +646,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Bold Pearl Hoop Earrings</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Bold Pearl Hoop Earrings</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-4"></div>
                                                                                 </div>
@@ -664,7 +664,7 @@
                                                                                 <div class="hot">Hot</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/3.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/3-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -686,7 +686,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Twin Hoops</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Twin Hoops</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-0"></div>
                                                                                 </div>
@@ -704,7 +704,7 @@
                                                                                 <div class="onsale">-33%</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/4.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/4-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -726,7 +726,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Yilver And Turquoise Earrings</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Yilver And Turquoise Earrings</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-5"></div>
                                                                                 </div>
@@ -747,7 +747,7 @@
                                                                                 <div class="onsale">-7%</div>
                                                                             </div>
                                                                             <div class="product-thumb-hover">
-                                                                                <a href="shop-details.html" tabindex="-1">
+                                                                                <a href="#" tabindex="-1">
                                                                                     <img width="600" height="600" src="media/product/5.jpg" class="post-image" alt="">
                                                                                     <img width="600" height="600" src="media/product/5-2.jpg" class="hover-image back" alt="">
                                                                                 </a>
@@ -772,7 +772,7 @@
                                                                         </div>
                                                                         <div class="products-content">
                                                                             <div class="contents text-center">
-                                                                                <h3 class="product-title"><a href="shop-details.html" tabindex="-1">Amp Pendant Light Large</a></h3>
+                                                                                <h3 class="product-title"><a href="#" tabindex="-1">Amp Pendant Light Large</a></h3>
                                                                                 <div class="rating">
                                                                                     <div class="star star-4"></div>
                                                                                 </div>

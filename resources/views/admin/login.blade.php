@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
     <title>Evara Dashboard</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -18,7 +19,7 @@
     <main>
         <header class="main-header style-2 navbar">
             <div class="col-brand">
-                <a href="index.html" class="brand-wrap">
+                <a href="{{ route('home') }}" class="brand-wrap">
                     <img src="assets/imgs/theme/logo.svg" class="logo" alt="Evara Dashboard">
                 </a>
             </div>
@@ -64,12 +65,22 @@
             <div class="card mx-auto card-login">
                 <div class="card-body">
                     <h4 class="card-title mb-4">Sign in</h4>
-                    <form action="{{ route('admin.dashboard') }}">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form action="{{ route('admin.check') }}" method="POST">
+                        @csrf
                         <div class="mb-3">
-                            <input class="form-control" placeholder="Email" type="email" value="admin@test.com">
+                            <input class="form-control" placeholder="Email" type="email" name="email" required>
                         </div> <!-- form-group// -->
                         <div class="mb-3">
-                            <input class="form-control" placeholder="Password" type="password" value="12345678">
+                            <input class="form-control" placeholder="Password" type="password" name="password" required>
                         </div> <!-- form-group// -->
                         <div class="mb-3">
                             <a href="#" class="float-end font-sm text-muted">Forgot password?</a>
@@ -105,7 +116,8 @@
         <footer class="main-footer text-center">
             <p class="font-xs">
                 <script>
-                document.write(new Date().getFullYear())
+                    document.write(new Date().getFullYear())
+
                 </script>2023 ©, Evara - HTML Ecommerce Template .
             </p>
             <p class="font-xs mb-30">All rights reserved</p>
@@ -118,4 +130,5 @@
     <script src="assets/js/main.js" type="text/javascript"></script>
 
 
-</body></html>
+</body>
+</html>
