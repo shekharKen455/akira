@@ -7,10 +7,77 @@ use App\Models\Order;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 
+include(app_path() . '/Gateway/mpgClasses.php');
+
+use App\Gateway\mpgTransaction;
+use App\Gateway\CofInfo;
+use App\Gateway\mpgRequest;
+use App\Gateway\mpgHttpsPost;
+
+
+
+
 class OrderController extends Controller
 {
     public function store(Request $request)
     {
+
+        $store_id = 'gwca071192';
+        $api_token = 'fvaZQc6duOsiReCPgxdQ';
+
+        /************************* Transactional Variables ****************************/
+
+        $type = 'purchase';
+        $order_id = 'order' . date("dmy-G:i:s");
+        $amount = $request->sub_amount;
+        $pan = '5454545454545454';
+        $expdate = '2212';
+        $crypt = '7';
+
+        /*********************** Transactional Associative Array **********************/
+
+        $txnArray = array(
+            'type' => $type,
+            'order_id' => $order_id,
+            'amount' => $amount,
+            'pan' => $pan,
+            'expdate' => $expdate,
+            'crypt_type' => $crypt
+        );
+
+        /**************************** Transaction Object *****************************/
+
+        $mpgTxn = new mpgTransaction($txnArray);
+
+        /******************* Credential on File **********************************/
+
+        $cof = new CofInfo();
+        $cof->setPaymentIndicator("U");
+        $cof->setPaymentInformation("2");
+        $cof->setIssuerId("139X3130ASCXAS9");
+
+        $mpgTxn->setCofInfo($cof);
+
+        /****************************** Request Object *******************************/
+
+        $mpgRequest = new mpgRequest($mpgTxn);
+        $mpgRequest->setProcCountryCode("CA"); //"US" for sending transaction to US environment
+        $mpgRequest->setTestMode(true); //false or comment out this line for production transactions
+
+        /***************************** HTTPS Post Object *****************************/
+
+        /* Status Check Example
+            $mpgHttpPost  =new mpgHttpsPostStatus($store_id,$api_token,$status_check,$mpgRequest);
+        */
+
+        $mpgHttpPost = new mpgHttpsPost($store_id, $api_token, $mpgRequest);
+
+        /******************************* Response ************************************/
+
+        $mpgResponse = $mpgHttpPost->getMpgResponse();
+
+        dd($mpgResponse);
+
         $user = auth()->user();
         $reqData = $request->only([
             "first_name",
