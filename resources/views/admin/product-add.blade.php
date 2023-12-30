@@ -1,4 +1,7 @@
-<x-admin>
+@php
+    $title = "products";
+@endphp
+<x-admin :title="$title">
     <section class="content-main">
         <div class="row">
             <div class="col-9">

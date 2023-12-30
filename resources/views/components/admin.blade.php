@@ -37,22 +37,22 @@
                         <span class="text">Website</span>
                     </a>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item {{ $title === 'home' ? 'active' : '' }}">
                     <a class="menu-link" href="{{ route('admin.dashboard') }}"> <i class="fa fa-home" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Dashboard</span>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item  {{ $title === 'categories' ? 'active' : '' }}">
                     <a class="menu-link" href="{{ route('admin.category') }}"> <i class="fa fa-list-alt" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Categories</span>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item  {{ $title === 'products' ? 'active' : '' }}">
                     <a class="menu-link" href="{{ route('admin.product') }}"> <i class="fa fa-list" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Product</span>
                     </a>
                 </li>
-                <li class="menu-item">
+                <li class="menu-item  {{ $title === 'orders' ? 'active' : '' }}">
                     <a class="menu-link" href="{{ route('admin.order') }}"> <i class="fa fa-credit-card" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Order</span>
                     </a>
@@ -149,7 +149,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
                     {{-- <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a> --}}
-                    <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
+                    <a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="material-icons md-settings"></i>Account Settings</a>
                     {{-- <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a> --}}
                     {{-- <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a> --}}
                     {{-- <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a> --}}
@@ -170,7 +170,7 @@
                     <script>
                         document.write(new Date().getFullYear())
 
-                    </script> ©, Evara - HTML Ecommerce Template .
+                    </script> ©, Akira Jwellery.
                 </div>
                 <div class="col-sm-6">
                     <div class="text-sm-end">

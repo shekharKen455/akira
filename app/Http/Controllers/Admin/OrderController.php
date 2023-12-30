@@ -13,4 +13,19 @@ class OrderController extends Controller
         $orders = Order::with('user')->withCount('orderProduct')->get();
         return view('admin.order', compact('orders'));
     }
+    
+    public function show($id)
+    {
+        $order = Order::with('user', 'orderProduct.product')->find($id);
+        return view('admin.order-edit', compact('order'));
+    }
+    
+    public function update($id, Request $request)
+    {
+        $order = Order::find($id);
+        $order->order_status = $request->order_status;
+        $order->save();
+
+        return redirect()->route('admin.order');
+    }
 }

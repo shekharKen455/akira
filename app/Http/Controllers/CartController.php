@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function store($pid)
+    public function store($pid, Request $request)
     {
         $data = [
             'product_id' => $pid,
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
+            'length' => $request->length ?? null,
+            'style' => $request->style ?? null,
+            'plating_color' => $request->color ?? null,
+            'custom_text' => $request->custom_text,
         ];
         Cart::updateOrCreate($data, $data);
 
@@ -51,12 +55,16 @@ class CartController extends Controller
     }
 
 
-    public function buyCart($id)
+    public function buyCart($id, Request $request)
     {
         $user = auth()->user();
         $data = [
             'product_id' => $id,
-            'user_id' => $user->id
+            'user_id' => $user->id,
+            'length' => $request->length ?? null,
+            'style' => $request->style ?? null,
+            'plating_color' => $request->color ?? null,
+            'custom_text' => $request->custom_text,
         ];
         Cart::updateOrCreate($data, $data);
         return redirect()->route('cart.show');

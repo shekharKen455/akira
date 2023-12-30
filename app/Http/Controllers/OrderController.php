@@ -21,17 +21,23 @@ class OrderController extends Controller
 {
     public function store(Request $request)
     {
+        $request->validate([
+            'card_number' => 'required',
+            'month' => 'required',
+            'year' => 'required|digits:4',
+            'cvv' => 'required|digits:3'
+        ]);
 
-        $store_id = 'gwca071192';
-        $api_token = 'fvaZQc6duOsiReCPgxdQ';
+        $store_id = env('MONERIS_STORE_ID');
+        $api_token = env('MONERIS_API_TOKEN');
 
         /************************* Transactional Variables ****************************/
 
         $type = 'purchase';
         $order_id = 'order' . date("dmy-G:i:s");
         $amount = $request->sub_amount;
-        $pan = '5454545454545454';
-        $expdate = '2212';
+        $pan = $request->card_number;
+        $expdate = $request->month . substr($request->year, -2);
         $crypt = '7';
 
         /*********************** Transactional Associative Array **********************/
@@ -76,7 +82,7 @@ class OrderController extends Controller
 
         $mpgResponse = $mpgHttpPost->getMpgResponse();
 
-        dd($mpgResponse);
+        // dd($mpgResponse);
 
         $user = auth()->user();
         $reqData = $request->only([
@@ -112,7 +118,12 @@ class OrderController extends Controller
                     'user_id' => $user->id,
                     'order_id' => $order->id,
                     'product_id' => $value->product_id,
-                    'quantity' => $value->quantity
+                    'quantity' => $value->quantity,
+                    'length' => $value->length ?? null,
+                    'style' => $value->style ?? null,
+                    'plating_color' => $value->color ?? null,
+                    'custom_text' => $value->custom_text ?? null,
+
                 ]);
 
                 $value->delete();

@@ -1,14 +1,16 @@
-<x-admin>
-
+@php
+    $title = "orders";
+@endphp
+<x-admin :title="$title">
     <section class="content-main">
         <div class="content-header">
             <div>
                 <h2 class="content-title card-title">Products</h2>
                 {{-- <p>Lorem ipsum dolor sit amet.</p> --}}
             </div>
-            <div>
+            {{-- <div>
                 <a href="{{ route('product.add') }}" class="btn btn-primary btn-sm rounded">Create new</a>
-            </div>
+            </div> --}}
         </div>
         <div class="card mb-4">
             <header class="card-header">
@@ -18,9 +20,13 @@
                     </div>
                     <div class="col-lg-2 col-6 col-md-3">
                         <select class="form-select">
-                            <option>Status</option>
-                            <option>Active</option>
-                            <option>Disabled</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Processed">Processed</option>
+                            <option value="Dispatched">Dispatched</option>
+                            <option value="Out for Delivery">Out for Delivery</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Canceled">Canceled</option>
+                            <option value="Refunded">Refunded</option>
                             <option>Show all</option>
                         </select>
                     </div>
@@ -56,10 +62,10 @@
                                 <td>{{ $cat->user->email }}</td>
                                 <td><b>{{ $cat->order_product_count }}</b></td>
                                 <td>$ {{ $cat->sub_amount }}</td>
-                                <td><span class="text text-danger">{{ $cat->order_status }}</span></td>
+                                <td><span class="text text-danger badge">{{ $cat->order_status }}</span></td>
                                 <td>{{ $cat->created_at->format('M d, Y') }}</td>
                                 <td class="text-end">
-                                    <a href="#" class="btn btn-md rounded font-sm">Status</a>
+                                    <a href="{{ route('admin.order.show', $cat->id) }}" class="btn btn-md rounded font-sm">Details</a>
                                 </td>
                             </tr>
 

@@ -28,10 +28,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:categories,name'
+            'name' => 'required|unique:categories,name',
+            'image' => 'required|mimes:png,jpg,jpeg|file'
         ]);
 
-        Categories::create($request->only(['name', 'description']));
+        $reqData = $request->only(['name', 'description']);
+        $reqData['image'] = $request->file('image')->store('category', ['disk' => 'public']);
+
+        Categories::create($reqData);
         return redirect()->route('admin.category');
     }
 
@@ -41,7 +45,11 @@ class CategoryController extends Controller
             'name' => 'required|unique:categories,name,' . $id
         ]);
         $cat = Categories::find($id);
-        $cat->update($request->only(['name', 'description']));
+        $reqData = $request->only(['name', 'description']);
+        if ($request->hasFile('image')) {
+            $reqData['image'] = $request->file('image')->store('category', ['disk' => 'public']);
+        }
+        $cat->update($reqData);
 
         return redirect()->route('admin.category');
     }

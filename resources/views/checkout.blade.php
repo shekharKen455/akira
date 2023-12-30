@@ -25,28 +25,36 @@
                                         <div class="col-xl-8 col-lg-7 col-md-12 col-12">
                                             <div class="customer-details">
                                                 <div class="billing-fields">
+                                                    @if ($errors->any())
+                                                    @foreach ($errors->all() as $error)
+                                                    <p class="form-row">
+                                                        <span class="text text-danger"><em>. {{ $error }} </em></span>
+                                                    </p>
+                                                    @endforeach
+                                                    @endif
                                                     <h3>Billing Details</h3>
+
                                                     <div class="billing-fields-wrapper">
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <p class="form-row form-row-first validate-required">
                                                                     <label>First name <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text" name="first_name" value="" required></span>
+                                                                        <input type="text" class="input-text" name="first_name" value="{{ old('first_name') }}" required></span>
                                                                 </p>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <p class="form-row form-row-last validate-required">
                                                                     <label>Last name <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text" name="last_name" value="" required></span>
+                                                                        <input type="text" class="input-text" name="last_name" value="{{ old('last_name') }}" required></span>
                                                                 </p>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <p class="form-row form-row-wide validate-required validate-email">
                                                                     <label>Email address <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="email" class="input-text" name="email" value="" autocomplete="off" required>
+                                                                        <input type="email" class="input-text" name="email" value="{{ old('email') }}" autocomplete="off" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
@@ -54,7 +62,7 @@
                                                                 <p class="form-row form-row-wide validate-required validate-phone">
                                                                     <label>Phone <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="tel" class="input-text" name="phone" value="" required>
+                                                                        <input type="tel" class="input-text" name="phone" value="{{ old('phone') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
@@ -63,13 +71,13 @@
                                                         <p class="form-row address-field validate-required form-row-wide">
                                                             <label>Street address <span class="required" title="required">*</span></label>
                                                             <span class="input-wrapper">
-                                                                <input type="text" class="input-text" name="address_1" placeholder="House number and street name" value="" required>
+                                                                <input type="text" class="input-text" name="address_1" placeholder="House number and street name" value="{{ old('address_1') }}" required>
                                                             </span>
                                                         </p>
                                                         <p class="form-row address-field form-row-wide">
                                                             <label>Apartment, suite, unit, etc.&nbsp;<span class="optional">(optional)</span></label>
                                                             <span class="input-wrapper">
-                                                                <input type="text" class="input-text" name="address_2" placeholder="Apartment, suite, unit, etc. (optional)" value="">
+                                                                <input type="text" class="input-text" name="address_2" placeholder="Apartment, suite, unit, etc. (optional)" value="{{ old('address_2') }}">
                                                             </span>
                                                         </p>
                                                         <div class="row">
@@ -77,7 +85,7 @@
                                                                 <p class="form-row address-field validate-required form-row-wide">
                                                                     <label for="billing_city" class="">Town / City <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text" name="city" value="" required>
+                                                                        <input type="text" class="input-text" name="city" value="{{ old('city') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
@@ -85,7 +93,7 @@
                                                                 <p class="form-row address-field validate-required form-row-wide">
                                                                     <label for="billing_city" class="">State <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text" name="state" value="" required>
+                                                                        <input type="text" class="input-text" name="state" value="{{ old('state') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
@@ -346,7 +354,7 @@
                                                                 <p class="form-row address-field validate-required validate-postcode form-row-wide">
                                                                     <label>Postcode / ZIP <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text" name="postcode" value="" required>
+                                                                        <input type="text" class="input-text" name="postcode" value="{{ old('postcode') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
@@ -368,7 +376,7 @@
                                                 <p class="form-row notes">
                                                     <label>Order notes <span class="optional">(optional)</span></label>
                                                     <span class="input-wrapper">
-                                                        <textarea name="notes" class="input-text" placeholder="Notes about your order, e.g. special notes for delivery." rows="2" cols="5"></textarea>
+                                                        <textarea name="notes" class="input-text" placeholder="Notes about your order, e.g. special notes for delivery." rows="2" cols="5">{{ old('notes') }}</textarea>
                                                     </span>
                                                 </p>
                                             </div>
@@ -440,9 +448,51 @@
                                                             <input type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
                                                             <label for="payment_method_bacs">Moneris</label>
                                                             <div class="payment-box" style="">
-                                                                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                                                                <p>Make your payment directly into our bank account. Be payment ready with moneris.</p>
                                                             </div>
                                                         </li>
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12 col-md-12">
+                                                                <label class="required">Card Number:</label><br>
+                                                                <span class="form-control-wrap">
+                                                                    <input type="number" name="card_number" value="" size="40" class="form-control" aria-required="true" required>
+                                                                </span>
+                                                            </div>
+                                                            <div class="col-sm-12 col-md-6">
+                                                                <label class="required">Expiry Month:</label><br>
+                                                                <span class="form-control-wrap">
+                                                                    <select name="month" class="form-control" required>
+                                                                        <option value=''>--Select Month--</option>
+                                                                        <option value='01'>Janaury</option>
+                                                                        <option value='02'>February</option>
+                                                                        <option value='03'>March</option>
+                                                                        <option value='04'>April</option>
+                                                                        <option value='05'>May</option>
+                                                                        <option value='06'>June</option>
+                                                                        <option value='07'>July</option>
+                                                                        <option value='08'>August</option>
+                                                                        <option value='09'>September</option>
+                                                                        <option value='10'>October</option>
+                                                                        <option value='11'>November</option>
+                                                                        <option value='12'>December</option>
+                                                                    </select>
+                                                                </span>
+                                                            </div>
+                                                            <div class="col-sm-12 col-md-6">
+                                                                <label class="required">Expiry Year:</label><br>
+                                                                <span class="form-control-wrap">
+                                                                    <input type="number" name="year" min="2023" max="2050" value="" size="4" class="form-control" aria-required="true" required>
+                                                                </span>
+                                                            </div>
+                                                            <div class="col-sm-12 col-md-12">
+                                                                <label class="required">CVV:</label><br>
+                                                                <span class="form-control-wrap">
+                                                                    <input type="number" name="cvv" class="form-control" aria-required="true" required>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+
                                                         {{-- <li class="payment-method">
                                                             <input type="radio" class="input-radio" name="payment_method" value="cheque">
                                                             <label>Check payments</label>

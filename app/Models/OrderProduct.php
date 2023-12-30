@@ -14,6 +14,15 @@ class OrderProduct extends Model
         'order_id',
         'product_id',
         'quantity',
-        'price'
+        'price',
+        'length',
+        'style',
+        'plating_color',
+        'custom_text',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

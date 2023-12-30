@@ -1,4 +1,7 @@
-<x-admin>
+@php
+$title = "categories";
+@endphp
+<x-admin :title="$title">
     <section class="content-main">
         <div class="row">
             <div class="col-9">
@@ -21,7 +24,7 @@
                         @endforeach
                         @endif
 
-                        <form action="{{ route('category.update', $cat->id) }}" method="POST">
+                        <form action="{{ route('category.update', $cat->id) }}" method="POST" enctype='multipart/form-data'>
                             @csrf
                             @method('PUT')
                             <div class="mb-4">
@@ -31,6 +34,11 @@
                             <div class="mb-4">
                                 <label for="product_name" class="form-label">Description</label>
                                 <textarea class="form-control" name="description" placeholder="Category Description ...">{{ $cat->description }}</textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="product_name" class="form-label">Category Images</label>
+                                <input type="file" class="form-control" name="image" />
                             </div>
 
                             <button class="btn btn-md rounded font-sm">Save</button>

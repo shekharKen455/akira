@@ -67,7 +67,7 @@
                                                     <div class="item-product-cat-content">
                                                         <a href="{{ route('category', $cat->id) }}">
                                                             <div class="item-image animation-horizontal">
-                                                                <img width="258" height="258" src="media/product/{{ ucfirst($cat->name) }}.jpg" alt="{{ $cat->name }}">
+                                                                <img width="258" height="258" src="{{ asset('storage/' . $cat->image) }}" alt="{{ $cat->name }}">
                                                             </div>
                                                         </a>
                                                         <div class="product-cat-content-info">
@@ -343,7 +343,7 @@
                                                                     <div class="hot">Hot</div>
                                                                 </div>
                                                                 <div class="product-thumb-hover">
-                                                                    <a href="#">
+                                                                    <a href="{{ route('product', $pro->slug) }}">
                                                                         <img width="600" height="600" src="{{ asset('storage/'. $pro->image) }}" class="post-image" alt="">
                                                                         <img width="600" height="600" src="{{ asset('storage/'. $pro->image) }}" class="hover-image back" alt="">
                                                                     </a>
@@ -368,7 +368,7 @@
                                                                     <div class="rating">
                                                                         <div class="star star-{{ $pro->rating }}"></div>
                                                                     </div>
-                                                                    <h3 class="product-title"><a href="#">{{ $pro->name }}</a></h3>
+                                                                    <h3 class="product-title"><a href="{{ route('product', $pro->slug) }}">{{ $pro->name }}</a></h3>
                                                                     <span class="price">${{ $pro->price }}</span>
                                                                 </div>
                                                             </div>

@@ -57,6 +57,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => ['admin.auth']], function () {
         Route::get('dashboard', [AuthController::class, 'index'])->name('admin.dashboard');
 
+        Route::group(['prefix' => 'profile'], function () {
+            Route::get('', [AuthController::class, 'profile'])->name('admin.profile');
+            Route::post('', [AuthController::class, 'changePassword'])->name('admin.profile.update');
+        });
+
         Route::get('category', [CategoryController::class, 'index'])->name('admin.category');
         Route::get('category/{id}', [CategoryController::class, 'edit'])->name('category.edit');
         Route::get('category-add', [CategoryController::class, 'addCategory'])->name('category.add');
@@ -71,6 +76,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('product-delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
         Route::put('product-update/{id}', [ProductController::class, 'update'])->name('product.update');
 
-        Route::get('order', [AdminOrderController::class, 'index'])->name('admin.order');
+        Route::group(['prefix' => 'order'], function () {
+            Route::get('', [AdminOrderController::class, 'index'])->name('admin.order');
+            Route::get('{id}', [AdminOrderController::class, 'show'])->name('admin.order.show');
+            Route::put('{id}', [AdminOrderController::class, 'update'])->name('admin.order.update');
+        });
     });
 });
