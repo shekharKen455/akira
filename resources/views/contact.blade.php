@@ -54,7 +54,7 @@
                                                             <h2>Phone</h2>
                                                         </div>
                                                         <div class="item-content">
-                                                            810.222.5439
+                                                            647-745-5143
                                                         </div>
                                                     </div>
                                                 </div>
@@ -65,7 +65,7 @@
                                                         </div>
                                                         <div class="item-content">
                                                             <p>Monday to Friday</p>
-                                                            <p>8:00am – 4:00pm Sydney, NSW time (UTC +10)</p>
+                                                            <p>9:00am – 6:00pm Canada, EST time (GMT -5)</p>
                                                             <p>Saturday and Sunday closed</p>
                                                         </div>
                                                     </div>
