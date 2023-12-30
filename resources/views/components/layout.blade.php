@@ -266,13 +266,13 @@
                                         <div class="block-content">
                                             <ul>
                                                 <li>
-                                                    <span>Head Office:</span> 26 Wyle Cop, Shrewsbury, Shropshire, SY1 1XD
+                                                    <span>Address:</span> 77, Parkwood village drive, Toronto
                                                 </li>
                                                 <li>
-                                                    <span>Tel:</span> 01743 234500
+                                                    <span>Tel:</span> 647-745-5143
                                                 </li>
                                                 <li>
-                                                    <span>Email:</span> <a href="mailto:support@mojuri.com">support@mojuri.com</a>
+                                                    <span>Email:</span> <a href="mailto:support@akirajwellery.com">support@akirajwellery.com</a>
                                                 </li>
                                             </ul>
                                         </div>

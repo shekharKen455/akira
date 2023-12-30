@@ -24,7 +24,7 @@
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
             <a href="{{ route('home') }}" class="brand-wrap">
-                <img src="{{ asset('admin/assets/imgs/theme/logo.svg')}}" class="logo" alt="Evara Dashboard">
+                <img src="{{ asset('media/akira-logo.png')}}" class="logo" alt="Evara Dashboard">
             </a>
             <div>
                 <button class="btn btn-icon btn-aside-minimize"> <i class="fa fa-bars" aria-hidden="true"></i> </button>
