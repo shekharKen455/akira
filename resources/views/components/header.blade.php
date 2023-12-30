@@ -6,7 +6,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 header-left">
                         <div class="site-logo">
                             <a href="{{ route('home') }}">
-                                <img width="400" height="140" src="media/logo-white.png" alt="Akira – Jewellery" />
+                                <img width="400" height="140" src="{{asset('media/akira-logo.png')}}" alt="Akira – Jewellery" />
                             </a>
                         </div>
                     </div>

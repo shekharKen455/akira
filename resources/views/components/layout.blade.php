@@ -45,7 +45,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 header-center">
                                 <div class="site-logo">
                                     <a href="{{ route('home') }}">
-                                        <img width="400" height="79" src="media/logo-white.png" alt="Mojuri – Jewelry Store HTML Template" />
+                                        <img width="400" height="79" src="{{asset('media/akira-logo.png')}}" alt="Akira Jwellery" />
                                     </a>
                                 </div>
                             </div>
