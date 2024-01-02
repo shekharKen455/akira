@@ -34,18 +34,17 @@ class OrderController extends Controller
         /************************* Transactional Variables ****************************/
 
         $type = 'purchase';
-        $order_id = 'order' . date("dmy-G:i:s");
+        $order_id = 'order-' . time();
         $amount = $request->sub_amount;
         $pan = $request->card_number;
         $expdate = $request->month . substr($request->year, -2);
         $crypt = '7';
 
         /*********************** Transactional Associative Array **********************/
-
         $txnArray = array(
             'type' => $type,
             'order_id' => $order_id,
-            'amount' => $amount,
+            'amount' => number_format((float)$amount, 2, '.', ''),
             'pan' => $pan,
             'expdate' => $expdate,
             'crypt_type' => $crypt
@@ -60,7 +59,7 @@ class OrderController extends Controller
         $cof = new CofInfo();
         $cof->setPaymentIndicator("U");
         $cof->setPaymentInformation("2");
-        $cof->setIssuerId("139X3130ASCXAS9");
+        // $cof->setIssuerId("139X3130ASCXAS9");
 
         $mpgTxn->setCofInfo($cof);
 
@@ -68,21 +67,24 @@ class OrderController extends Controller
 
         $mpgRequest = new mpgRequest($mpgTxn);
         $mpgRequest->setProcCountryCode("CA"); //"US" for sending transaction to US environment
-        $mpgRequest->setTestMode(true); //false or comment out this line for production transactions
+        // $mpgRequest->setTestMode(true); //false or comment out this line for production transactions
 
         /***************************** HTTPS Post Object *****************************/
 
-        /* Status Check Example
-            $mpgHttpPost  =new mpgHttpsPostStatus($store_id,$api_token,$status_check,$mpgRequest);
-        */
+        // Status Check Example test
+        // $mpgHttpPost  = new mpgHttpsPost("store4", "yesguy", $mpgRequest);
+
 
         $mpgHttpPost = new mpgHttpsPost($store_id, $api_token, $mpgRequest);
 
         /******************************* Response ************************************/
 
         $mpgResponse = $mpgHttpPost->getMpgResponse();
+        $response = $mpgResponse->responseData;
 
-        // dd($mpgResponse);
+        if (!((int)$response['ResponseCode'] >= 000 && (int)$response['ResponseCode'] <= 29)) {
+            return redirect()->back()->withErrors('Invalid card details!!');
+        }
 
         $user = auth()->user();
         $reqData = $request->only([
@@ -99,6 +101,7 @@ class OrderController extends Controller
         ]);
 
         $orderData = [
+            'order_id' => $order_id,
             'user_id' => $user->id,
             'notes' => $request->notes ?? null,
             'sub_amount' => $request->sub_amount,
