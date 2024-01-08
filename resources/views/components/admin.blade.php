@@ -57,6 +57,11 @@
                         <span class="text">Order</span>
                     </a>
                 </li>
+                {{-- <li class="menu-item  {{ $title === 'images' ? 'active' : '' }}">
+                    <a class="menu-link" href="{{ route('admin.image') }}"> <i class="fa fa-credit-card" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
+                        <span class="text">Custom Images</span>
+                    </a>
+                </li> --}}
                 <li class="menu-item">
                     <a class="menu-link" href="{{ route('admin.logout') }}"> <i class="fa fa-sign-out" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
                         <span class="text">Logout</span>

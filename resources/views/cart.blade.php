@@ -101,19 +101,21 @@
                                                 <div class="shipping-totals">
                                                     <div class="title">Shipping</div>
                                                     <div>
-                                                        <ul class="shipping-methods custom-radio">
-                                                            <li>
-                                                                <input type="radio" name="shipping_method" data-index="0" value="free_shipping" class="shipping_method" checked="checked"><label>Free shipping</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" name="shipping_method" data-index="0" value="flat_rate" class="shipping_method"><label>Flat rate</label>
-                                                            </li>
-                                                        </ul>
-                                                        {{-- <p class="shipping-desc">
+                                                        <p class="shipping-desc">
                                                             Shipping options will be updated during checkout.
-                                                        </p> --}}
+                                                        </p>
                                                     </div>
                                                 </div>
+                                                <div class="shipping-totals">
+                                                    <div class="title">Taxes & Fee</div>
+                                                    <div>
+                                                        <p class="shipping-desc">
+                                                            13% HST to all canadian customers. <br>
+                                                            13% Taxes and fee of import for rest of the world.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                
                                                 <div class="order-total">
                                                     <div class="title">Total</div>
                                                     <div><span>${{ $totalPrice }}</span></div>

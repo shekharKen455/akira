@@ -50,7 +50,7 @@
                                                                         <input type="text" class="input-text" name="last_name" value="{{ old('last_name') }}" required></span>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-12">
                                                                 <p class="form-row form-row-wide validate-required validate-email">
                                                                     <label>Email address <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
@@ -58,7 +58,7 @@
                                                                     </span>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-12">
                                                                 <p class="form-row form-row-wide validate-required validate-phone">
                                                                     <label>Phone <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
@@ -101,7 +101,8 @@
                                                                 <p class="form-row address-field validate-required validate-state form-row-wide">
                                                                     <label>Country <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <select id="country" name="country" class="form-control input-text">
+                                                                        <select id="country" name="country" class="form-control input-text" required>
+                                                                            <option value="" selected disabled>Select Country</option>
                                                                             <option value="Afghanistan">Afghanistan</option>
                                                                             <option value="Åland Islands">Åland Islands</option>
                                                                             <option value="Albania">Albania</option>
@@ -363,20 +364,20 @@
                                                 </div>
                                             </div>
 
-                                            <div class="additional-fields">
+                                            {{-- <div class="additional-fields">
                                                 <p class="form-row notes">
                                                     <label>Custom Image <span class="optional">(optional)</span></label>
                                                     <span class="input-wrapper">
                                                         <input type="file" name="custom_image" class="input-text" style="border-bottom: 2px #e5e5e5;height: 100%;" />
                                                     </span>
                                                 </p>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="additional-fields">
                                                 <p class="form-row notes">
                                                     <label>Order notes <span class="optional">(optional)</span></label>
                                                     <span class="input-wrapper">
-                                                        <textarea name="notes" class="input-text" placeholder="Notes about your order, e.g. special notes for delivery." rows="2" cols="5">{{ old('notes') }}</textarea>
+                                                        <textarea name="notes" class="input-text" placeholder="Notes about your order, e.g. special notes for delivery." rows="5" cols="5">{{ old('notes') }}</textarea>
                                                     </span>
                                                 </p>
                                             </div>
@@ -421,7 +422,7 @@
                                                     </div>
                                                     <div class="shipping-totals shipping">
                                                         <h2>Shipping</h2>
-                                                        <div data-title="Shipping">
+                                                        {{-- <div data-title="Shipping">
                                                             <ul class="shipping-methods custom-radio">
                                                                 <li>
                                                                     <input type="radio" name="shipping_method" data-index="0" value="free_shipping" class="shipping_method" checked="checked"><label>Free shipping</label>
@@ -430,14 +431,23 @@
                                                                     <input type="radio" name="shipping_method" data-index="0" value="flat_rate" class="shipping_method"><label>Flat rate</label>
                                                                 </li>
                                                             </ul>
+                                                        </div> --}}
+                                                        <div class="Shipping">
+                                                            <span>${{ $shipping = ($totalPrice * 13) / 100 }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="shipping-totals shipping">
+                                                        <h2>Taxes & Fees</h2>
+                                                        <div class="subtotal-price">
+                                                            <span id="taxId"> - </span>
                                                         </div>
                                                     </div>
                                                     <div class="order-total">
                                                         <h2>Total</h2>
                                                         <div class="total-price">
                                                             <strong>
-                                                                <span>${{ $totalPrice }}</span>
-                                                                <input type="hidden" name="sub_amount" value="{{ $totalPrice }}" />
+                                                                <span id="totalAmountText">${{ $tamt = $totalPrice + $shipping }}</span>
+                                                                <input type="hidden" name="sub_amount" id="totalAmount" value="{{ $totalPrice + $shipping }}" />
                                                             </strong>
                                                         </div>
                                                     </div>
@@ -446,10 +456,10 @@
                                                     <ul class="payment-methods methods custom-radio">
                                                         <li class="payment-method">
                                                             <input type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
-                                                            <label for="payment_method_bacs">Moneris</label>
-                                                            <div class="payment-box" style="">
+                                                            <label for="payment_method_bacs">Pay With Moneris</label>
+                                                            {{-- <div class="payment-box" style="">
                                                                 <p>Make your payment directly into our bank account. Be payment ready with moneris.</p>
-                                                            </div>
+                                                            </div> --}}
                                                         </li>
 
                                                         <div class="row">
@@ -533,4 +543,32 @@
             </div><!-- #primary -->
         </div><!-- #main-content -->
     </div>
+
+
 </x-main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function() {
+        $('#country').on('change', function() {
+            let tax = 10;
+            let totalAmount = parseFloat('{{ $tamt }}');
+            if (this.value === "Canada") {
+                let tax = (parseFloat('{{ $totalPrice }}') * 10) / 100;
+                let totalAmt = tax + totalAmount
+                $('#taxId').html('$' + tax)
+                $('#totalAmountText').html('$' + totalAmt)
+                $('#totalAmount').val(totalAmt)
+
+
+            } else {
+                let tax = (parseFloat('{{ $totalPrice }}') * 25) / 100;
+                let totalAmt = tax + totalAmount
+                $('#taxId').html('$' + tax)
+                $('#totalAmountText').html('$' + totalAmt)
+                $('#totalAmount').val(totalAmt)
+            }
+        });
+    })
+
+</script>

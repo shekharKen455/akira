@@ -383,13 +383,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="footer-left">
-                                        <p class="copyright">Copyright © 2023. All Right Reserved</p>
+                                        <p class="copyright">Copyright © 2024. All Right Reserved</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="footer-right">
                                         <div class="block block-image">
-                                            <img width="309" height="32" src="media/payments.png" alt="">
+                                            <img width="309" height="32" src="{{ asset('media/payments.png') }}" alt="">
                                         </div>
                                     </div>
                                 </div>

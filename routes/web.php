@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebsiteController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('artisan', function() {
+    Artisan::call('migrate');
+});
 
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('register', [UserController::class, 'register'])->name('register');
@@ -38,9 +43,9 @@ Route::get('product/{slug}', [WebsiteController::class, 'product'])->name('produ
 
 Route::group(['prefix' => 'cart', 'middleware' => ['auth']], function () {
     Route::get('', [CartController::class, 'cart'])->name('cart.show');
-    Route::get('{pid}', [CartController::class, 'store'])->name('cart.add');
+    Route::post('{pid}', [CartController::class, 'store'])->name('cart.add');
     Route::get('delete/{id}', [CartController::class, 'remove'])->name('cart.delete');
-    Route::get('buy/{id}', [CartController::class, 'buyCart'])->name('cart.buy');
+    Route::post('buy/{id}', [CartController::class, 'buyCart'])->name('cart.buy');
     Route::post('update', [CartController::class, 'updateCart'])->name('cart.update');
 });
 
@@ -80,6 +85,13 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('', [AdminOrderController::class, 'index'])->name('admin.order');
             Route::get('{id}', [AdminOrderController::class, 'show'])->name('admin.order.show');
             Route::put('{id}', [AdminOrderController::class, 'update'])->name('admin.order.update');
+        });
+        
+        Route::group(['prefix' => 'image'], function () {
+            Route::get('', [ImageController::class, 'index'])->name('admin.image');
+            Route::get('add', [ImageController::class, 'add'])->name('admin.image.add');
+            Route::post('', [ImageController::class, 'store'])->name('admin.image.store');
+            Route::get('{id}', [ImageController::class, 'delete'])->name('admin.image.delete');
         });
     });
 });

@@ -111,9 +111,9 @@ class OrderController extends Controller
 
         $cart = Cart::where('user_id', $user->id)->get();
         if ($cart->isNotEmpty()) {
-            if ($request->has('custom_image')) {
-                $orderData['custom_image'] = $request->file('custom_image')->store('order/custom', ['disk' => 'public']);
-            }
+            // if ($request->has('custom_image')) {
+            //     $orderData['custom_image'] = $request->file('custom_image')->store('order/custom', ['disk' => 'public']);
+            // }
 
             $order = Order::create($orderData);
             foreach ($cart as $key => $value) {
@@ -126,7 +126,7 @@ class OrderController extends Controller
                     'style' => $value->style ?? null,
                     'plating_color' => $value->color ?? null,
                     'custom_text' => $value->custom_text ?? null,
-
+                    'custom_image' => $value->custom_image ?? null,
                 ]);
 
                 $value->delete();

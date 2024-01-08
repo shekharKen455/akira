@@ -17,8 +17,11 @@ class CartController extends Controller
             'plating_color' => $request->color ?? null,
             'custom_text' => $request->custom_text,
         ];
-        Cart::updateOrCreate($data, $data);
+        if ($request->has('custom_image')) {
+            $data['custom_image'] = $request->file('custom_image')->store('order/custom', ['disk' => 'public']);
+        }
 
+        Cart::updateOrCreate($data, $data);
         return redirect()->back();
     }
 
@@ -66,6 +69,11 @@ class CartController extends Controller
             'plating_color' => $request->color ?? null,
             'custom_text' => $request->custom_text,
         ];
+
+        if ($request->has('custom_image')) {
+            $data['custom_image'] = $request->file('custom_image')->store('order/custom', ['disk' => 'public']);
+        }
+
         Cart::updateOrCreate($data, $data);
         return redirect()->route('cart.show');
     }

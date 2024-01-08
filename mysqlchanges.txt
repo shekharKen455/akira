@@ -1,0 +1,4 @@
+
+ALTER TABLE `carts` ADD `custom_image` VARCHAR(500) NULL DEFAULT NULL AFTER `custom_text`;
+
+ALTER TABLE `order_products` ADD `custom_image` VARCHAR(500) NULL DEFAULT NULL AFTER `custom_text`;

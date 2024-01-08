@@ -32,12 +32,12 @@ $title = "orders";
                                 <input class="form-control" name="name" readonly value='{{ $order->id }}'>
                             </div>
                             <div class="mb-4">
-                                <label for="product_name" class="form-label">Payment ID</label>
-                                <input class="form-control" name="name" readonly value='{{ $order->payment_id }}'>
+                                <label for="product_name" class="form-label">Total Amount (Including Shiping & Tax)</label>
+                                <input class="form-control" name="name" readonly value='$ {{ $order->total_amount }}'>
                             </div>
                             <div class="mb-4">
-                                <label for="product_name" class="form-label">Custom Notes</label>
-                                <textarea class="form-control" readonly name="description">{{ $order->notes }}</textarea>
+                                <label for="product_name" class="form-label">Payment ID</label>
+                                <input class="form-control" name="name" readonly value='{{ $order->payment_id }}'>
                             </div>
 
                             @if($order->custom_image)
@@ -132,25 +132,31 @@ $title = "orders";
                             <tr>
                                 <th scope="col">Product name</th>
                                 <th scope="col">Product image</th>
+                                <th scope="col">Custom Image</th>
+                                <th scope="col">Name/Text</th>
                                 <th scope="col">Quantity</th>
                                 <th scope="col">Sub Amount</th>
-                                <th scope="col">Legth</th>
+                                {{-- <th scope="col">Legth</th> --}}
                                 <th scope="col">Cable Style</th>
                                 <th scope="col">Plating Color</th>
-                                <th scope="col">Custom Name/Text</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($order->orderProduct as $cat)
                             <tr>
                                 <td>{{ $cat->product->name }}</td>
-                                <td><img class="img-fluid img-thumbnail" src="{{ asset('storage/' . $cat->product->image) }}" height="40" width="40" /></td>
+                                <td>
+                                    <img class="img-fluid img-thumbnail" src="{{ asset('storage/' . $cat->product->image) }}" height="40" width="40" />
+                                </td>
+                                <td>
+                                    <a href="{{ asset('storage/' . $cat->custom_image) }}" target="_blank"><img class="img-fluid img-thumbnail" src="{{ asset('storage/' . $cat->custom_image) }}" height="40" width="40" />
+                                </td>
+                                <td><strong class="text-danger">{{ $cat->custom_text }}</strong></td>
                                 <td>{{ $cat->quantity }}</td>
                                 <td>$<b>{{ $cat->product->price * $cat->quantity }}</b></td>
-                                <td>{{ $cat->length }}</td>
+                                {{-- <td>{{ $cat->length }}</td> --}}
                                 <td>{{ $cat->style }}</td>
                                 <td>{{ $cat->plating_color }}</td>
-                                <td><strong>{{ $cat->custom_text }}</strong></td>
                             </tr>
 
                             @endforeach

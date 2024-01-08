@@ -162,44 +162,45 @@
 
                                             </style>
                                             <div class="variations">
-                                                <form id="cartForm" method="GET">
+                                                <form id="cartForm" method="POST" enctype='multipart/form-data'>
+                                                @csrf
                                                     <table cellspacing="0">
                                                         <tbody>
-                                                            <tr>
+                                                            {{-- <tr>
                                                                 <td class="label">Length</td>
                                                                 <td class="attributes">
                                                                     <div class="form-check form-check-inline">
                                                                         <input class="form-check-input" type="radio" id="length-35cm" name="length" value="35">
-                                                                        <label class="form-check-label" for="length-35cm">35 CM (14")</label>
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-35cm">35 CM (14")</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
                                                                         <input class="form-check-input" type="radio" id="length-40cm" name="length" value="40">
-                                                                        <label class="form-check-label" for="length-40cm">40 CM (16")</label>
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-40cm">40 CM (16")</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
                                                                         <input class="form-check-input" type="radio" id="length-45cm" name="length" value="45">
-                                                                        <label class="form-check-label" for="length-45cm">45 CM (18")</label>
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-45cm">45 CM (18")</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
                                                                         <input class="form-check-input" type="radio" id="length-50cm" name="length" value="50">
-                                                                        <label class="form-check-label" for="length-50cm">50 CM (20")</label>
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-50cm">50 CM (20")</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
                                                                         <input class="form-check-input" type="radio" id="length-55cm" name="length" value="55">
-                                                                        <label class="form-check-label" for="length-55cm">55 CM (22")</label>
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-55cm">55 CM (22")</label>
                                                                     </div>
                                                                 </td>
-                                                            </tr>
+                                                            </tr> --}}
                                                             <tr>
-                                                                <td class="label">Style</td>
+                                                                <td class="label" style="width:20%">Chain Style</td>
                                                                 <td class="attributes">
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="box" name="style" value="Box Chain">
-                                                                        <label class="form-check-label" for="box">Box Chain</label>
+                                                                        <input class="form-check-input" type="radio" id="box" name="style" value="Cuban Chain">
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="box"> Cuban </label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="Cable" name="style" value="Cable Chain">
-                                                                        <label class="form-check-label" for="Cable">Cable Chain</label>
+                                                                        <input class="form-check-input" type="radio" id="Cable" name="style" value="Twisted Chain">
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="Cable"> Twisted</label>
                                                                     </div>
                                                                 </td>
                                                             </tr>
@@ -209,17 +210,27 @@
                                                                     <ul class="colors">
                                                                         <li><span class="color-1"></span><input type="radio" name="color" value="Silver"></li>
                                                                         <li><span class="color-2"></span><input type="radio" name="color" value="Gold"></li>
-                                                                        <li><span class="color-3"></span><input type="radio" name="color" value="Rose Gold"></li>
+                                                                        {{-- <li><span class="color-3"></span><input type="radio" name="color" value="Rose Gold"></li> --}}
                                                                     </ul>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="labelText">Name/Text</td>
+                                                                <td class="label" style="width:100%">Name / Text</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>
+                                                                <td style="width:100%">
                                                                     <span class="form-control-wrap">
-                                                                        <input type="text" name="custom_text" value="" size="100%" class="form-control" aria-required="true" placeholder="Enter your text ...">
+                                                                        <textarea name="custom_text" style="width:100%" class="form-control" aria-required="true" placeholder="Detail description about how you want your pendant. Please specify ..."></textarea>
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="label" style="width:100%">Choose your photo</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="width:100%">
+                                                                    <span class="form-control-wrap">
+                                                                        <input type="file" name="custom_image" class="input-text" style="border-bottom: 2px #e5e5e5;height: 100%;">
                                                                     </span>
                                                                 </td>
                                                             </tr>
@@ -279,10 +290,10 @@
                                 <div class="section-container p-l-r">
                                     <div class="block block-products slider">
                                         <div class="block-title">
-                                            <h2>Related Products</h2>
+                                            {{-- <h2>Related Products</h2> --}}
                                         </div>
                                         <div class="block-content">
-                                            <div class="content-product-list slick-wrap">
+                                            {{-- <div class="content-product-list slick-wrap">
                                                 <div class="slick-sliders products-list grid" data-slidestoscroll="true" data-dots="false" data-nav="1" data-columns4="1" data-columns3="2" data-columns2="3" data-columns1="3" data-columns1440="4" data-columns="4">
                                                     <div class="item-product slick-slide">
                                                         <div class="items">
@@ -494,7 +505,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
