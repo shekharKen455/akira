@@ -19,8 +19,9 @@
                     <div class="section-padding">
                         <div class="section-container p-l-r">
                             <div class="shop-checkout">
-                                <form name="checkout" method="POST" class="checkout" action="{{ route('order.save') }}" autocomplete="off" enctype='multipart/form-data'>
+                                <form id="checkOutForm" name="checkout" method="POST" class="checkout" action="{{ route('order.save') }}" autocomplete="off" enctype='multipart/form-data'>
                                     @csrf
+                                    <input type="hidden" name="order_id" id="orderId" />
                                     <div class="row">
                                         <div class="col-xl-8 col-lg-7 col-md-12 col-12">
                                             <div class="customer-details">
@@ -394,21 +395,21 @@
 
                                                         @foreach ($cart as $item)
                                                         @php
-                                                        $totalPrice += $item->sub_amount ?? ($item->product->price * $item->quantity);
+                                                        $totalPrice += ($item['product']->price * $item['quantity']);
                                                         @endphp
 
                                                         <div class="cart-item">
                                                             <div class="info-product">
                                                                 <div class="product-thumbnail">
-                                                                    <img width="600" height="600" src="{{ asset('storage/' . $item->product->image) }}" alt="">
+                                                                    <img width="600" height="600" src="{{ asset('storage/' . $item['product']->image) }}" alt="">
                                                                 </div>
                                                                 <div class="product-name">
-                                                                    {{ $item->product->name }}
-                                                                    <strong class="product-quantity">QTY : {{ $item->quantity ?? 1 }}</strong>
+                                                                    {{ $item['product']->name }}
+                                                                    <strong class="product-quantity">QTY : {{ $item['quantity'] ?? 1 }}</strong>
                                                                 </div>
                                                             </div>
                                                             <div class="product-total">
-                                                                <span>${{ $item->sub_amount ?? $item->product->price }}</span>
+                                                                <span>${{ $item['sub_amount'] ?? $item['product']->price }}</span>
                                                             </div>
                                                         </div>
                                                         @endforeach
@@ -460,9 +461,11 @@
                                                             {{-- <div class="payment-box" style="">
                                                                 <p>Make your payment directly into our bank account. Be payment ready with moneris.</p>
                                                             </div> --}}
+                                                            <div id="monerisCheckout" style="display:none"></div>
+
                                                         </li>
 
-                                                        <div class="row">
+                                                        {{-- <div class="row">
                                                             <div class="col-sm-12 col-md-12">
                                                                 <label class="required">Card Number:</label><br>
                                                                 <span class="form-control-wrap">
@@ -501,7 +504,7 @@
                                                                     <input type="number" name="cvv" class="form-control" aria-required="true" required>
                                                                 </span>
                                                             </div>
-                                                        </div>
+                                                        </div> --}}
 
                                                         {{-- <li class="payment-method">
                                                             <input type="radio" class="input-radio" name="payment_method" value="cheque">
@@ -529,7 +532,7 @@
                                                         <div class="terms-and-conditions-wrapper">
                                                             <div class="privacy-policy-text"></div>
                                                         </div>
-                                                        <button type="submit" class="button alt" name="checkout_place_order" value="Place order">Place order</button>
+                                                        <button type="submit" class="button alt" id="checkoutBtn" name="checkout_place_order" value="Place order">Place order</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -544,10 +547,12 @@
         </div><!-- #main-content -->
     </div>
 
-
 </x-main>
 
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://gatewayt.moneris.com/chkt/js/chkt_v1.00.js"></script>
 <script>
     $(document).ready(function() {
         $('#country').on('change', function() {
@@ -569,6 +574,61 @@
                 $('#totalAmount').val(totalAmt)
             }
         });
+
+
+        // checkout form submit
+        $('#checkOutForm').on('submit', function(e) {
+            e.preventDefault()
+            generateCheckoutPage();
+            $('#monerisCheckout').show();
+        })
+
     })
+
+    function generateCheckoutPage() {
+        var settings = {
+            "url": "https://gatewayt.moneris.com/chktv2/request/request.php"
+            , "method": "POST"
+            , "data": JSON.stringify({
+                "store_id": "store3"
+                , "api_token": "yesguy"
+                , "checkout_id": "chkt8UVTAtore3"
+                , "txn_total": parseFloat($('#totalAmount').val()).toFixed(2)
+                , "environment": "qa"
+                , "action": "preload"
+            })
+        , };
+
+        $.ajax(settings)
+            .done(function(data) {
+                var myCheckout = new monerisCheckout();
+                myCheckout.setMode("qa");
+                myCheckout.setCheckoutDiv("monerisCheckout");
+                myCheckout.startCheckout(data.response.ticket);
+
+                $("#orderId").val(data.response.ticket);
+
+                myCheckout.setCallback("page_loaded", (data) => {
+                    $("#checkoutBtn").attr('disabled', false);
+                });
+                myCheckout.setCallback("cancel_transaction", (data) => {
+                    $('#monerisCheckout').hide();
+                    alert("Payment cancelled!!");
+                    generateCheckoutPage();
+                });
+                myCheckout.setCallback("error_event", (data) => {
+                    $('#monerisCheckout').hide();
+                    alert('Something went wrong. Please again after sometime.');
+                    generateCheckoutPage();
+                });
+                myCheckout.setCallback("payment_receipt", (data) => {
+                    setTimeout(function() {
+                        $('#monerisCheckout').css('display', 'none');
+                        $('#checkOutForm').off('submit');
+                        $('#checkOutForm').submit();
+                    }, 2000)
+                });
+            });
+    }
 
 </script>

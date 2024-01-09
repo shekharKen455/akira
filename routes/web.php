@@ -23,33 +23,38 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('artisan', function() {
+
+Route::get('artisan', function () {
     Artisan::call('migrate');
 });
 
 Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('register', [UserController::class, 'register'])->name('register');
-Route::get('account', [UserController::class, 'account'])->middleware('auth')->name('account');
-Route::get('logout', [UserController::class, 'logout'])->middleware('auth')->name('logout');
-Route::post('profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
-Route::post('password', [UserController::class, 'changePassword'])->middleware('auth')->name('password');
+// Route::get('account', [UserController::class, 'account'])->name('account');
+// Route::get('logout', [UserController::class, 'logout'])->name('logout');
+// Route::post('profile', [UserController::class, 'profile'])->name('profile');
+// Route::post('password', [UserController::class, 'changePassword'])->name('password');
 
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
 Route::get('about', [WebsiteController::class, 'about'])->name('about');
+Route::get('privacy-policy', [WebsiteController::class, 'privacy'])->name('privacy');
+Route::get('term-and-condition', [WebsiteController::class, 'tnc'])->name('tnc');
 Route::get('contact', [WebsiteController::class, 'contact'])->name('contact');
+Route::get('care', [WebsiteController::class, 'pcare'])->name('care');
+Route::get('shipping', [WebsiteController::class, 'shipping'])->name('shipping');
 Route::get('catelog', [WebsiteController::class, 'catelog'])->name('catelog');
 Route::get('category/{id}', [WebsiteController::class, 'category'])->name('category');
 Route::get('product/{slug}', [WebsiteController::class, 'product'])->name('product');
 
-Route::group(['prefix' => 'cart', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'cart'], function () {
     Route::get('', [CartController::class, 'cart'])->name('cart.show');
     Route::post('{pid}', [CartController::class, 'store'])->name('cart.add');
     Route::get('delete/{id}', [CartController::class, 'remove'])->name('cart.delete');
     Route::post('buy/{id}', [CartController::class, 'buyCart'])->name('cart.buy');
-    Route::post('update', [CartController::class, 'updateCart'])->name('cart.update');
+    Route::post('update/test', [CartController::class, 'updateCart'])->name('cart.update');
 });
 
-Route::group(['prefix' => 'checkout', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'checkout'], function () {
     Route::get('', [CheckoutController::class, 'index'])->name('checkout');
     Route::post('order', [OrderController::class, 'store'])->name('order.save');
 });
@@ -86,7 +91,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('{id}', [AdminOrderController::class, 'show'])->name('admin.order.show');
             Route::put('{id}', [AdminOrderController::class, 'update'])->name('admin.order.update');
         });
-        
+
         Route::group(['prefix' => 'image'], function () {
             Route::get('', [ImageController::class, 'index'])->name('admin.image');
             Route::get('add', [ImageController::class, 'add'])->name('admin.image.add');

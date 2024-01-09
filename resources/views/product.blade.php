@@ -163,7 +163,7 @@
                                             </style>
                                             <div class="variations">
                                                 <form id="cartForm" method="POST" enctype='multipart/form-data'>
-                                                @csrf
+                                                    @csrf
                                                     <table cellspacing="0">
                                                         <tbody>
                                                             {{-- <tr>
@@ -215,6 +215,31 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
+                                                                <td class="label" style="width:20%">Language</td>
+                                                                <td class="attributes">
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" id="English" name="lang" value="English">
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="English"> English </label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" id="Punjabi" name="lang" value="Punjabi">
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="Punjabi"> Punjabi </label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" id="Punjabi2" name="lang" value="Punjabi Caligraphy">
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="Punjabi2"> Punjabi Caligraphy </label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" id="Hindi" name="lang" value="Hindi">
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="Hindi"> Hindi </label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" id="Other" name="lang" value="Other">
+                                                                        <label class="form-check-label" style="margin-left: 2px" for="Other"> Other Specify in description box </label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
                                                                 <td class="label" style="width:100%">Name / Text</td>
                                                             </tr>
                                                             <tr>
@@ -246,21 +271,21 @@
                                                         <button type="button" class="minus">-</button>
                                                     </div> --}}
                                                     <div class="btn-add-to-cart-new">
-                                                        @if (auth()->user())
+                                                        {{-- @if (auth()->user()) --}}
                                                         <a onclick="submitCartForm('{{ route('cart.add', $product->id) }}')" tabindex="0">Add to cart</a>
-                                                        @else
+                                                        {{-- @else
                                                         <a href="#" onclick="alert('Please login to continue!')" tabindex="0">Add to cart</a>
-                                                        @endif
+                                                        @endif --}}
                                                     </div>
                                                 </div>
                                                 <div class="btn-quick-buy" data-title="Wishlist">
-                                                    @if (auth()->user())
+                                                    {{-- @if (auth()->user()) --}}
                                                     <a onclick="submitCartForm('{{ route('cart.buy', $product->id) }}')">
                                                         <button class="product-btn">Buy It Now</button>
                                                     </a>
-                                                    @else
+                                                    {{-- @else
                                                     <button class="product-btn" onclick="alert('Please login to continue!')">Buy It Now</button>
-                                                    @endif
+                                                    @endif --}}
 
                                                 </div>
                                                 {{-- <div class="btn-wishlist" data-title="Wishlist">

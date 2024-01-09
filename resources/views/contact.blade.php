@@ -57,6 +57,14 @@
                                                             647-745-5143
                                                         </div>
                                                     </div>
+                                                    {{-- <div class="info-item">
+                                                        <div class="item-tilte">
+                                                            <h2>Email</h2>
+                                                        </div>
+                                                        <div class="item-content">
+                                                            <a href="mailto: Akirajewellery.ca@gmail.com">Akirajewellery.ca@gmail.com<a>
+                                                        </div>
+                                                    </div> --}}
                                                 </div>
                                                 <div class="col-md-4 sm-m-b-30">
                                                     <div class="info-item">

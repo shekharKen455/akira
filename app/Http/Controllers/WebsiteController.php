@@ -42,6 +42,26 @@ class WebsiteController extends Controller
     {
         return view('about');
     }
+    
+    public function privacy()
+    {
+        return view('pp');
+    }
+
+    public function tnc()
+    {
+        return view('tnc');
+    }
+    
+    public function pcare()
+    {
+        return view('care');
+    }
+    
+    public function shipping()
+    {
+        return view('shipping');
+    }
 
     public function contact()
     {

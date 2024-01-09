@@ -239,7 +239,7 @@
                                                             Shipping Worldwide
                                                         </h3>
                                                         <p class="box-description">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                                            We ship to every corner of the world. Offer a quick and reliable shipping services.
                                                         </p>
                                                     </div>
                                                 </div>
