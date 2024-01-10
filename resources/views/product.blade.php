@@ -250,12 +250,12 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td class="label" style="width:100%">Choose your photo</td>
+                                                                <td class="label" style="width:100%">Choose your photo(s)</td>
                                                             </tr>
                                                             <tr>
                                                                 <td style="width:100%">
                                                                     <span class="form-control-wrap">
-                                                                        <input type="file" name="custom_image" class="input-text" style="border-bottom: 2px #e5e5e5;height: 100%;">
+                                                                        <input type="file" name="custom_image[]" class="input-text" style="border-bottom: 2px #e5e5e5;height: 100%;" multiple>
                                                                     </span>
                                                                 </td>
                                                             </tr>

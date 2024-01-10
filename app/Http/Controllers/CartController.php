@@ -21,8 +21,13 @@ class CartController extends Controller
             'lang' => $request->lang,
             'product' => Product::find($pid)
         ]);
+
         if ($request->has('custom_image')) {
-            $data['custom_image'] = $request->file('custom_image')->store('order/custom', ['disk' => 'public']);
+            $imgs = [];
+            foreach ($request->custom_image as $value) {
+                $imgs[] = $value->store('order/custom', ['disk' => 'public']);
+            }
+            $data['custom_image'] = implode(",", $imgs);
         }
 
         $cart = session()->get('cart', []);
@@ -104,8 +109,13 @@ class CartController extends Controller
             'lang' => $request->lang,
             'product' => Product::find($id)
         ]);
+
         if ($request->has('custom_image')) {
-            $data['custom_image'] = $request->file('custom_image')->store('order/custom', ['disk' => 'public']);
+            $imgs = [];
+            foreach ($request->custom_image as $value) {
+                $imgs[] = $value->store('order/custom', ['disk' => 'public']);
+            }
+            $data['custom_image'] = implode(",", $imgs);
         }
 
         $cart = session()->get('cart', []);

@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Akira Jweller</title>
+    <meta name="description" content="Welcome to Akira Jewellers, Toronto's home for personalized elegance. We take pride in being Canada-based jewellers, known for our exquisite custom 18-carat gold-plated photo pendants crafted with precision using state-of-the-art laser technology. Alongside our sterling silver jewellery collection, encompassing necklaces, rings, bracelets, and earrings, we are recognized for our reliability and commitment to exceptional service. Explore our pieces and experience the embodiment of quality and reliability at Akira Jewellers.">
+    <link rel="icon" type="image/x-icon" href="{{ asset('media/favicon.png') }}">
+    <title>Akira Jewellery</title>
 
     <!-- Favicon -->
     {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('media/favicon.png') }}"> --}}

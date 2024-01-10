@@ -111,8 +111,7 @@
                                                     <div class="title">Taxes & Fee</div>
                                                     <div>
                                                         <p class="shipping-desc">
-                                                            13% HST to all canadian customers. <br>
-                                                            13% Taxes and fee of import for rest of the world.
+                                                            13% HST
                                                         </p>
                                                     </div>
                                                 </div>

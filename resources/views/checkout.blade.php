@@ -92,7 +92,7 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <p class="form-row address-field validate-required form-row-wide">
-                                                                    <label for="billing_city" class="">State <span class="required" title="required">*</span></label>
+                                                                    <label for="billing_city" class="">Province <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
                                                                         <input type="text" class="input-text" name="state" value="{{ old('state') }}" required>
                                                                     </span>
@@ -559,7 +559,7 @@
             let tax = 10;
             let totalAmount = parseFloat('{{ $tamt }}');
             if (this.value === "Canada") {
-                let tax = (parseFloat('{{ $totalPrice }}') * 10) / 100;
+                let tax = 10;
                 let totalAmt = tax + totalAmount
                 $('#taxId').html('$' + tax)
                 $('#totalAmountText').html('$' + totalAmt)
@@ -567,14 +567,13 @@
 
 
             } else {
-                let tax = (parseFloat('{{ $totalPrice }}') * 25) / 100;
+                let tax = 25;
                 let totalAmt = tax + totalAmount
                 $('#taxId').html('$' + tax)
                 $('#totalAmountText').html('$' + totalAmt)
                 $('#totalAmount').val(totalAmt)
             }
         });
-
 
         // checkout form submit
         $('#checkOutForm').on('submit', function(e) {

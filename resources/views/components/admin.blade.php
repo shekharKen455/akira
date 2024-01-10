@@ -44,7 +44,7 @@
                 </li>
                 <li class="menu-item  {{ $title === 'categories' ? 'active' : '' }}">
                     <a class="menu-link" href="{{ route('admin.category') }}"> <i class="fa fa-list-alt" style="color: #adb5bd; margin-right: 10px; font-size: 24px;"></i>
-                        <span class="text">Categories</span>
+                        <span class="text">Catalogs</span>
                     </a>
                 </li>
                 <li class="menu-item  {{ $title === 'products' ? 'active' : '' }}">

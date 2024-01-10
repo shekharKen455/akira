@@ -6,7 +6,7 @@ $title = "categories";
         <div class="row">
             <div class="col-9">
                 <div class="content-header">
-                    <h2 class="content-title">Add New Category</h2>
+                    <h2 class="content-title">Add New Catalog</h2>
                     <div>
                         <a href="{{ route('admin.category') }}" class="btn btn-light rounded font-sm mr-5 text-body hover-up">Go Back</a>
                     </div>
@@ -15,7 +15,7 @@ $title = "categories";
             <div class="col-lg-6">
                 <div class="card mb-4">
                     <div class="card-header">
-                        <h4>Category</h4>
+                        <h4>Catalog</h4>
                     </div>
                     <div class="card-body">
                         @if ($errors->any())

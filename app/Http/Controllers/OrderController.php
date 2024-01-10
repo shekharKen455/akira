@@ -41,7 +41,9 @@ class OrderController extends Controller
             'notes' => $request->notes ?? null,
             'sub_amount' => $request->sub_amount,
             'total_amount' => $request->sub_amount,
-            'address' => json_encode($reqData)
+            'address' => json_encode($reqData),
+            'email' => $request->email,
+            'phone' => $request->phone
         ];
 
         // $cart = Cart::where('user_id', $user->id)->get();
