@@ -57,10 +57,15 @@ class WebsiteController extends Controller
     {
         return view('care');
     }
-    
+
     public function shipping()
     {
         return view('shipping');
+    }
+    
+    public function faq()
+    {
+        return view('faq');
     }
 
     public function contact()

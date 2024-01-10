@@ -305,7 +305,7 @@
                                                     <a href="{{ route('contact') }}">Book an Appointment</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('about') }}">Frequently Asked Questions</a>
+                                                    <a href="{{ route('faq') }}">Frequently Asked Questions</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{ route('shipping') }}">Shipping & Returns</a>

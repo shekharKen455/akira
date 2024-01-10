@@ -42,6 +42,7 @@ Route::get('term-and-condition', [WebsiteController::class, 'tnc'])->name('tnc')
 Route::get('contact', [WebsiteController::class, 'contact'])->name('contact');
 Route::get('care', [WebsiteController::class, 'pcare'])->name('care');
 Route::get('shipping', [WebsiteController::class, 'shipping'])->name('shipping');
+Route::get('faq', [WebsiteController::class, 'faq'])->name('faq');
 Route::get('catelog', [WebsiteController::class, 'catelog'])->name('catelog');
 Route::get('category/{id}', [WebsiteController::class, 'category'])->name('category');
 Route::get('product/{slug}', [WebsiteController::class, 'product'])->name('product');
