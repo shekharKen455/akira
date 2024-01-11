@@ -19,6 +19,7 @@ class CartController extends Controller
             'plating_color' => $request->color ?? null,
             'custom_text' => $request->custom_text,
             'lang' => $request->lang,
+            'font' => $request->font ?? null,
             'product' => Product::find($pid)
         ]);
 

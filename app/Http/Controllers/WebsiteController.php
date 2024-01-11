@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
 use App\Models\Categories;
 use App\Models\Product;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class WebsiteController extends Controller
 {
@@ -30,19 +29,39 @@ class WebsiteController extends Controller
         return view('category', compact('cat', 'products'));
     }
 
+    public function customeItems()
+    {
+        $cats = Categories::where('description', 'like', '%CUSTOM%')->get(['id']);
+        $products = Product::whereIn('category_id', $cats->toArray())->paginate(24);
+
+        $cat = (object)[
+            'name' => 'Custom Items'
+        ];
+
+        return view('category', compact('cat', 'products'));
+    }
+
     public function product($slug)
     {
         $product = Product::with('category')->where('slug', $slug)->first();
+        $fonts = [];
+        if(str_contains(strtolower($product->category->name), strtolower('NAME PENDANTS'))) {
+            $fonts = File::allFiles(public_path('fonts'));
+            // foreach ($files as $file) {
+            //     $path = $file->getPathname();
+            // }
+        }
+
         $product->others = explode(',', $product->other_images);
 
-        return view('product', compact('product'));
+        return view('product', compact('product', 'fonts'));
     }
 
     public function about()
     {
         return view('about');
     }
-    
+
     public function privacy()
     {
         return view('pp');
@@ -52,7 +71,7 @@ class WebsiteController extends Controller
     {
         return view('tnc');
     }
-    
+
     public function pcare()
     {
         return view('care');
@@ -62,7 +81,7 @@ class WebsiteController extends Controller
     {
         return view('shipping');
     }
-    
+
     public function faq()
     {
         return view('faq');

@@ -549,7 +549,35 @@
 
 </x-main>
 
+<div class="my-account">
+    <div class="login-header">
+        <div class="login-header icon">
+            <a class="active-login" href="#"><i class="wpb-icon-user"></i></a>
+            <div class="form-login-register">
+                <div class="box-form-login">
+                    {{-- <div class="active-login"></div> --}}
+                    <div class="box-content">
+                        <div class="form-login active">
+                            <form id="login_ajax" method="post" class="login">
+                                @csrf
+                                <h2> Moneris </h2>
+                                <p class="status"></p>
+                                <div class="content">
 
+                                    <div class="button-login text-center">
+                                        <div class="button" name="login" value="Login">
+                                            Loading ...
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://gatewayt.moneris.com/chkt/js/chkt_v1.00.js"></script>
@@ -578,10 +606,9 @@
         // checkout form submit
         $('#checkOutForm').on('submit', function(e) {
             e.preventDefault()
+            $(".form-login-register").addClass('active');
             generateCheckoutPage();
-            $('#monerisCheckout').show();
         })
-
     })
 
     function generateCheckoutPage() {
@@ -608,6 +635,8 @@
                 $("#orderId").val(data.response.ticket);
 
                 myCheckout.setCallback("page_loaded", (data) => {
+                    $(".form-login-register").removeClass('active');
+                    $('#monerisCheckout').show();
                     $("#checkoutBtn").attr('disabled', false);
                 });
                 myCheckout.setCallback("cancel_transaction", (data) => {

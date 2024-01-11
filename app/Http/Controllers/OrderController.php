@@ -6,13 +6,6 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
-
-include(app_path() . '/Gateway/mpgClasses.php');
-
-use App\Gateway\mpgTransaction;
-use App\Gateway\CofInfo;
-use App\Gateway\mpgRequest;
-use App\Gateway\mpgHttpsPost;
 use App\Models\User;
 
 class OrderController extends Controller
@@ -64,6 +57,7 @@ class OrderController extends Controller
                     'custom_text' => $value['custom_text'] ?? null,
                     'custom_image' => $value['custom_image'] ?? null,
                     'lang' => $value['lang'] ?? null,
+                    'font' => $value['font'] ?? null,
                 ]);
             }
 

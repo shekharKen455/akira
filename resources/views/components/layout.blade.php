@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="libs/slick/css/slick.css" type="text/css">
     <link rel="stylesheet" href="libs/slick/css/slick-theme.css" type="text/css">
     <link rel="stylesheet" href="libs/mmenu/css/mmenu.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
 
     <!-- Site Stylesheet -->
     <link rel="stylesheet" href="assets/css/app.css" type="text/css">
@@ -274,7 +276,7 @@
                                                     <span>Tel:</span> 647-745-5143
                                                 </li>
                                                 <li>
-                                                    <span>Email:</span> <a href="mailto:support@akirajwellery.com">support@akirajwellery.com</a>
+                                                    <span>Email:</span> <a href="mailto:Akirajewellery.ca@gmail.com">Akirajewellery.ca@gmail.com</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -282,10 +284,9 @@
 
                                     <div class="block block-social">
                                         <ul class="social-link">
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                            <li><a href="https://www.instagram.com/akirajewellery/"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="https://www.snapchat.com/add/akirajewellery"><i class="fab fa-snapchat"></i></a></li>
+                                            <li><a href="https://www.tiktok.com/@akirajewellery"><i class="fab fa-tiktok"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -20,7 +20,8 @@ class OrderProduct extends Model
         'plating_color',
         'custom_text',
         'custom_image',
-        'lang'
+        'lang',
+        'font'
     ];
 
     public function product()

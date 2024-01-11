@@ -26,299 +26,366 @@
                                                 <div class="col-md-2">
                                                     <div class="content-thumbnail-scroll">
                                                         <div class="image-thumbnail slick-carousel slick-vertical" data-asnavfor=".image-additional" data-centermode="true" data-focusonselect="true" data-columns4="5" data-columns3="4" data-columns2="4" data-columns1="4" data-columns="4" data-nav="true" data-vertical="&quot;true&quot;" data-verticalswiping="&quot;true&quot;">
+
+                                                            @php
+                                                            $mainFile = asset('storage/' . $product->image);
+                                                            @endphp
+
+                                                            @if(preg_match('/^.*\.(mp4|mov|mpeg|webm|avi)$/i', $mainFile))
                                                             <div class="img-item slick-slide">
+                                                                <span class="img-thumbnail-scroll">
+                                                                    <video autoplay muted loop preload="none" width="100%" height="100%">
+                                                                        <source src="{{ $mainFile }}" type="video/mp4" />
+                                                                    </video>
+                                                                </span>
+                                                            </div>
+                                                            @else
+                                                            <div class="img-item slick-slide">
+                                                                <span class="img-thumbnail-scroll">
+                                                                    <img width="600" height="600" src="{{ $mainFile }}" alt="">
+                                                                </span>
+                                                            </div>
+                                                            @endif
+
+                                                            {{-- <div class="img-item slick-slide">
                                                                 <span class="img-thumbnail-scroll">
                                                                     <img width="600" height="600" src="{{ asset('storage/' . $product->image) }}" alt="">
-                                                                </span>
-                                                            </div>
+                                                            </span>
+                                                        </div> --}}
 
-                                                            @foreach ($product->others as $img)
-                                                            <div class="img-item slick-slide">
-                                                                <span class="img-thumbnail-scroll">
-                                                                    <img width="600" height="600" src="{{ asset('storage/' . $img) }}" alt="">
-                                                                </span>
-                                                            </div>
-                                                            @endforeach
+                                                        @foreach ($product->others as $img)
+                                                        @php
+                                                        $file = asset('storage/' . $img);
+                                                        @endphp
 
-                                                            {{-- <div class="img-item slick-slide">
-																		<span class="img-thumbnail-scroll">
-																			<img width="600" height="600" src="media/product/1.jpg" alt="">
-																		</span>
-																	</div>
-																	<div class="img-item slick-slide">
-																		<span class="img-thumbnail-scroll">
-																			<img width="600" height="600" src="media/product/1-2.jpg" alt="">
-																		</span>
-																	</div>
-																	<div class="img-item slick-slide">
-																		<span class="img-thumbnail-scroll">
-																			<img width="600" height="600" src="media/product/2.jpg" alt="">
-																		</span>
-																	</div>
-																	<div class="img-item slick-slide">
-																		<span class="img-thumbnail-scroll">
-																			<img width="600" height="600" src="media/product/2-2.jpg" alt="">
-																		</span>
-																	</div>
-																	<div class="img-item slick-slide">
-																		<span class="img-thumbnail-scroll">
-																			<img width="600" height="600" src="media/product/3.jpg" alt="">
-																		</span>
-																	</div> --}}
+                                                        @if(preg_match('/^.*\.(mp4|mov|mpeg|webm|avi)$/i', $file))
+                                                        <div class="img-item slick-slide">
+                                                            <span class="img-thumbnail-scroll">
+                                                                <video autoplay muted loop preload="none" width="100%" height="100%">
+                                                                    <source src="{{ $file }}" type="video/mp4" />
+                                                                </video>
+                                                            </span>
                                                         </div>
+                                                        @else
+                                                        <div class="img-item slick-slide">
+                                                            <span class="img-thumbnail-scroll">
+                                                                <img width="600" height="600" src="{{ $file }}" alt="">
+                                                            </span>
+                                                        </div>
+                                                        @endif
+
+                                                        @endforeach
                                                     </div>
                                                 </div>
-                                                <div class="col-md-10">
-                                                    <div class="scroll-image main-image">
-                                                        <div class="image-additional slick-carousel" data-asnavfor=".image-thumbnail" data-fade="true" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns="1" data-nav="true">
-                                                            <div class="img-item slick-slide">
-                                                                <img width="900" height="900" src="{{ asset('storage/' . $product->image) }}" alt="" title="">
-                                                            </div>
-
-                                                            @foreach ($product->others as $img)
-                                                            <div class="img-item slick-slide">
-                                                                <img width="900" height="900" src="{{ asset('storage/' . $img) }}" alt="" title="">
-                                                            </div>
-                                                            @endforeach
-
-                                                            {{-- <div class="img-item slick-slide">
-                                                                            <img width="900" height="900" src="media/product/1.jpg" alt="" title="">
-                                                                        </div>
-                                                                        <div class="img-item slick-slide">
-                                                                            <img width="900" height="900" src="media/product/1-2.jpg" alt="" title="">
-                                                                        </div>
-                                                                        <div class="img-item slick-slide">
-                                                                            <img width="900" height="900" src="media/product/2.jpg" alt="" title="">
-                                                                        </div>
-                                                                        <div class="img-item slick-slide">
-                                                                            <img width="900" height="900" src="media/product/2-2.jpg" alt="" title="">
-                                                                        </div>
-                                                                        <div class="img-item slick-slide">
-                                                                            <img width="900" height="900" src="media/product/3.jpg" alt="" title="">
-                                                                        </div> --}}
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="scroll-image main-image">
+                                                    <div class="image-additional slick-carousel" data-asnavfor=".image-thumbnail" data-fade="true" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="1" data-columns="1" data-nav="true">
+                                                        <div class="img-item slick-slide">
+                                                            <img width="900" height="900" src="{{ asset('storage/' . $product->image) }}" alt="" title="">
                                                         </div>
+
+                                                        @foreach ($product->others as $img)
+
+                                                        @php
+                                                        $file = asset('storage/' . $img);
+                                                        @endphp
+
+                                                        @if(preg_match('/^.*\.(mp4|mov|mpeg|webm|avi)$/i', $file))
+                                                        <div class="img-item slick-slide">
+                                                            <video autoplay muted loop preload="none" width="100%" height="100%">
+                                                                <source src="{{ $file }}" type="video/mp4" />
+                                                            </video>
+                                                        </div>
+                                                        @else
+                                                        <div class="img-item slick-slide">
+                                                            <img width="900" height="900" src="{{ $file }}" alt="" title="">
+                                                        </div>
+                                                        @endif
+
+                                                        @endforeach
+
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="product-info col-lg-5 col-md-12 col-12 ">
-                                            <h1 class="title">{{ $product->name }}</h1>
-                                            <span class="price">
-                                                {{-- <del aria-hidden="true"><span>${{ $product->price }}</span></del> --}}
-                                            <ins><span>${{ $product->price }}</span></ins>
-                                            </span>
-                                            <div class="rating">
-                                                <div class="star star-{{ $product->rating }}"></div>
-                                                {{-- <div class="review-count">
+                                    <div class="product-info col-lg-5 col-md-12 col-12 ">
+                                        <h1 class="title">{{ $product->name }}</h1>
+                                        <span class="price">
+                                            {{-- <del aria-hidden="true"><span>${{ $product->price }}</span></del> --}}
+                                        <ins><span>${{ $product->price }}</span></ins>
+                                        </span>
+                                        <div class="rating">
+                                            <div class="star star-{{ $product->rating }}"></div>
+                                            {{-- <div class="review-count">
                                                     (3<span> reviews</span>)
                                                 </div> --}}
-                                            </div>
-                                            <div class="description">
-                                                <p>{{ $product->description }}</p>
-                                            </div>
+                                        </div>
+                                        <div class="description">
+                                            <p>{{ $product->description }}</p>
+                                        </div>
 
-                                            <style>
-                                                /* Style to increase radio button size */
-                                                input[type="radio"] {
-                                                    -ms-transform: scale(1.5);
-                                                    /* IE 9 */
-                                                    -webkit-transform: scale(1.5);
-                                                    /* Safari 3-8 */
-                                                    transform: scale(1.5);
-                                                }
+                                        <style>
+                                            /* Style to increase radio button size */
+                                            input[type="radio"] {
+                                                -ms-transform: scale(1.5);
+                                                /* IE 9 */
+                                                -webkit-transform: scale(1.5);
+                                                /* Safari 3-8 */
+                                                transform: scale(1.5);
+                                            }
 
-                                                .colors li {
-                                                    display: inline-block;
-                                                    width: 30px;
-                                                    height: 30px;
-                                                    margin: 5px;
-                                                    cursor: pointer;
-                                                }
+                                            .colors li {
+                                                display: inline-block;
+                                                width: 30px;
+                                                height: 30px;
+                                                margin: 5px;
+                                                cursor: pointer;
+                                            }
 
-                                                .colors input {
-                                                    display: none;
-                                                }
+                                            .colors input {
+                                                display: none;
+                                            }
 
-                                                .selected {
-                                                    border: 3px solid #000;
-                                                }
+                                            .selected {
+                                                border: 3px solid #000;
+                                            }
 
-                                                .text li {
-                                                    margin-bottom: 5px;
-                                                }
+                                            .text li {
+                                                margin-bottom: 5px;
+                                            }
 
-                                                .labelText {
-                                                    font-size: 12px;
-                                                    color: #000;
-                                                    margin-bottom: 0;
-                                                    margin-right: 15px;
-                                                    line-height: 40px;
-                                                    font-weight: 500;
-                                                    letter-spacing: 1.5px;
-                                                    text-transform: uppercase;
-                                                    width: 70px;
-                                                }
+                                            .labelText {
+                                                font-size: 12px;
+                                                color: #000;
+                                                margin-bottom: 0;
+                                                margin-right: 15px;
+                                                line-height: 40px;
+                                                font-weight: 500;
+                                                letter-spacing: 1.5px;
+                                                text-transform: uppercase;
+                                                width: 70px;
+                                            }
 
-                                            </style>
-                                            <div class="variations">
-                                                <form id="cartForm" method="POST" enctype='multipart/form-data'>
-                                                    @csrf
-                                                    <table cellspacing="0">
-                                                        <tbody>
-                                                            {{-- <tr>
-                                                                <td class="label">Length</td>
-                                                                <td class="attributes">
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="length-35cm" name="length" value="35">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-35cm">35 CM (14")</label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="length-40cm" name="length" value="40">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-40cm">40 CM (16")</label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="length-45cm" name="length" value="45">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-45cm">45 CM (18")</label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="length-50cm" name="length" value="50">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-50cm">50 CM (20")</label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="length-55cm" name="length" value="55">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="length-55cm">55 CM (22")</label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr> --}}
-                                                            <tr>
-                                                                <td class="label" style="width:20%">Chain Style</td>
-                                                                <td class="attributes">
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="box" name="style" value="Cuban Chain">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="box"> Cuban </label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="Cable" name="style" value="Twisted Chain">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="Cable"> Twisted</label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="label">Plating</td>
-                                                                <td class="attributes">
-                                                                    <ul class="colors">
-                                                                        <li><span class="color-1"></span><input type="radio" name="color" value="Silver"></li>
-                                                                        <li><span class="color-2"></span><input type="radio" name="color" value="Gold"></li>
-                                                                        {{-- <li><span class="color-3"></span><input type="radio" name="color" value="Rose Gold"></li> --}}
-                                                                    </ul>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="label" style="width:20%">Language</td>
-                                                                <td class="attributes">
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="English" name="lang" value="English">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="English"> English </label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="Punjabi" name="lang" value="Punjabi">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="Punjabi"> Punjabi </label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="Punjabi2" name="lang" value="Punjabi Caligraphy">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="Punjabi2"> Punjabi Caligraphy </label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="Hindi" name="lang" value="Hindi">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="Hindi"> Hindi </label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input class="form-check-input" type="radio" id="Other" name="lang" value="Other">
-                                                                        <label class="form-check-label" style="margin-left: 2px" for="Other"> Other Specify in description box </label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="label" style="width:100%">Name / Text</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="width:100%">
-                                                                    <span class="form-control-wrap">
-                                                                        <textarea name="custom_text" style="width:100%" class="form-control" aria-required="true" placeholder="Detail description about how you want your pendant. Please specify ..."></textarea>
-                                                                    </span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="label" style="width:100%">Choose your photo(s)</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td style="width:100%">
-                                                                    <span class="form-control-wrap">
-                                                                        <input type="file" name="custom_image[]" class="input-text" style="border-bottom: 2px #e5e5e5;height: 100%;" multiple>
-                                                                    </span>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </form>
-                                            </div>
-                                            <div class="buttons">
-                                                <div class="add-to-cart-wrap">
-                                                    {{-- <div class="quantity">
+                                        </style>
+                                        <div class="variations">
+                                            <form id="cartForm" method="POST" enctype='multipart/form-data'>
+                                                @csrf
+                                                <table cellspacing="0">
+                                                    <tbody>
+                                                        @if(str_contains(strtolower($product->category->name), strtolower('PHOTO PENDANTS')) || str_contains(strtolower($product->category->name), strtolower('NAME PENDANTS')))
+                                                        <tr>
+                                                            <td class="label" style="width:20%">Chain Style</td>
+                                                            <td class="attributes">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" id="box" name="style" value="Cuban Chain">
+                                                                    <label class="form-check-label" style="margin-left: 2px" for="box"> Cuban </label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" id="Cable" name="style" value="Twisted Chain">
+                                                                    <label class="form-check-label" style="margin-left: 2px" for="Cable"> Twisted</label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+
+                                                        @if(str_contains(strtolower($product->category->name), strtolower('RINGS')))
+                                                        <tr>
+                                                            <td class="label">Size</td>
+                                                            <td class="attributes">
+                                                                <select name="length">
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                    <option>6</option>
+                                                                    <option>7</option>
+                                                                    <option>8</option>
+                                                                    <option>9</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+
+                                                        @if(str_contains(strtolower($product->category->name), strtolower('PHOTO PENDANTS')))
+                                                        <tr>
+                                                            <td class="label">Plating</td>
+                                                            <td class="attributes">
+                                                                <ul class="colors">
+                                                                    <li><span class="color-1"></span><input type="radio" name="color" value="Silver"></li>
+                                                                    <li><span class="color-2"></span><input type="radio" name="color" value="Gold"></li>
+                                                                    {{-- <li><span class="color-3"></span><input type="radio" name="color" value="Rose Gold"></li> --}}
+                                                                </ul>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+
+                                                        @if(str_contains(strtolower($product->category->name), strtolower('NAME PENDANTS')))
+                                                        <tr>
+                                                            <td class="label" style="width:20%">Language</td>
+                                                            <td class="attributes">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" id="English" name="lang" value="English">
+                                                                    <label class="form-check-label" style="margin-left: 2px" for="English"> English </label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" id="Punjabi" name="lang" value="Punjabi">
+                                                                    <label class="form-check-label" style="margin-left: 2px" for="Punjabi"> Punjabi </label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" id="Punjabi2" name="lang" value="Punjabi Caligraphy">
+                                                                    <label class="form-check-label" style="margin-left: 2px" for="Punjabi2"> Punjabi Caligraphy </label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" id="Hindi" name="lang" value="Hindi">
+                                                                    <label class="form-check-label" style="margin-left: 2px" for="Hindi"> Hindi </label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="radio" id="Other" name="lang" value="Other">
+                                                                    <label class="form-check-label" style="margin-left: 2px" for="Other"> Other Specify in description box </label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+
+                                                        @if(str_contains(strtolower($product->category->name), strtolower('PHOTO PENDANTS')) || str_contains(strtolower($product->category->name), strtolower('NAME PENDANTS')))
+                                                        <tr>
+                                                            <td class="label" style="width:100%">Name / Text</td>
+                                                            <td style="width:100%">
+                                                                <span class="form-control-wrap">
+                                                                    <textarea name="custom_text" style="width:100%" class="form-control" aria-required="true" placeholder="Detail description about how you want your pendant. Please specify ..."></textarea>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+
+                                                        @if(str_contains(strtolower($product->category->name), strtolower('NAME PENDANTS')))
+
+                                                        <style>
+                                                            .lableCheck {
+                                                                position: relative;
+                                                                cursor: pointer;
+                                                                display: inline-block;
+                                                            }
+
+                                                            input[type="radio"] {
+                                                                position: absolute;
+                                                                opacity: 0;
+                                                                cursor: pointer;
+                                                            }
+
+                                                            .lableCheck::before {
+                                                                content: '';
+                                                                position: absolute;
+                                                                top: 0;
+                                                                left: 0;
+                                                                border: 2px solid transparent;
+                                                                box-sizing: border-box;
+                                                            }
+
+                                                            .fontSelect {
+                                                                border: 2px solid #cb8161;
+                                                                border-radius: 5%
+                                                            }
+
+                                                        </style>
+                                                        <tr>
+                                                            <td class="label" style="width:100%">Font</td>
+                                                            <td style="width:100%">
+                                                                <div class="row d-flex align-items-center justify-content-center">
+                                                                    @foreach ($fonts as $font)
+                                                                    @php
+                                                                    $pathinfo = pathinfo($font);
+                                                                    $filename = $pathinfo['filename'];
+                                                                    $extension = $pathinfo['extension'];
+                                                                    @endphp
+                                                                    <label class="col-md-2 col-4 lableCheck">
+                                                                        <input type="radio" name="font" value="{{ $filename . '.' . $extension }}" />
+                                                                        <img src="{{ asset('fonts/' . $filename . '.' . $extension) }}">
+                                                                    </label>
+                                                                    @endforeach
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+
+                                                        @if(str_contains(strtolower($product->category->name), strtolower('PHOTO PENDANTS')))
+                                                        <tr>
+                                                            <td class="label" style="width:100%">Choose your photo(s)</td>
+                                                            <td style="width:100%">
+                                                                <span class="form-control-wrap">
+                                                                    <input type="file" name="custom_image[]" class="input-text" style="border-bottom: 2px #e5e5e5;height: 100%;" multiple>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                        @endif
+
+                                                    </tbody>
+                                                </table>
+                                            </form>
+                                        </div>
+                                        <div class="buttons">
+                                            <div class="add-to-cart-wrap">
+                                                {{-- <div class="quantity">
                                                         <button type="button" class="plus">+</button>
                                                         <input type="number" class="qty" step="1" min="0" max="" name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="numeric" autocomplete="off">
                                                         <button type="button" class="minus">-</button>
                                                     </div> --}}
-                                                    <div class="btn-add-to-cart-new">
-                                                        {{-- @if (auth()->user()) --}}
-                                                        <a onclick="submitCartForm('{{ route('cart.add', $product->id) }}')" tabindex="0">Add to cart</a>
-                                                        {{-- @else
+                                                <div class="btn-add-to-cart-new">
+                                                    {{-- @if (auth()->user()) --}}
+                                                    <a onclick="submitCartForm('{{ route('cart.add', $product->id) }}')" tabindex="0">Add to cart</a>
+                                                    {{-- @else
                                                         <a href="#" onclick="alert('Please login to continue!')" tabindex="0">Add to cart</a>
                                                         @endif --}}
-                                                    </div>
                                                 </div>
-                                                <div class="btn-quick-buy" data-title="Wishlist">
-                                                    {{-- @if (auth()->user()) --}}
-                                                    <a onclick="submitCartForm('{{ route('cart.buy', $product->id) }}')">
-                                                        <button class="product-btn">Buy It Now</button>
-                                                    </a>
-                                                    {{-- @else
+                                            </div>
+                                            <div class="btn-quick-buy" data-title="Wishlist">
+                                                {{-- @if (auth()->user()) --}}
+                                                <a onclick="submitCartForm('{{ route('cart.buy', $product->id) }}')">
+                                                    <button class="product-btn">Buy It Now</button>
+                                                </a>
+                                                {{-- @else
                                                     <button class="product-btn" onclick="alert('Please login to continue!')">Buy It Now</button>
                                                     @endif --}}
 
-                                                </div>
-                                                {{-- <div class="btn-wishlist" data-title="Wishlist">
+                                            </div>
+                                            {{-- <div class="btn-wishlist" data-title="Wishlist">
                                                     <button class="product-btn">Add to wishlist</button>
                                                 </div>
                                                 <div class="btn-compare" data-title="Compare">
                                                     <button class="product-btn">Compare</button>
                                                 </div> --}}
-                                            </div>
-                                            <div class="product-meta">
-                                                {{-- <span class="sku-wrapper">SKU: <span class="sku">D2300-3-2-2</span></span> --}}
-                                                <span class="posted-in">Category: <a href="{{ route('category', $product->category->id) }}" rel="tag">{{ $product->category->name }}</a></span>
-                                                <span class="tagged-as">Tags: <a href="#" rel="tag">Hot</a>, <a href="#" rel="tag">Trend</a></span>
-                                            </div>
-                                            <div class="social-share">
-                                                <a href="#" title="Facebook" class="share-facebook" target="_blank"><i class="fa fa-facebook"></i>Facebook</a>
-                                                <a href="#" title="Twitter" class="share-twitter"><i class="fa fa-twitter"></i>Twitter</a>
-                                                <a href="#" title="Pinterest" class="share-pinterest"><i class="fa fa-pinterest"></i>Pinterest</a>
-                                            </div>
+                                        </div>
+                                        <div class="product-meta">
+                                            {{-- <span class="sku-wrapper">SKU: <span class="sku">D2300-3-2-2</span></span> --}}
+                                            <span class="posted-in">Category: <a href="{{ route('category', $product->category->id) }}" rel="tag">{{ $product->category->name }}</a></span>
+                                            <span class="tagged-as">Tags: <a href="#" rel="tag">Hot</a>, <a href="#" rel="tag">Trend</a></span>
+                                        </div>
+                                        <div class="social-share">
+                                            <a href="#" title="Facebook" class="share-facebook" target="_blank">
+                                                <i class="fa fa-facebook"></i>Facebook
+                                            </a>
+                                            <a href="#" title="Twitter" class="share-twitter">
+                                                <i class="fa fa-twitter"></i>Twitter
+                                            </a>
+                                            <a href="#" title="Pinterest" class="share-pinterest">
+                                                <i class="fa fa-pinterest"></i>Pinterest
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="product-related">
-                            <div class="section-padding">
-                                <div class="section-container p-l-r">
-                                    <div class="block block-products slider">
-                                        <div class="block-title">
-                                            {{-- <h2>Related Products</h2> --}}
-                                        </div>
-                                        <div class="block-content">
-                                            {{-- <div class="content-product-list slick-wrap">
+                    </div>
+                    <div class="product-related">
+                        <div class="section-padding">
+                            <div class="section-container p-l-r">
+                                <div class="block block-products slider">
+                                    <div class="block-title">
+                                        {{-- <h2>Related Products</h2> --}}
+                                    </div>
+                                    <div class="block-content">
+                                        {{-- <div class="content-product-list slick-wrap">
                                                 <div class="slick-sliders products-list grid" data-slidestoscroll="true" data-dots="false" data-nav="1" data-columns4="1" data-columns3="2" data-columns2="3" data-columns1="3" data-columns1440="4" data-columns="4">
                                                     <div class="item-product slick-slide">
                                                         <div class="items">
@@ -531,15 +598,15 @@
                                                     </div>
                                                 </div>
                                             </div> --}}
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- #content -->
-            </div><!-- #primary -->
-        </div><!-- #main-content -->
+                </div>
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    </div><!-- #main-content -->
     </div>
     </div><!-- #primary -->
     </div><!-- #main-content -->
@@ -549,18 +616,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     $(document).ready(function() {
+
+
+        const labels = document.querySelectorAll('.lableCheck');
+        labels.forEach(label => {
+            label.addEventListener('click', () => {
+                labels.forEach(l => l.classList.remove('fontSelect'));
+                label.classList.add('fontSelect');
+            });
+        });
+
+
         // Handle click events on spans
         $('.colors li span').on('click', function() {
-            // Get the associated radio button
             var radioBtn = $(this).closest('li').find('input');
-
-            // Check the radio button
             radioBtn.attr('checked', true);
-
-            // Remove the 'selected' class from all spans
             $('.colors li span').removeClass('selected');
-
-            // Add the 'selected' class to the clicked span
             $(this).addClass('selected');
         });
     });

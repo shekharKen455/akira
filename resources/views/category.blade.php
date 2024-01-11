@@ -130,11 +130,11 @@
                                                                 </div>
                                                                 <div class="product-button">
                                                                     <div class="btn-add-to-cart-new" data-title="Add to cart">
-                                                                        <a href="{{ route('cart.add', $pro->id) }}" class="product-btn button">Add to cart</a>
+                                                                        <a href="{{ route('product', $pro->slug) }}" class="product-btn button">View </a>
                                                                     </div>
-                                                                    <div class="btn-add-to-cart-new" data-title="Buy">
+                                                                    {{-- <div class="btn-add-to-cart-new" data-title="Buy">
                                                                         <a href="#" class="product-btn button">Buy</a>
-                                                                    </div>
+                                                                    </div> --}}
                                                                 </div>
                                                                 <div class="product-description">{{ $pro->description }}</div>
                                                             </div>

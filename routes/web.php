@@ -44,6 +44,7 @@ Route::get('care', [WebsiteController::class, 'pcare'])->name('care');
 Route::get('shipping', [WebsiteController::class, 'shipping'])->name('shipping');
 Route::get('faq', [WebsiteController::class, 'faq'])->name('faq');
 Route::get('catelog', [WebsiteController::class, 'catelog'])->name('catelog');
+Route::get('category/custom-item', [WebsiteController::class, 'customeItems'])->name('custom');
 Route::get('category/{id}', [WebsiteController::class, 'category'])->name('category');
 Route::get('product/{slug}', [WebsiteController::class, 'product'])->name('product');
 

@@ -63,7 +63,7 @@
                                         </ul>
                                     </li> --}}
                                 <li class="level-0 menu-item">
-                                    <a href="{{ route('category', $custom->id ?? 1) }}"><span class="menu-item-text">CUSTOM ITEMS</span></a>
+                                    <a href="{{ route('custom') }}"><span class="menu-item-text">CUSTOM ITEMS</span></a>
                                 </li>
                                 <li class="level-0 menu-item">
                                     <a href="{{ route('catelog') }}"><span class="menu-item-text">CATALOGS</span></a>
