@@ -30,7 +30,7 @@
                                                         <div class="banner-wrapper banners">
                                                             <div class="banner-image hover-opacity">
                                                                 <a href="#">
-                                                                    <img src="media/banner/banner-about-1.jpg" alt="Banner Image">
+                                                                    <img src="media/banner/about1.jpeg" alt="Banner Image">
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -56,7 +56,7 @@
                                                         <div class="banner-wrapper banners">
                                                             <div class="banner-image hover-opacity">
                                                                 <a href="#">
-                                                                    <img src="media/banner/banner-about-3.jpg" alt="Banner Image">
+                                                                    <img src="media/banner/about2.jpeg" alt="Banner Image">
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -108,14 +108,14 @@
                                                 Where It All Began
                                             </h2>
                                             <div class="intro-text">
-                                                Aenean imperdiet. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Vestibulum fringilla pede sit amet augue. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce fermentum odio nec arcu.Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Sed cursus turpis vitae tortor. Vestibulum eu odio. Sed in libero ut nibh placerat accumsan. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                                Welcome to Akira Jewellers, Toronto's home for personalized elegance. We take pride in being Canada-based jewellers, known for our exquisite custom 18-carat gold-plated photo pendants crafted with precision using state-of-the-art laser technology. Alongside our sterling silver jewellery collection, encompassing necklaces, rings, bracelets, and earrings, we are recognized for our reliability and commitment to exceptional service. Explore our pieces and experience the embodiment of quality and reliability at Akira Jewellers.
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-
+                        
                         <section class="section section-padding background-img bg-img-2 p-t-70 p-b-70 m-b-70">
                             <div class="section-container">
                                 <!-- Block Intro (Layout 6) -->
@@ -126,7 +126,7 @@
                                                 <div class="intro-wrap">
                                                     <h2 class="intro-title">We Know Jewellery – <br> &amp; We Know Our Customers</h2>
                                                     <div class="intro-item m-b-0">
-                                                        Cenean imperdiet. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Vestibulum fringilla pede sit amet augue. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce fermentum odio nec arcu.
+                                                        At Akira Jewellers, We're Experts in Both Gems and Our Customers' Desires, Creating a Fusion of Elegance and Personal Expression." We offer a perfect jewellery for every occasion
                                                     </div>
                                                 </div>
                                             </div>
@@ -239,7 +239,7 @@
                                                             Shipping Worldwide
                                                         </h3>
                                                         <p class="box-description">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                                            We ship to every corner of the world. Offer a quick and reliable shipping services.
                                                         </p>
                                                     </div>
                                                 </div>
@@ -292,7 +292,7 @@
                                                             14 Days Return
                                                         </h3>
                                                         <p class="box-description">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                                            Returns in case of damage or broked products only. No return/exchange in custom item
                                                         </p>
                                                     </div>
                                                 </div>
@@ -335,7 +335,7 @@
                                                             Security Payment
                                                         </h3>
                                                         <p class="box-description">
-                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                                            Our website use 3D secure payment gateway.
                                                         </p>
                                                     </div>
                                                 </div>
@@ -346,380 +346,380 @@
                             </div>
                         </section>
 
-                        <section class="section section-padding background-13 p-t-70 p-b-70 m-b-70">
-                            <div class="section-container">
+                        <!--<section class="section section-padding background-13 p-t-70 p-b-70 m-b-70">-->
+                        <!--    <div class="section-container">-->
                                 <!-- Block Intro (Layout 7) -->
-                                <div class="block block-intro layout-7">
-                                    <div class="block-widget-wrap">
-                                        <div class="row">
-                                            <div class="section-column left animation-horizontal hover-opacity">
-                                                <img width="600" height="440" src="media/banner/intro-about-3.jpg" alt="intro">
-                                            </div>
-                                            <div class="section-column right">
-                                                <div class="intro-wrap">
-                                                    <h2 class="intro-title">Top Jewellers at Ice Online</h2>
-                                                    <div class="intro-item m-b-0">
-                                                        Cenean imperdiet. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Vestibulum fringilla pede sit amet augue. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce fermentum odio nec arcu.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        <!--        <div class="block block-intro layout-7">-->
+                        <!--            <div class="block-widget-wrap">-->
+                        <!--                <div class="row">-->
+                        <!--                    <div class="section-column left animation-horizontal hover-opacity">-->
+                        <!--                        <img width="600" height="440" src="media/banner/intro-about-3.jpg" alt="intro">-->
+                        <!--                    </div>-->
+                        <!--                    <div class="section-column right">-->
+                        <!--                        <div class="intro-wrap">-->
+                        <!--                            <h2 class="intro-title">Top Jewellers at Ice Online</h2>-->
+                        <!--                            <div class="intro-item m-b-0">-->
+                        <!--                                Cenean imperdiet. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. Vestibulum fringilla pede sit amet augue. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Fusce fermentum odio nec arcu.-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                </div>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</section>-->
 
-                        <section class="section section-padding m-b-70">
-                            <div class="section-container">
+                        <!--<section class="section section-padding m-b-70">-->
+                        <!--    <div class="section-container">-->
                                 <!-- Block Testimonial -->
-                                <div class="block block-testimonial layout-2">
-                                    <div class="block-widget-wrap">
-                                        <div class="testimonial-wrap slick-wrap"><i class="slick-arrow fa fa-angle-left" style=""></i>
-                                            <div class="slick-sliders slick-initialized slick-slider" data-slidestoscroll="true" data-nav="1" data-dots="0" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="2" data-columns="3">
-                                                <div class="slick-list draggable">
-                                                    <div class="slick-track" style="opacity: 1; width: 5280px; transform: translate3d(-1440px, 0px, 0px);">
-                                                        <div class="testimonial-content slick-slide slick-cloned" data-slick-index="-3" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-4"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Fabulous Grounds”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/2.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Saitama One</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-cloned" data-slick-index="-2" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Great vineyard tour and tasting!”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/3.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Sara Colinton</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Stunning Design”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/4.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Shetty Jamie</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Amazing piece of history”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/1.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Robet Smith</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="0" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-4"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Fabulous Grounds”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/2.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Saitama One</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="0" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Great vineyard tour and tasting!”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/3.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Sara Colinton</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Stunning Design”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/4.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Shetty Jamie</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Amazing piece of history”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/1.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Robet Smith</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-4"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Fabulous Grounds”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/2.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Saitama One</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Great vineyard tour and tasting!”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/3.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Sara Colinton</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="testimonial-content slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">
-                                                            <div class="item">
-                                                                <div class="testimonial-item">
-                                                                    <div class="testimonial-icon">
-                                                                        <div class="rating">
-                                                                            <div class="star star-5"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h2 class="testimonial-title">“Stunning Design”</h2>
-                                                                    <div class="testimonial-excerpt">
-                                                                        Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...
-                                                                    </div>
-                                                                </div>
-                                                                <div class="testimonial-image image-position-top">
-                                                                    <div class="thumbnail">
-                                                                        <img width="110" height="110" src="media/testimonial/4.jpg" alt="">
-                                                                    </div>
-                                                                    <div class="testimonial-info">
-                                                                        <h2 class="testimonial-customer-name">Shetty Jamie</h2>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                        <!--        <div class="block block-testimonial layout-2">-->
+                        <!--            <div class="block-widget-wrap">-->
+                        <!--                <div class="testimonial-wrap slick-wrap"><i class="slick-arrow fa fa-angle-left" style=""></i>-->
+                        <!--                    <div class="slick-sliders slick-initialized slick-slider" data-slidestoscroll="true" data-nav="1" data-dots="0" data-columns4="1" data-columns3="1" data-columns2="1" data-columns1="2" data-columns="3">-->
+                        <!--                        <div class="slick-list draggable">-->
+                        <!--                            <div class="slick-track" style="opacity: 1; width: 5280px; transform: translate3d(-1440px, 0px, 0px);">-->
+                        <!--                                <div class="testimonial-content slick-slide slick-cloned" data-slick-index="-3" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-4"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Fabulous Grounds”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/2.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Saitama One</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-cloned" data-slick-index="-2" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-5"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Great vineyard tour and tasting!”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/3.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Sara Colinton</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-5"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Stunning Design”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/4.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Shetty Jamie</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-5"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Amazing piece of history”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/1.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Robet Smith</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="0" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-4"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Fabulous Grounds”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/2.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Saitama One</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="0" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-5"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Great vineyard tour and tasting!”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/3.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Sara Colinton</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-5"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Stunning Design”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/4.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Shetty Jamie</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-5"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Amazing piece of history”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/1.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Robet Smith</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-4"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Fabulous Grounds”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/2.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Saitama One</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-5"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Great vineyard tour and tasting!”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/3.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Sara Colinton</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="testimonial-content slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" tabindex="-1" style="width: 480px;">-->
+                        <!--                                    <div class="item">-->
+                        <!--                                        <div class="testimonial-item">-->
+                        <!--                                            <div class="testimonial-icon">-->
+                        <!--                                                <div class="rating">-->
+                        <!--                                                    <div class="star star-5"></div>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            <h2 class="testimonial-title">“Stunning Design”</h2>-->
+                        <!--                                            <div class="testimonial-excerpt">-->
+                        <!--                                                Blood bank canine teeth larynx occupational therapist oncologist optician plaque spinal tap stat strep...-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="testimonial-image image-position-top">-->
+                        <!--                                            <div class="thumbnail">-->
+                        <!--                                                <img width="110" height="110" src="media/testimonial/4.jpg" alt="">-->
+                        <!--                                            </div>-->
+                        <!--                                            <div class="testimonial-info">-->
+                        <!--                                                <h2 class="testimonial-customer-name">Shetty Jamie</h2>-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
 
 
-                                            </div>
-                                            <i class="slick-arrow fa fa-angle-right" style=""></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        <!--                    </div>-->
+                        <!--                    <i class="slick-arrow fa fa-angle-right" style=""></i>-->
+                        <!--                </div>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</section>-->
 
-                        <section class="section section-padding top-border p-t-60 m-b-80">
-                            <div class="section-container">
+                        <!--<section class="section section-padding top-border p-t-60 m-b-80">-->
+                        <!--    <div class="section-container">-->
                                 <!-- Block Newsletter (Layout 2) -->
-                                <div class="block block-newsletter layout-2 one-col">
-                                    <div class="block-widget-wrap">
-                                        <div class="newsletter-title-wrap">
-                                            <h2 class="newsletter-title">Latest From MoJuri!</h2>
-                                            <div class="newsletter-text">Sign-up to receive 10% off your next purchase. Plus hear about new arrivals and offers.</div>
-                                        </div>
-                                        <form action="#" method="post" class="newsletter-form">
-                                            <input type="email" name="your-email" value="" size="40" placeholder="Email address">
-                                            <span class="btn-submit">
-                                                <input type="submit" value="SUBSCRIBE">
-                                            </span>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        <!--        <div class="block block-newsletter layout-2 one-col">-->
+                        <!--            <div class="block-widget-wrap">-->
+                        <!--                <div class="newsletter-title-wrap">-->
+                        <!--                    <h2 class="newsletter-title">Latest From MoJuri!</h2>-->
+                        <!--                    <div class="newsletter-text">Sign-up to receive 10% off your next purchase. Plus hear about new arrivals and offers.</div>-->
+                        <!--                </div>-->
+                        <!--                <form action="#" method="post" class="newsletter-form">-->
+                        <!--                    <input type="email" name="your-email" value="" size="40" placeholder="Email address">-->
+                        <!--                    <span class="btn-submit">-->
+                        <!--                        <input type="submit" value="SUBSCRIBE">-->
+                        <!--                    </span>-->
+                        <!--                </form>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</section>-->
 
-                        <section class="section section-padding top-border p-t-10 p-b-10 m-b-0">
-                            <div class="section-container">
+                        <!--<section class="section section-padding top-border p-t-10 p-b-10 m-b-0">-->
+                        <!--    <div class="section-container">-->
                                 <!-- Block Image -->
-                                <div class="block block-image slider">
-                                    <div class="block-widget-wrap">
-                                        <div class="slick-wrap">
-                                            <div class="slick-sliders slick-initialized slick-slider" data-nav="0" data-columns4="1" data-columns3="2" data-columns2="3" data-columns1="4" data-columns1440="4" data-columns="5">
-                                                <div class="slick-list draggable">
-                                                    <div class="slick-track" style="opacity: 1; width: 1440px; transform: translate3d(0px, 0px, 0px);">
-                                                        <div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 288px;">
-                                                            <div class="item-image animation-horizontal">
-                                                                <a href="#" tabindex="0">
-                                                                    <img width="450" height="450" src="media/brand/1.jpg" alt="Brand 1">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="item slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="0" style="width: 288px;">
-                                                            <div class="item-image animation-horizontal">
-                                                                <a href="#" tabindex="0">
-                                                                    <img width="450" height="450" src="media/brand/2.jpg" alt="Brand 2">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="item slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="0" style="width: 288px;">
-                                                            <div class="item-image animation-horizontal">
-                                                                <a href="#" tabindex="0">
-                                                                    <img width="450" height="450" src="media/brand/3.jpg" alt="Brand 3">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="item slick-slide slick-active" data-slick-index="3" aria-hidden="false" tabindex="0" style="width: 288px;">
-                                                            <div class="item-image animation-horizontal">
-                                                                <a href="#" tabindex="0">
-                                                                    <img width="450" height="450" src="media/brand/4.jpg" alt="Brand 4">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="item slick-slide slick-active" data-slick-index="4" aria-hidden="false" tabindex="0" style="width: 288px;">
-                                                            <div class="item-image animation-horizontal">
-                                                                <a href="#" tabindex="0">
-                                                                    <img width="450" height="450" src="media/brand/5.jpg" alt="Brand 5">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                        <!--        <div class="block block-image slider">-->
+                        <!--            <div class="block-widget-wrap">-->
+                        <!--                <div class="slick-wrap">-->
+                        <!--                    <div class="slick-sliders slick-initialized slick-slider" data-nav="0" data-columns4="1" data-columns3="2" data-columns2="3" data-columns1="4" data-columns1440="4" data-columns="5">-->
+                        <!--                        <div class="slick-list draggable">-->
+                        <!--                            <div class="slick-track" style="opacity: 1; width: 1440px; transform: translate3d(0px, 0px, 0px);">-->
+                        <!--                                <div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="0" style="width: 288px;">-->
+                        <!--                                    <div class="item-image animation-horizontal">-->
+                        <!--                                        <a href="#" tabindex="0">-->
+                        <!--                                            <img width="450" height="450" src="media/brand/1.jpg" alt="Brand 1">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="item slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="0" style="width: 288px;">-->
+                        <!--                                    <div class="item-image animation-horizontal">-->
+                        <!--                                        <a href="#" tabindex="0">-->
+                        <!--                                            <img width="450" height="450" src="media/brand/2.jpg" alt="Brand 2">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="item slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="0" style="width: 288px;">-->
+                        <!--                                    <div class="item-image animation-horizontal">-->
+                        <!--                                        <a href="#" tabindex="0">-->
+                        <!--                                            <img width="450" height="450" src="media/brand/3.jpg" alt="Brand 3">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="item slick-slide slick-active" data-slick-index="3" aria-hidden="false" tabindex="0" style="width: 288px;">-->
+                        <!--                                    <div class="item-image animation-horizontal">-->
+                        <!--                                        <a href="#" tabindex="0">-->
+                        <!--                                            <img width="450" height="450" src="media/brand/4.jpg" alt="Brand 4">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="item slick-slide slick-active" data-slick-index="4" aria-hidden="false" tabindex="0" style="width: 288px;">-->
+                        <!--                                    <div class="item-image animation-horizontal">-->
+                        <!--                                        <a href="#" tabindex="0">-->
+                        <!--                                            <img width="450" height="450" src="media/brand/5.jpg" alt="Brand 5">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
 
 
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        <!--                    </div>-->
+                        <!--                </div>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</section>-->
                     </div>
                 </div><!-- #content -->
             </div><!-- #primary -->

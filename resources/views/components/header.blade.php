@@ -123,13 +123,13 @@
                                             </style>
                                             <ul class="cart-list ">
                                                 @foreach ($cart as $item)
-                                                <?php $price += $item->product->price; ?>
+                                                <?php $price += $item['product']->price; ?>
                                                 <li class="mini-cart-item">
-                                                    <a href="{{ route('cart.delete', $item->id) }}" class="removed-new" title="Remove this item"><i class="icon_close"></i></a>
-                                                    <a href="{{ route('product', $item->product->slug) }}" class="product-image"><img width="600" height="600" src="{{ asset('storage/' . $item->product->image) }}" alt=""></a>
-                                                    <a href="#" class="product-name">{{ $item->product->name }}</a>
+                                                    <a href="{{ route('cart.delete', $item['id']) }}" class="removed-new" title="Remove this item"><i class="icon_close"></i></a>
+                                                    <a href="{{ route('product', $item['product']->slug) }}" class="product-image"><img width="600" height="600" src="{{ asset('storage/' . $item['product']->image) }}" alt=""></a>
+                                                    <a href="#" class="product-name">{{ $item['product']->name }}</a>
                                                     {{-- <div class="quantity">Qty: 1</div> --}}
-                                                    <div class="price">${{ $item->product->price }}</div>
+                                                    <div class="price">${{ $item['product']->price }}</div>
                                                 </li>
                                                 @endforeach
                                             </ul>
@@ -153,7 +153,7 @@
                             </div>
 
                             <!-- Login -->
-                            @if(auth() && auth()->user() && auth()->user()->email != "admin@user.com")
+                            <!-- @if(auth() && auth()->user() && auth()->user()->email != "admin@user.com")
                             {{-- <div class="login-header icon">
                                 <a class="active-login" href="#"><i class="icon-user"></i> {{ auth()->user()->name }} </a>
                         </div> --}}
@@ -251,20 +251,46 @@
                                 </div>
                             </div>
                         </div>
-                        @endif
+                        @endif -->
 
-                        <!-- Wishlist -->
-                        {{-- <div class="wishlist-box">
+                            <!-- Wishlist -->
+                            {{-- <div class="wishlist-box">
                                 <a href="shop-wishlist.html"><i class="icon-heart"></i></a>
                                 <span class="count-wishlist">1</span>
                             </div> --}}
 
-                        <!-- Cart -->
+                            <!-- Cart -->
 
+                            <div class="login-header icon">
+                                {{-- <a class="active-login" href="#"><i class="icon-user"></i></a> --}}
+                                <div class="form-login-register {{ session('orderSuccess') }}">
+                                    <div class="box-form-login">
+                                        <div class="active-login"></div>
+                                        <div class="box-content">
+                                            <div class="form-login active">
+                                                <div class="content">
+                                                    <br>
+                                                    <div class="text-center text-success text-bold">
+                                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                                        Order created successfully.
+                                                    </div>
+                                                    <br>
+                                                    <a href="{{ route('home') }}">
+                                                        <div class="button-login">
+                                                            <input type="submit" class="button" name="login" value="Continue Shopping" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>

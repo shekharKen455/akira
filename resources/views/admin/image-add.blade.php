@@ -6,7 +6,7 @@ $title = "categories";
         <div class="row">
             <div class="col-9">
                 <div class="content-header">
-                    <h2 class="content-title">Add New Catalog</h2>
+                    <h2 class="content-title">Add New Image</h2>
                     <div>
                         <a href="{{ route('admin.category') }}" class="btn btn-light rounded font-sm mr-5 text-body hover-up">Go Back</a>
                     </div>
@@ -15,7 +15,7 @@ $title = "categories";
             <div class="col-lg-6">
                 <div class="card mb-4">
                     <div class="card-header">
-                        <h4>Catalog</h4>
+                        <h4>Image</h4>
                     </div>
                     <div class="card-body">
                         @if ($errors->any())
@@ -24,19 +24,20 @@ $title = "categories";
                         @endforeach
                         @endif
 
-                        <form action="{{ route('category.store') }}" method="POST" enctype='multipart/form-data'>
+                        <form action="{{ route('admin.image.store') }}" method="POST" enctype='multipart/form-data'>
                             @csrf
                             <div class="mb-4">
                                 <label for="product_name" class="form-label">Name</label>
-                                <input type="text" placeholder="Category Name" class="form-control" name="name" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="product_name" class="form-label">Description</label>
-                                <textarea class="form-control" name="description" placeholder="Category Description ..."></textarea>
+                                <input type="text" placeholder="Enter Name" class="form-control" name="name" required>
                             </div>
 
                             <div class="mb-4">
-                                <label for="product_name" class="form-label">Category Images</label>
+                                <label for="product_name" class="form-label">Link</label>
+                                <input type="url" placeholder="Enter Link" class="form-control" name="Link" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="product_name" class="form-label">Images</label>
                                 <input type="file" class="form-control" name="image" required />
                             </div>
 

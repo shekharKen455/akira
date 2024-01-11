@@ -252,7 +252,7 @@
                             <div class="row">
                                 <div class="section-column left">
                                     <div class="intro-wrap">
-                                        <h2 class="intro-title">Handcrafted<br> &amp; Ethically Sourced</h2>
+                                        <h2 class="intro-title">WHY AKIRA JEWELLERY?</h2>
                                         <div class="intro-item">
                                             <div class="icon">
                                                 <span class="wrap animation-horizontal">
@@ -286,8 +286,8 @@
                                                 </span>
                                             </div>
                                             <div class="content">
-                                                <h3 class="title">FAIR PRICING</h3>
-                                                <div class="text">Nullam quis ante. Pellentesque libero tortor, tincidunt et, tinciduntamet est.In hac habitasse platea dictumst. Praesent nec nisl a purus blandit viverra</div>
+                                                <h3 class="title">BEST PRICING</h3>
+                                                <div class="text">We promise you that price we give, no one can beat. As we are manufacturer of every article.</div>
                                             </div>
                                         </div>
                                         <div class="intro-item">
@@ -305,7 +305,7 @@
                                             </div>
                                             <div class="content">
                                                 <h3 class="title">HIGH QUALITY</h3>
-                                                <div class="text">Nullam quis ante. Pellentesque libero tortor, tincidunt et, tinciduntamet est.In hac habitasse platea dictumst. Praesent nec nisl a purus blandit viverra</div>
+                                                <div class="text">Top notch Quality of material has been used to manufacture every single article. Discover the finest quality in every piece of our jewelry collection, guaranteed.</div>
                                             </div>
                                         </div>
                                         <div class="intro-btn">
@@ -555,25 +555,25 @@
                         </div>
                     </section>
 
-                    <section class="section section-padding m-b-80">
-                        <div class="section-container">
+                    <!--<section class="section section-padding m-b-80">-->
+                    <!--    <div class="section-container">-->
                             <!-- Block Newsletter (Layout 2) -->
-                            <div class="block block-newsletter layout-2 one-col">
-                                <div class="block-widget-wrap">
-                                    <div class="newsletter-title-wrap">
-                                        <h2 class="newsletter-title">Latest From MoJuri!</h2>
-                                        <div class="newsletter-text">Sign-up to receive 10% off your next purchase. Plus hear about new arrivals and offers.</div>
-                                    </div>
-                                    <form action="#" method="post" class="newsletter-form">
-                                        <input type="email" name="your-email" value="" size="40" placeholder="Email address">
-                                        <span class="btn-submit">
-                                            <input type="submit" value="SUBSCRIBE">
-                                        </span>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <!--        <div class="block block-newsletter layout-2 one-col">-->
+                    <!--            <div class="block-widget-wrap">-->
+                    <!--                <div class="newsletter-title-wrap">-->
+                    <!--                    <h2 class="newsletter-title">Latest From MoJuri!</h2>-->
+                    <!--                    <div class="newsletter-text">Sign-up to receive 10% off your next purchase. Plus hear about new arrivals and offers.</div>-->
+                    <!--                </div>-->
+                    <!--                <form action="#" method="post" class="newsletter-form">-->
+                    <!--                    <input type="email" name="your-email" value="" size="40" placeholder="Email address">-->
+                    <!--                    <span class="btn-submit">-->
+                    <!--                        <input type="submit" value="SUBSCRIBE">-->
+                    <!--                    </span>-->
+                    <!--                </form>-->
+                    <!--            </div>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</section>-->
 
                     {{-- <section class="section section-padding top-border p-t-10 p-b-10 m-b-0">
                         <div class="section-container">

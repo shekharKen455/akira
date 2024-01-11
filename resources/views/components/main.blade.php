@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Akira Jweller</title>
+    <meta name="description" content="Welcome to Akira Jewellers, Toronto's home for personalized elegance. We take pride in being Canada-based jewellers, known for our exquisite custom 18-carat gold-plated photo pendants crafted with precision using state-of-the-art laser technology. Alongside our sterling silver jewellery collection, encompassing necklaces, rings, bracelets, and earrings, we are recognized for our reliability and commitment to exceptional service. Explore our pieces and experience the embodiment of quality and reliability at Akira Jewellers.">
+    <link rel="icon" type="image/x-icon" href="{{ asset('media/favicon.png') }}">
+    <title>Akira Jewellery</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('media/favicon.png') }}">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="{{ asset('media/favicon.png') }}"> --}}
 
     <!-- Dependency Styles -->
     <link rel="stylesheet" href="{{ asset('libs/bootstrap/css/bootstrap.min.css') }}" type="text/css">
@@ -89,13 +91,13 @@
                                                 </style>
                                                 <ul class="cart-list ">
                                                     @foreach ($cart as $item)
-                                                    <?php $price += $item->product->price; ?>
+                                                    <?php $price += $item['product']->price; ?>
                                                     <li class="mini-cart-item">
-                                                        <a href="{{ route('cart.delete', $item->id) }}" class="removed-new" title="Remove this item"><i class="icon_close"></i></a>
-                                                        <a href="{{ route('product', $item->product->slug) }}" class="product-image"><img width="600" height="600" src="{{ asset('storage/' . $item->product->image) }}" alt=""></a>
-                                                        <a href="#" class="product-name">{{ $item->product->name }}</a>
+                                                        <a href="{{ route('cart.delete', $item['id']) }}" class="removed-new" title="Remove this item"><i class="icon_close"></i></a>
+                                                        <a href="{{ route('product', $item['product']->slug) }}" class="product-image"><img width="600" height="600" src="{{ asset('storage/' . $item['product']->image) }}" alt=""></a>
+                                                        <a href="#" class="product-name">{{ $item['product']->name }}</a>
                                                         {{-- <div class="quantity">Qty: 1</div> --}}
-                                                        <div class="price">${{ $item->product->price }}</div>
+                                                        <div class="price">${{ $item['product']->price }}</div>
                                                     </li>
                                                     @endforeach
                                                 </ul>
@@ -167,7 +169,7 @@
 
                 <div class="header-mobile-fixed">
                     <!-- Login -->
-                    <div class="my-account">
+                    <!-- <div class="my-account">
                         <div class="login-header">
                             @if(auth() && auth()->user() && auth()->user()->email != "admin@user.com")
                             <a href="{{ route('account') }}"><i class="wpb-icon-user"></i> {{ auth()->user()->name  }} </a>
@@ -233,7 +235,7 @@
                             </div>
                             @endif
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Shop -->
                     {{-- <div class="shop-page">
@@ -304,16 +306,16 @@
                                                     <a href="{{ route('contact') }}">Track Your Order</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('contact') }}">Product Care & Repair</a>
+                                                    <a href="{{ route('care') }}">Product Care</a>
                                                 </li>
                                                 <li>
                                                     <a href="{{ route('contact') }}">Book an Appointment</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('about') }}">Frequently Asked Questions</a>
+                                                    <a href="{{ route('faq') }}">Frequently Asked Questions</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('contact') }}">Shipping & Returns</a>
+                                                    <a href="{{ route('shipping') }}">Shipping & Returns</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -331,16 +333,13 @@
                                                     <a href="{{ route('about') }}">FAQ</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Our Producers</a>
+                                                    <a target="_blank" href="https://maps.app.goo.gl/FK9vp2StXRp4BWyN9?g_st=ic">Sitemap</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('about') }}">Sitemap</a>
+                                                    <a href="{{ route('tnc') }}">Terms & Conditions</a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ route('about') }}">Terms & Conditions</a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ route('about') }}">Privacy Policy</a>
+                                                    <a href="{{ route('privacy') }}">Privacy Policy</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -388,13 +387,13 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="footer-left">
-                                        <p class="copyright">Copyright © 2023. All Right Reserved</p>
+                                        <p class="copyright">Copyright © 2024. All Right Reserved</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="footer-right">
                                         <div class="block block-image">
-                                            <img width="309" height="32" src="media/payments.png" alt="">
+                                            <img width="309" height="32" src="{{ asset('media/payments.png') }}" alt="">
                                         </div>
                                     </div>
                                 </div>

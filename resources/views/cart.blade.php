@@ -18,11 +18,11 @@
                 <div id="content" class="site-content" role="main">
                     <div class="section-padding">
                         <div class="section-container p-l-r">
-                            @if($cart->count() > 0)
+                            @if(count($cart) > 0)
                             <div class="shop-cart">
                                 <div class="row">
                                     <div class="col-xl-8 col-lg-12 col-md-12 col-12">
-                                        <form class="cart-form" action="{{ route('cart.update') }}" method="post">
+                                        <form class="cart-form" action="{{ route('cart.update') }}" method="POST">
                                             @csrf
                                             <div class="table-responsive">
                                                 <table class="cart-items table" cellspacing="0">
@@ -40,35 +40,36 @@
                                                         $totalPrice = 0;
                                                         @endphp
 
-                                                        @foreach ($cart as $item)
+                                                        @foreach ($cart as $key => $item)
+                                                        
                                                         @php
-                                                        $totalPrice += $item->sub_amount ?? ($item->product->price * $item->quantity);
+                                                        $totalPrice += ($item['product']->price * $item['quantity']);
                                                         @endphp
                                                         <tr class="cart-item">
                                                             <td class="product-thumbnail">
                                                                 <a href="#">
-                                                                    <img width="600" height="600" src="{{ asset('storage/' . $item->product->image) }}" class="product-image" alt="">
+                                                                    <img width="600" height="600" src="{{ asset('storage/' . $item['product']->image) }}" class="product-image" alt="">
                                                                 </a>
                                                                 <div class="product-name">
-                                                                    <a href="#">{{ $item->product->name }}</a>
+                                                                    <a href="#">{{ $item['product']->name }}</a>
                                                                 </div>
                                                             </td>
                                                             <td class="product-price">
-                                                                <span class="price">${{ $item->product->price }}</span>
+                                                                <span class="price">${{ $item['product']->price }}</span>
                                                             </td>
                                                             <td class="product-quantity">
                                                                 <div class="quantity">
                                                                     <button type="button" class="minus">-</button>
-                                                                    <input type="number" class="qty" step="1" min="0" max="" name="item[{{$item->id}}][quantity]" value="{{ $item->quantity ?? 1 }}" title="Qty" size="4" placeholder="" inputmode="numeric" autocomplete="off">
+                                                                    <input type="number" class="qty" step="1" min="0" max="" name="item[{{$key}}][quantity]" value="{{ $item['quantity'] ?? 1 }}" title="Qty" size="4" placeholder="" inputmode="numeric" autocomplete="off">
                                                                     <button type="button" class="plus">+</button>
                                                                 </div>
                                                             </td>
-                                                            <input type="hidden" name="item[{{$item->id}}][price]" value="{{ $item->product->price }}" />
+                                                            <input type="hidden" name="item[{{$key}}][price]" value="{{ $item['product']->price }}" />
                                                             <td class="product-subtotal">
-                                                                <span>${{ $item->sub_amount ?? $item->product->price }}</span>
+                                                                <span>${{ $item['product']->price * $item['quantity'] }}</span>
                                                             </td>
                                                             <td class="product-remove-new">
-                                                                <a href="{{ route('cart.delete', [$item->id, 'cart'=>'yes']) }}" class="remove">×</a>
+                                                                <a href="{{ route('cart.delete', [$key, 'cart'=>'yes']) }}" class="remove">×</a>
                                                             </td>
                                                         </tr>
 
@@ -101,19 +102,20 @@
                                                 <div class="shipping-totals">
                                                     <div class="title">Shipping</div>
                                                     <div>
-                                                        <ul class="shipping-methods custom-radio">
-                                                            <li>
-                                                                <input type="radio" name="shipping_method" data-index="0" value="free_shipping" class="shipping_method" checked="checked"><label>Free shipping</label>
-                                                            </li>
-                                                            <li>
-                                                                <input type="radio" name="shipping_method" data-index="0" value="flat_rate" class="shipping_method"><label>Flat rate</label>
-                                                            </li>
-                                                        </ul>
-                                                        {{-- <p class="shipping-desc">
+                                                        <p class="shipping-desc">
                                                             Shipping options will be updated during checkout.
-                                                        </p> --}}
+                                                        </p>
                                                     </div>
                                                 </div>
+                                                <div class="shipping-totals">
+                                                    <div class="title">Taxes & Fee</div>
+                                                    <div>
+                                                        <p class="shipping-desc">
+                                                            13% HST
+                                                        </p>
+                                                    </div>
+                                                </div>
+
                                                 <div class="order-total">
                                                     <div class="title">Total</div>
                                                     <div><span>${{ $totalPrice }}</span></div>
@@ -146,5 +148,5 @@
                 </div><!-- #content -->
             </div><!-- #primary -->
         </div><!-- #main-content -->
-    </div>u
+    </div>
 </x-main>

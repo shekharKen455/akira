@@ -19,6 +19,8 @@ class OrderProduct extends Model
         'style',
         'plating_color',
         'custom_text',
+        'custom_image',
+        'lang'
     ];
 
     public function product()

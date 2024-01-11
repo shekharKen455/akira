@@ -19,8 +19,9 @@
                     <div class="section-padding">
                         <div class="section-container p-l-r">
                             <div class="shop-checkout">
-                                <form name="checkout" method="POST" class="checkout" action="{{ route('order.save') }}" autocomplete="off" enctype='multipart/form-data'>
+                                <form id="checkOutForm" name="checkout" method="POST" class="checkout" action="{{ route('order.save') }}" autocomplete="off" enctype='multipart/form-data'>
                                     @csrf
+                                    <input type="hidden" name="order_id" id="orderId" />
                                     <div class="row">
                                         <div class="col-xl-8 col-lg-7 col-md-12 col-12">
                                             <div class="customer-details">
@@ -50,7 +51,7 @@
                                                                         <input type="text" class="input-text" name="last_name" value="{{ old('last_name') }}" required></span>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-12">
                                                                 <p class="form-row form-row-wide validate-required validate-email">
                                                                     <label>Email address <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
@@ -58,7 +59,7 @@
                                                                     </span>
                                                                 </p>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-12">
                                                                 <p class="form-row form-row-wide validate-required validate-phone">
                                                                     <label>Phone <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
@@ -91,7 +92,7 @@
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <p class="form-row address-field validate-required form-row-wide">
-                                                                    <label for="billing_city" class="">State <span class="required" title="required">*</span></label>
+                                                                    <label for="billing_city" class="">Province <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
                                                                         <input type="text" class="input-text" name="state" value="{{ old('state') }}" required>
                                                                     </span>
@@ -101,7 +102,8 @@
                                                                 <p class="form-row address-field validate-required validate-state form-row-wide">
                                                                     <label>Country <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <select id="country" name="country" class="form-control input-text">
+                                                                        <select id="country" name="country" class="form-control input-text" required>
+                                                                            <option value="" selected disabled>Select Country</option>
                                                                             <option value="Afghanistan">Afghanistan</option>
                                                                             <option value="Åland Islands">Åland Islands</option>
                                                                             <option value="Albania">Albania</option>
@@ -363,20 +365,20 @@
                                                 </div>
                                             </div>
 
-                                            <div class="additional-fields">
+                                            {{-- <div class="additional-fields">
                                                 <p class="form-row notes">
                                                     <label>Custom Image <span class="optional">(optional)</span></label>
                                                     <span class="input-wrapper">
                                                         <input type="file" name="custom_image" class="input-text" style="border-bottom: 2px #e5e5e5;height: 100%;" />
                                                     </span>
                                                 </p>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="additional-fields">
                                                 <p class="form-row notes">
                                                     <label>Order notes <span class="optional">(optional)</span></label>
                                                     <span class="input-wrapper">
-                                                        <textarea name="notes" class="input-text" placeholder="Notes about your order, e.g. special notes for delivery." rows="2" cols="5">{{ old('notes') }}</textarea>
+                                                        <textarea name="notes" class="input-text" placeholder="Notes about your order, e.g. special notes for delivery." rows="5" cols="5">{{ old('notes') }}</textarea>
                                                     </span>
                                                 </p>
                                             </div>
@@ -393,21 +395,21 @@
 
                                                         @foreach ($cart as $item)
                                                         @php
-                                                        $totalPrice += $item->sub_amount ?? ($item->product->price * $item->quantity);
+                                                        $totalPrice += ($item['product']->price * $item['quantity']);
                                                         @endphp
 
                                                         <div class="cart-item">
                                                             <div class="info-product">
                                                                 <div class="product-thumbnail">
-                                                                    <img width="600" height="600" src="{{ asset('storage/' . $item->product->image) }}" alt="">
+                                                                    <img width="600" height="600" src="{{ asset('storage/' . $item['product']->image) }}" alt="">
                                                                 </div>
                                                                 <div class="product-name">
-                                                                    {{ $item->product->name }}
-                                                                    <strong class="product-quantity">QTY : {{ $item->quantity ?? 1 }}</strong>
+                                                                    {{ $item['product']->name }}
+                                                                    <strong class="product-quantity">QTY : {{ $item['quantity'] ?? 1 }}</strong>
                                                                 </div>
                                                             </div>
                                                             <div class="product-total">
-                                                                <span>${{ $item->sub_amount ?? $item->product->price }}</span>
+                                                                <span>${{ $item['sub_amount'] ?? $item['product']->price }}</span>
                                                             </div>
                                                         </div>
                                                         @endforeach
@@ -421,7 +423,7 @@
                                                     </div>
                                                     <div class="shipping-totals shipping">
                                                         <h2>Shipping</h2>
-                                                        <div data-title="Shipping">
+                                                        {{-- <div data-title="Shipping">
                                                             <ul class="shipping-methods custom-radio">
                                                                 <li>
                                                                     <input type="radio" name="shipping_method" data-index="0" value="free_shipping" class="shipping_method" checked="checked"><label>Free shipping</label>
@@ -430,14 +432,23 @@
                                                                     <input type="radio" name="shipping_method" data-index="0" value="flat_rate" class="shipping_method"><label>Flat rate</label>
                                                                 </li>
                                                             </ul>
+                                                        </div> --}}
+                                                        <div class="Shipping">
+                                                            <span>${{ $shipping = ($totalPrice * 13) / 100 }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="shipping-totals shipping">
+                                                        <h2>Taxes & Fees</h2>
+                                                        <div class="subtotal-price">
+                                                            <span id="taxId"> - </span>
                                                         </div>
                                                     </div>
                                                     <div class="order-total">
                                                         <h2>Total</h2>
                                                         <div class="total-price">
                                                             <strong>
-                                                                <span>${{ $totalPrice }}</span>
-                                                                <input type="hidden" name="sub_amount" value="{{ $totalPrice }}" />
+                                                                <span id="totalAmountText">${{ $tamt = $totalPrice + $shipping }}</span>
+                                                                <input type="hidden" name="sub_amount" id="totalAmount" value="{{ $totalPrice + $shipping }}" />
                                                             </strong>
                                                         </div>
                                                     </div>
@@ -446,13 +457,15 @@
                                                     <ul class="payment-methods methods custom-radio">
                                                         <li class="payment-method">
                                                             <input type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
-                                                            <label for="payment_method_bacs">Moneris</label>
-                                                            <div class="payment-box" style="">
+                                                            <label for="payment_method_bacs">Pay With Moneris</label>
+                                                            {{-- <div class="payment-box" style="">
                                                                 <p>Make your payment directly into our bank account. Be payment ready with moneris.</p>
-                                                            </div>
+                                                            </div> --}}
+                                                            <div id="monerisCheckout" style="display:none"></div>
+
                                                         </li>
 
-                                                        <div class="row">
+                                                        {{-- <div class="row">
                                                             <div class="col-sm-12 col-md-12">
                                                                 <label class="required">Card Number:</label><br>
                                                                 <span class="form-control-wrap">
@@ -491,7 +504,7 @@
                                                                     <input type="number" name="cvv" class="form-control" aria-required="true" required>
                                                                 </span>
                                                             </div>
-                                                        </div>
+                                                        </div> --}}
 
                                                         {{-- <li class="payment-method">
                                                             <input type="radio" class="input-radio" name="payment_method" value="cheque">
@@ -519,7 +532,7 @@
                                                         <div class="terms-and-conditions-wrapper">
                                                             <div class="privacy-policy-text"></div>
                                                         </div>
-                                                        <button type="submit" class="button alt" name="checkout_place_order" value="Place order">Place order</button>
+                                                        <button type="submit" class="button alt" id="checkoutBtn" name="checkout_place_order" value="Place order">Place order</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -533,4 +546,88 @@
             </div><!-- #primary -->
         </div><!-- #main-content -->
     </div>
+
 </x-main>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://gatewayt.moneris.com/chkt/js/chkt_v1.00.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#country').on('change', function() {
+            let tax = 10;
+            let totalAmount = parseFloat('{{ $tamt }}');
+            if (this.value === "Canada") {
+                let tax = 10;
+                let totalAmt = tax + totalAmount
+                $('#taxId').html('$' + tax)
+                $('#totalAmountText').html('$' + totalAmt)
+                $('#totalAmount').val(totalAmt)
+
+
+            } else {
+                let tax = 25;
+                let totalAmt = tax + totalAmount
+                $('#taxId').html('$' + tax)
+                $('#totalAmountText').html('$' + totalAmt)
+                $('#totalAmount').val(totalAmt)
+            }
+        });
+
+        // checkout form submit
+        $('#checkOutForm').on('submit', function(e) {
+            e.preventDefault()
+            generateCheckoutPage();
+            $('#monerisCheckout').show();
+        })
+
+    })
+
+    function generateCheckoutPage() {
+        var settings = {
+            "url": "https://gatewayt.moneris.com/chktv2/request/request.php"
+            , "method": "POST"
+            , "data": JSON.stringify({
+                "store_id": "store3"
+                , "api_token": "yesguy"
+                , "checkout_id": "chkt8UVTAtore3"
+                , "txn_total": parseFloat($('#totalAmount').val()).toFixed(2)
+                , "environment": "qa"
+                , "action": "preload"
+            })
+        , };
+
+        $.ajax(settings)
+            .done(function(data) {
+                var myCheckout = new monerisCheckout();
+                myCheckout.setMode("qa");
+                myCheckout.setCheckoutDiv("monerisCheckout");
+                myCheckout.startCheckout(data.response.ticket);
+
+                $("#orderId").val(data.response.ticket);
+
+                myCheckout.setCallback("page_loaded", (data) => {
+                    $("#checkoutBtn").attr('disabled', false);
+                });
+                myCheckout.setCallback("cancel_transaction", (data) => {
+                    $('#monerisCheckout').hide();
+                    alert("Payment cancelled!!");
+                    generateCheckoutPage();
+                });
+                myCheckout.setCallback("error_event", (data) => {
+                    $('#monerisCheckout').hide();
+                    alert('Something went wrong. Please again after sometime.');
+                    generateCheckoutPage();
+                });
+                myCheckout.setCallback("payment_receipt", (data) => {
+                    setTimeout(function() {
+                        $('#monerisCheckout').css('display', 'none');
+                        $('#checkOutForm').off('submit');
+                        $('#checkOutForm').submit();
+                    }, 2000)
+                });
+            });
+    }
+
+</script>

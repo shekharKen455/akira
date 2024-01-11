@@ -54,7 +54,9 @@
                                                             <h2>Phone</h2>
                                                         </div>
                                                         <div class="item-content">
-                                                            647-745-5143
+                                                            647-745-5143 
+                                                            <br>
+                                                            Akirajewellery.ca@gmail.com
                                                         </div>
                                                     </div>
                                                 </div>
@@ -65,7 +67,7 @@
                                                         </div>
                                                         <div class="item-content">
                                                             <p>Monday to Friday</p>
-                                                            <p>9:00am – 6:00pm Canada, EST time (GMT -5)</p>
+                                                            <p>11:00am – 9:00pm Canada, EST time (GMT -5)</p>
                                                             <p>Saturday and Sunday closed</p>
                                                         </div>
                                                     </div>
@@ -76,7 +78,7 @@
                                                             <h2>Returns</h2>
                                                         </div>
                                                         <div class="item-content small-width">
-                                                            For information on Returns and Refunds, please click <a href="#">here.</a>
+                                                            For information on Returns and Refunds, please click <a href="{{ route('shipping') }}">here.</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -97,19 +99,19 @@
                                             <div class="sub-title">We’ll get back to you within two days.</div>
                                         </div>
                                         <div class="block-content">
-                                            <form action="#" method="post" class="contact-form" novalidate="novalidate">
+                                            <form class="contact-form" novalidate="novalidate">
                                                 <div class="contact-us-form">
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6">
                                                             <label class="required">Name</label><br>
                                                             <span class="form-control-wrap">
-                                                                <input type="text" name="name" value="" size="40" class="form-control" aria-required="true">
+                                                                <input type="text" name="name" value="" size="40" class="form-control" aria-required="true" required>
                                                             </span>
                                                         </div>
                                                         <div class="col-sm-12 col-md-6">
                                                             <label class="required">Email</label><br>
                                                             <span class="form-control-wrap">
-                                                                <input type="email" name="email" value="" size="40" class="form-control" aria-required="true">
+                                                                <input type="email" name="email" value="" size="40" class="form-control" aria-required="true" required>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -117,7 +119,7 @@
                                                         <div class="col-sm-12">
                                                             <label class="required">Message</label><br>
                                                             <span class="form-control-wrap">
-                                                                <textarea name="message" cols="40" rows="10" class="form-control" aria-required="true"></textarea>
+                                                                <textarea name="message" cols="40" rows="10" class="form-control" aria-required="true" required></textarea>
                                                             </span>
                                                         </div>
                                                     </div>

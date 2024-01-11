@@ -17,7 +17,9 @@ class Order extends Model
         'order_status',
         'payment_id',
         'payment_status',
-        'order_id'
+        'order_id',
+        'email',
+        'phone'
     ];
 
     public function orderProduct()

@@ -24,13 +24,15 @@ class Main extends Component
     public function render(): View|Closure|string
     {
         $categories = Categories::where('status', 'active')->where('name', '<>', 'CUSTOM ITEMS')->get();
-        $cart = collect([]);
+        $cart = [];
         $price = 0;
         $cnt = 0;
-        if (auth()->user()) {
-            $cart = Cart::with('product')->where('user_id', auth()->user()->id)->get();
-            $cnt = $cart->count();
-            // $price = 0;
+        $cartSess = session()->get('cart', []);
+        if (!empty($cartSess)) {
+            foreach ($cartSess as $key => $value) {
+                $cart[$key] = is_array($value) ? collect($value) : $value;
+                $cnt++;
+            }
         }
 
         return view('components.main', compact('categories', 'cnt', 'cart', 'price'));
