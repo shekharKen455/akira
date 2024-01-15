@@ -45,11 +45,22 @@ class WebsiteController extends Controller
     {
         $product = Product::with('category')->where('slug', $slug)->first();
         $fonts = [];
-        if(str_contains(strtolower($product->category->name), strtolower('NAME PENDANTS'))) {
-            $fonts = File::allFiles(public_path('fonts'));
-            // foreach ($files as $file) {
-            //     $path = $file->getPathname();
-            // }
+        if (str_contains(strtolower($product->category->name), strtolower('NAME PENDANTS'))) {
+            $files = File::allFiles(public_path('fonts'));
+            foreach ($files as $file) {
+                $pathinfo = pathinfo($file);
+                $filename = $pathinfo['filename'];
+                $extension = $pathinfo['extension'];
+                if (str_contains($filename, 'english')) {
+                    $fonts['english'][] = asset('fonts/' . $filename . '.' . $extension);
+                }
+                if (str_contains($filename, 'punjabi')) {
+                    $fonts['punjabi'][] = asset('fonts/' . $filename . '.' . $extension);
+                }
+                if (str_contains($filename, 'hindi')) {
+                    $fonts['hindi'][] = asset('fonts/' . $filename . '.' . $extension);
+                }
+            }
         }
 
         $product->others = explode(',', $product->other_images);
