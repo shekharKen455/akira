@@ -21,7 +21,7 @@
                         <div class="section-container p-l-r">
                             <div class="shop-checkout">
                                 <form id="checkOutForm" name="checkout" method="POST" class="checkout"
-                                    action="{{ route('order.save') }}" autocomplete="off" enctype='multipart/form-data'>
+                                    action="{{ route('order.save') }}" enctype='multipart/form-data'>
                                     @csrf
                                     <input type="hidden" name="order_id" id="orderId" />
                                     <div class="row">
@@ -80,7 +80,7 @@
                                                                     <label>Phone <span class="required"
                                                                             title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="tel" class="input-text"
+                                                                        <input type="number" class="input-text"
                                                                             name="phone" value="{{ old('phone') }}"
                                                                             required>
                                                                     </span>
@@ -533,7 +533,7 @@
                                                                     <label>Postcode / ZIP <span class="required"
                                                                             title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text"
+                                                                        <input type="number" class="input-text"
                                                                             name="postcode"
                                                                             value="{{ old('postcode') }}" required>
                                                                     </span>
