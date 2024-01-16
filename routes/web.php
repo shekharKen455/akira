@@ -28,14 +28,16 @@ Route::get('artisan', function () {
     Artisan::call('migrate');
 });
 
-Route::post('login', [UserController::class, 'login'])->name('login');
+Route::post('login', [UserController::class, 'login'])->name('login.post');
 Route::post('register', [UserController::class, 'register'])->name('register');
-// Route::get('account', [UserController::class, 'account'])->name('account');
-// Route::get('logout', [UserController::class, 'logout'])->name('logout');
-// Route::post('profile', [UserController::class, 'profile'])->name('profile');
-// Route::post('password', [UserController::class, 'changePassword'])->name('password');
+
+Route::get('account', [UserController::class, 'account'])->middleware('auth')->name('account');
+Route::get('logout', [UserController::class, 'logout'])->middleware('auth')->name('logout');
+Route::post('profile', [UserController::class, 'profile'])->middleware('auth')->name('profile');
+Route::post('password', [UserController::class, 'changePassword'])->middleware('auth')->name('password');
 
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
+Route::get('user-login', [WebsiteController::class, 'login'])->name('login');
 Route::get('about', [WebsiteController::class, 'about'])->name('about');
 Route::get('privacy-policy', [WebsiteController::class, 'privacy'])->name('privacy');
 Route::get('term-and-condition', [WebsiteController::class, 'tnc'])->name('tnc');
@@ -47,6 +49,8 @@ Route::get('catelog', [WebsiteController::class, 'catelog'])->name('catelog');
 Route::get('category/custom-item', [WebsiteController::class, 'customeItems'])->name('custom');
 Route::get('category/{id}', [WebsiteController::class, 'category'])->name('category');
 Route::get('product/{slug}', [WebsiteController::class, 'product'])->name('product');
+
+Route::post('contact', [WebsiteController::class, 'sendContactUs'])->name('contact.send');
 
 Route::group(['prefix' => 'cart'], function () {
     Route::get('', [CartController::class, 'cart'])->name('cart.show');
@@ -92,6 +96,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('', [AdminOrderController::class, 'index'])->name('admin.order');
             Route::get('{id}', [AdminOrderController::class, 'show'])->name('admin.order.show');
             Route::put('{id}', [AdminOrderController::class, 'update'])->name('admin.order.update');
+            Route::get('product/{id}', [AdminOrderController::class, 'productInfo'])->name('admin.order.product');
         });
 
         Route::group(['prefix' => 'image'], function () {

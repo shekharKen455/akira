@@ -13,9 +13,9 @@ class UserController extends Controller
     {
         $validated = $request->validate(['email' => 'required|email', 'password' => 'required']);
         if (!auth()->attempt($validated)) {
-            return redirect()->back()->with('test', 'active')->withErrors(['Invalid Credentials !!']);
+            return redirect()->back()->withErrors(['loginError' => 'Invalid Credentials !!']);
         }
-        return redirect()->back();
+        return redirect()->route('account');
     }
 
     public function register(Request $request)
@@ -26,7 +26,7 @@ class UserController extends Controller
         User::create($validated);
 
         auth()->attempt($request->only('email', 'password'));
-        return redirect()->back();
+        return redirect()->route('account');
     }
 
     public function logout()
@@ -37,7 +37,11 @@ class UserController extends Controller
 
     public function account()
     {
-        $orders = Order::withCount('orderProduct')->where('user_id', auth()->user()->id)->get();
+        $user = auth()->user();
+        $orders = Order::withCount('orderProduct')
+            ->where('user_id', $user->id)
+            ->orWhere('email', 'LIKE', "%$user->email%")
+            ->get();
         return view('account', compact('orders'));
     }
 

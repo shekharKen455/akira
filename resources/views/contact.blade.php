@@ -96,10 +96,13 @@
                                     <div class="block-widget-wrap">
                                         <div class="block-title">
                                             <h2>Send Us Your Questions!</h2>
-                                            <div class="sub-title">We’ll get back to you within two days.</div>
+                                            @if (session('success'))
+                                                <div class="sub-title">Your message has been send. We’ll get back to you soon.</div>
+                                            @endif
                                         </div>
                                         <div class="block-content">
-                                            <form class="contact-form" novalidate="novalidate">
+                                            <form class="contact-form" action="{{ route('contact.send') }}" method="POST">
+                                                @csrf
                                                 <div class="contact-us-form">
                                                     <div class="row">
                                                         <div class="col-sm-12 col-md-6">

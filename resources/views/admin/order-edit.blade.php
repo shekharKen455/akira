@@ -1,5 +1,5 @@
 @php
-$title = "orders";
+    $title = 'orders';
 @endphp
 <x-admin :title="$title">
     <section class="content-main">
@@ -8,7 +8,8 @@ $title = "orders";
                 <div class="content-header">
                     <h2 class="content-title">Order Details</h2>
                     <div>
-                        <a href="{{ route('admin.order') }}" class="btn btn-light rounded font-sm mr-5 text-body hover-up">Go Back</a>
+                        <a href="{{ route('admin.order') }}"
+                            class="btn btn-light rounded font-sm mr-5 text-body hover-up">Go Back</a>
                     </div>
                 </div>
             </div>
@@ -19,9 +20,9 @@ $title = "orders";
                     </div>
                     <div class="card-body">
                         @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                        <label for="product_name" class="form-label text-danger">{{$error}}</label>
-                        @endforeach
+                            @foreach ($errors->all() as $error)
+                                <label for="product_name" class="form-label text-danger">{{ $error }}</label>
+                            @endforeach
                         @endif
 
                         <form action="{{ route('admin.order.update', $order->id) }}" method="POST">
@@ -32,34 +33,47 @@ $title = "orders";
                                 <input class="form-control" name="name" readonly value='{{ $order->id }}'>
                             </div>
                             <div class="mb-4">
-                                <label for="product_name" class="form-label">Total Amount (Including Shiping & Tax)</label>
-                                <input class="form-control" name="name" readonly value='$ {{ $order->total_amount }}'>
+                                <label for="product_name" class="form-label">Total Amount (Including Shiping &
+                                    Tax)</label>
+                                <input class="form-control" name="name" readonly
+                                    value='$ {{ $order->total_amount }}'>
                             </div>
                             <div class="mb-4">
                                 <label for="product_name" class="form-label">Payment ID</label>
                                 <input class="form-control" name="name" readonly value='{{ $order->payment_id }}'>
                             </div>
 
-                            @if($order->custom_image)
-                            <div class="mb-4">
-                                <a href="{{ asset('storage/' . $order->custom_image) }}" target="_blank">
-                                    <label for="product_name" class="form-label">Custom Image</label>
-                                    <img src="{{ asset('storage/' . $order->custom_image) }}" class="rounded mx-auto d-block" height="200" />
-                                </a>
-                            </div>
+                            @if ($order->custom_image)
+                                <div class="mb-4">
+                                    <a href="{{ asset('storage/' . $order->custom_image) }}" target="_blank">
+                                        <label for="product_name" class="form-label">Custom Image</label>
+                                        <img src="{{ asset('storage/' . $order->custom_image) }}"
+                                            class="rounded mx-auto d-block" height="200" />
+                                    </a>
+                                </div>
                             @endif
 
 
                             <div class="mb-4">
-                                <label for="product_name" class="form-label">Update Status <span class="text-danger">*</span></label>
+                                <label for="product_name" class="form-label">Update Status <span
+                                        class="text-danger">*</span></label>
                                 <select class="form-control" name="order_status">
-                                    <option value="Pending" {{ $order->order_status === "Pending" ? 'selected' : '' }}>Pending</option>
-                                    <option value="Processed" {{ $order->order_status === "Processed" ? 'selected' : '' }}>Processed</option>
-                                    <option value="Dispatched" {{ $order->order_status === "Dispatched" ? 'selected' : '' }}>Dispatched</option>
-                                    <option value="Out for Delivery" {{ $order->order_status === "Out for Delivery" ? 'selected' : '' }}>Out for Delivery</option>
-                                    <option value="Delivered" {{ $order->order_status === "Delivered" ? 'selected' : '' }}>Delivered</option>
-                                    <option value="Canceled" {{ $order->order_status === "Canceled" ? 'selected' : '' }}>Canceled</option>
-                                    <option value="Refunded" {{ $order->order_status === "Refunded" ? 'selected' : '' }}>Refunded</option>
+                                    <option value="Pending" {{ $order->order_status === 'Pending' ? 'selected' : '' }}>
+                                        Pending</option>
+                                    <option value="Processed"
+                                        {{ $order->order_status === 'Processed' ? 'selected' : '' }}>Processed</option>
+                                    <option value="Dispatched"
+                                        {{ $order->order_status === 'Dispatched' ? 'selected' : '' }}>Dispatched
+                                    </option>
+                                    <option value="Out for Delivery"
+                                        {{ $order->order_status === 'Out for Delivery' ? 'selected' : '' }}>Out for
+                                        Delivery</option>
+                                    <option value="Delivered"
+                                        {{ $order->order_status === 'Delivered' ? 'selected' : '' }}>Delivered</option>
+                                    <option value="Canceled"
+                                        {{ $order->order_status === 'Canceled' ? 'selected' : '' }}>Canceled</option>
+                                    <option value="Refunded"
+                                        {{ $order->order_status === 'Refunded' ? 'selected' : '' }}>Refunded</option>
                                 </select>
                             </div>
                             <button class="btn btn-md rounded font-sm">Save</button>
@@ -70,11 +84,11 @@ $title = "orders";
             <div class="col-lg-6">
                 <div class="card mb-4">
                     <div class="card-header">
-                        <h4>Category</h4>
+                        <h4>Billing Details</h4>
                     </div>
 
                     @php
-                    $address = json_decode($order->address)
+                        $address = json_decode($order->address);
                     @endphp
 
                     <div class="card-body">
@@ -117,7 +131,8 @@ $title = "orders";
                             </div>
                             <div class="mb-4 col-md-6">
                                 <label for="product_name" class="form-label">Postal Code</label>
-                                <input class="form-control" name="name" readonly value='{{ $address->postcode }}'>
+                                <input class="form-control" name="name" readonly
+                                    value='{{ $address->postcode }}'>
                             </div>
                         </div>
                     </div>
@@ -127,7 +142,7 @@ $title = "orders";
         <div class="card mb-4">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="myTable">
                         <thead>
                             <tr>
                                 <th scope="col">Product name</th>
@@ -143,22 +158,26 @@ $title = "orders";
                         </thead>
                         <tbody>
                             @foreach ($order->orderProduct as $cat)
-                            <tr>
-                                <td>{{ $cat->product->name }}</td>
-                                <td>
-                                    <img class="img-fluid img-thumbnail" src="{{ asset('storage/' . $cat->product->image) }}" height="40" width="40" />
-                                </td>
-                                <td>
-                                    <a href="{{ asset('storage/' . $cat->custom_image) }}" target="_blank"><img class="img-fluid img-thumbnail" src="{{ asset('storage/' . $cat->custom_image) }}" height="40" width="40" />
-                                </td>
-                                <td><strong class="text-danger">{{ $cat->custom_text }}</strong></td>
-                                <td>{{ $cat->quantity }}</td>
-                                <td>$<b>{{ $cat->product->price * $cat->quantity }}</b></td>
-                                {{-- <td>{{ $cat->length }}</td> --}}
-                                <td>{{ $cat->style }}</td>
-                                <td>{{ $cat->plating_color }}</td>
-                            </tr>
-
+                                <tr data-href="{{ route('admin.order.product', $cat->id) }}" style="cursor: pointer">
+                                    <td>{{ $cat->product->name }}</td>
+                                    <td>
+                                        <img class="img-fluid img-thumbnail"
+                                            src="{{ asset('storage/' . $cat->product->image) }}" height="40"
+                                            width="40" />
+                                    </td>
+                                    <td>
+                                        <a href="{{ asset('storage/' . $cat->custom_image) }}" target="_blank"><img
+                                                class="img-fluid img-thumbnail"
+                                                src="{{ asset('storage/' . $cat->custom_image) }}" height="40"
+                                                width="40" />
+                                    </td>
+                                    <td><strong class="text-danger">{{ $cat->custom_text }}</strong></td>
+                                    <td>{{ $cat->quantity }}</td>
+                                    <td>$<b>{{ $cat->product->price * $cat->quantity }}</b></td>
+                                    {{-- <td>{{ $cat->length }}</td> --}}
+                                    <td>{{ $cat->style }}</td>
+                                    <td>{{ $cat->plating_color }}</td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
@@ -171,4 +190,22 @@ $title = "orders";
         </div> <!-- card-body end// -->
         </div>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var table = document.getElementById("myTable");
+            var rows = table.getElementsByTagName("tr");
+
+            for (var i = 0; i < rows.length; i++) {
+                var currentRow = rows[i];
+                var createClickHandler = function(url) {
+                    return function() {
+                        window.location.href = url;
+                    };
+                };
+
+                currentRow.onclick = createClickHandler(currentRow.getAttribute("data-href"));
+            }
+        });
+    </script>
 </x-admin>

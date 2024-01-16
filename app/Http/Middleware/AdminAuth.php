@@ -16,7 +16,7 @@ class AdminAuth
     public function handle(Request $request, Closure $next): Response
     {
         // dd(auth()->user());
-        if (auth()->user()->email === "admin@user.com") {
+        if (auth()->user() && auth()->user()->email === "admin@user.com") {
             return $next($request);
         }
         return redirect()->route('home');

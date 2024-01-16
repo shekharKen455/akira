@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class CheckoutController extends Controller
 {
@@ -19,5 +20,27 @@ class CheckoutController extends Controller
         }
 
         return view('checkout', compact('cart'));
+    }
+
+    public function createMonerisTxn()
+    {
+        $url = env('MONERIS_CHECKOUT_URL');
+        $data = [
+            'store_id' => env('MONERIS_STORE_ID'),
+            'api_token' => env('MONERIS_API_TOKEN'),
+            'checkout_id' => env('MONERIS_CHECKOUT_ID'),
+            'environment' => 'qa',
+            'txn_total' => number_format(floatval(request()->input('totalAmount')), 2),
+            'action' => 'preload',
+        ];
+
+        try {
+            $response = Http::post($url, $data);
+            $responseData = $response->json();
+
+            return response()->json($responseData);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

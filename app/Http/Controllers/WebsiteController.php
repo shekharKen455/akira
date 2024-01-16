@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 
 class WebsiteController extends Controller
 {
@@ -101,5 +103,18 @@ class WebsiteController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+    
+    public function sendContactUs(Request $request)
+    {
+
+        Mail::to(env('ADMIN_EMAIL'))->send(new \App\Mail\ContactMail($request->all()));
+
+        return redirect()->back()->with('success', 'Message send Successfully.');
+    }
+    
+    public function login()
+    {
+        return view('login');
     }
 }

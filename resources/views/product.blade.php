@@ -747,6 +747,8 @@
         });
 
         $('.fontCheck').on('click', function(e) {
+            $("input[name='font']:radio").prop('checked', false);
+            $('.fontSelect').removeClass('fontSelect');
             if (e.target.id === "English") {
                 $("#fontId").show();
                 $(".english").show();

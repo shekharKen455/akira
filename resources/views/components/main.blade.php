@@ -262,7 +262,7 @@
 
         {{ $slot }}
 
-        <footer id="site-footer" class="site-footer background four-columns m-t-0">
+        <footer id="site-footer" class="site-footer background four-columns">
             <div class="footer">
                 <div class="section-padding">
                     <div class="section-container">

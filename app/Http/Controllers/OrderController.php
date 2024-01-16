@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\OrderProduct;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -29,13 +30,13 @@ class OrderController extends Controller
         $user = User::first();
 
         $orderData = [
-            'user_id' => $user->id,
+            'user_id' => auth()->user()->id ?? $user->id,
             'payment_id' => $request->order_id,
             'notes' => $request->notes ?? null,
             'sub_amount' => $request->sub_amount,
             'total_amount' => $request->sub_amount,
             'address' => json_encode($reqData),
-            'email' => $request->email,
+            'email' => auth()->user()->email ?? $request->email,
             'phone' => $request->phone
         ];
 
@@ -47,7 +48,7 @@ class OrderController extends Controller
             $order = Order::create($orderData);
             foreach ($cart as $key => $value) {
                 OrderProduct::Create([
-                    'user_id' => $user->id,
+                    'user_id' => auth()->user()->id ?? $user->id,
                     'order_id' => $order->id,
                     'product_id' => $value['product_id'],
                     'quantity' => $value['quantity'],
@@ -61,7 +62,12 @@ class OrderController extends Controller
                 ]);
             }
 
+            Mail::to(env('ADMIN_EMAIL'))->send(new \App\Mail\OrderMail($reqData, $cart));
             session()->forget('cart');
+        }
+
+        if (auth()) {
+            return redirect()->route('account');
         }
 
         return redirect()->route('home')->with('orderSuccess', 'active');
