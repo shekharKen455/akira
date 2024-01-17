@@ -32,6 +32,24 @@
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;display=swap" rel="stylesheet">
+    <style>
+        .removed-new {
+            text-indent: -1px;
+            line-height: 17px;
+            color: #000;
+            border-image: none;
+            border-color: #000;
+            text-align: center;
+            border-style: solid;
+            border-width: 0.75pt;
+            -webkit-border-radius: 50%;
+            height: 0.1875in;
+            width: 18px;
+            top: 0.020833333in;
+            right: 0.3125pc;
+            position: absolute;
+        }
+    </style>
 </head>
 
 <body class="home">
@@ -70,25 +88,7 @@
                                             </ul>
                                         </div> --}}
                                             <div class="cart-list-wrap">
-                                                <style>
-                                                    .removed-new {
-                                                        text-indent: -1px;
-                                                        line-height: 17px;
-                                                        color: #000;
-                                                        border-image: none;
-                                                        border-color: #000;
-                                                        text-align: center;
-                                                        border-style: solid;
-                                                        border-width: 0.75pt;
-                                                        -webkit-border-radius: 50%;
-                                                        height: 0.1875in;
-                                                        width: 18px;
-                                                        top: 0.020833333in;
-                                                        right: 0.3125pc;
-                                                        position: absolute;
-                                                    }
-
-                                                </style>
+                                                
                                                 <ul class="cart-list ">
                                                     @foreach ($cart as $item)
                                                     <?php $price += $item['product']->price; ?>
@@ -167,15 +167,16 @@
                 </div>
 
                 <div class="header-mobile-fixed">
+                    
                     <!-- Login -->
-                    <!-- <div class="my-account">
+                     <div class="my-account">
                         <div class="login-header">
                             @if(auth() && auth()->user() && auth()->user()->email != "admin@user.com")
-                            <a href="{{ route('account') }}"><i class="wpb-icon-user"></i> {{ auth()->user()->name  }} </a>
+                            <a href="{{ route('account') }}" style="text-transform: uppercase"><i class="wpb-icon-user"></i> {{ auth()->user()->name  }} </a>
                             @else
                             <div class="login-header icon">
-                                <a class="active-login" href="#"><i class="wpb-icon-user"></i></a>
-                                <div class="form-login-register {{ session('test') }}">
+                                <a class="active-login2" href="{{ route('login') }}"><i class="wpb-icon-user"></i></a>
+                               <!-- <div class="form-login-register {{ session('test') }}">
                                     <div class="box-form-login">
                                         <div class="active-login"></div>
                                         <div class="box-content">
@@ -230,11 +231,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             @endif
                         </div>
-                    </div>-->
+                    </div>
 
                     <!-- Shop -->
                     {{-- <div class="shop-page">
