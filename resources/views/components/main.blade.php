@@ -57,7 +57,7 @@
 
 <body class="page">
     <div id="page" class="hfeed page-wrapper">
-        <header id="site-header" class="site-header header-v1 color-white">
+        <header id="site-header" class="site-header header-v1">
             <div class="header-mobile">
                 <div class="section-padding">
                     <div class="section-container">
@@ -70,7 +70,7 @@
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 header-center">
                                 <div class="site-logo">
                                     <a href="{{ route('home') }}">
-                                        <img width="400" height="79" src="{{asset('media/akira-logo.png')}}" alt="Mojuri – Jewelry Store HTML Template" />
+                                        <img width="400" height="79" src="{{asset('media/akira-logo.png')}}" alt="Akira jwellery" />
                                     </a>
                                 </div>
                             </div>

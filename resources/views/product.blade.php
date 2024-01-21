@@ -251,6 +251,14 @@
                                                                                 style="margin-left: 2px"
                                                                                 for="Cable"> Twisted</label>
                                                                         </div>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input class="form-check-input"
+                                                                                type="radio" id="thick"
+                                                                                name="style" value="Thick Designer">
+                                                                            <label class="form-check-label"
+                                                                                style="margin-left: 2px"
+                                                                                for="Cable"> Thick Designer (Trending)</label>
+                                                                        </div>
                                                                     </td>
                                                                 </tr>
                                                             @endif
@@ -271,7 +279,7 @@
                                                                 </tr>
                                                             @endif
 
-                                                            @if (str_contains(strtolower($product->category->name), strtolower('PHOTO PENDANTS')))
+                                                            @if (!str_contains(strtolower($product->category->name), strtolower('PHOTO PENDANTS')))
                                                                 <tr>
                                                                     <td class="label">Plating</td>
                                                                     <td class="attributes">

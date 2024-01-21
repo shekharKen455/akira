@@ -38,12 +38,15 @@
                                                     <tbody>
                                                         @php
                                                         $totalPrice = 0;
+                                                        $thickCount = 0;
                                                         @endphp
 
                                                         @foreach ($cart as $key => $item)
                                                         
                                                         @php
                                                         $totalPrice += ($item['product']->price * $item['quantity']);
+                                                        $totalPrice += $item['style'] === "Thick Designer" ? (15 * $item['quantity']) : 0;
+                                                        $thickCount += $item['style'] === "Thick Designer" ? (1 * $item['quantity']) : 0;
                                                         @endphp
                                                         <tr class="cart-item">
                                                             <td class="product-thumbnail">
@@ -97,7 +100,11 @@
                                             <div>
                                                 <div class="cart-subtotal">
                                                     <div class="title">Subtotal</div>
-                                                    <div><span>${{ $totalPrice }}</span></div>
+                                                    <div><span>${{ $totalPrice - ($thickCount * 15) }}</span></div>
+                                                </div>
+                                                <div class="cart-subtotal">
+                                                    <div class="title">Additional Cost (Designer Chain)</div>
+                                                    <div><span>${{ $thickCount * 15 }}</span></div>
                                                 </div>
                                                 <div class="shipping-totals">
                                                     <div class="title">Shipping</div>

@@ -10,8 +10,7 @@
                             </h1>
                         </div>
                         <div class="breadcrumbs">
-                            <a href="{{ route('home') }}">Home</a><span class="delimiter"></span><a
-                                href="{{ route('cart.show') }}">Cart</a><span class="delimiter"></span>Checkout
+                            <a href="{{ route('home') }}">Home</a><span class="delimiter"></span><a href="{{ route('cart.show') }}">Cart</a><span class="delimiter"></span>Checkout
                         </div>
                     </div>
                 </div>
@@ -20,8 +19,7 @@
                     <div class="section-padding">
                         <div class="section-container p-l-r">
                             <div class="shop-checkout">
-                                <form id="checkOutForm" name="checkout" method="POST" class="checkout"
-                                    action="{{ route('order.save') }}" enctype='multipart/form-data'>
+                                <form id="checkOutForm" name="checkout" method="POST" class="checkout" action="{{ route('order.save') }}" enctype='multipart/form-data'>
                                     @csrf
                                     <input type="hidden" name="order_id" id="orderId" />
                                     <div class="row">
@@ -29,12 +27,12 @@
                                             <div class="customer-details">
                                                 <div class="billing-fields">
                                                     @if ($errors->any())
-                                                        @foreach ($errors->all() as $error)
-                                                            <p class="form-row">
-                                                                <span class="text text-danger"><em>. {{ $error }}
-                                                                    </em></span>
-                                                            </p>
-                                                        @endforeach
+                                                    @foreach ($errors->all() as $error)
+                                                    <p class="form-row">
+                                                        <span class="text text-danger"><em>. {{ $error }}
+                                                            </em></span>
+                                                    </p>
+                                                    @endforeach
                                                     @endif
                                                     <h3>Billing Details</h3>
 
@@ -42,108 +40,72 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <p class="form-row form-row-first validate-required">
-                                                                    <label>First name <span class="required"
-                                                                            title="required">*</span></label>
+                                                                    <label>First name <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text"
-                                                                            name="first_name"
-                                                                            value="{{ old('first_name') }}"
-                                                                            required></span>
+                                                                        <input type="text" class="input-text" name="first_name" value="{{ old('first_name') }}" required></span>
                                                                 </p>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <p class="form-row form-row-last validate-required">
-                                                                    <label>Last name <span class="required"
-                                                                            title="required">*</span></label>
+                                                                    <label>Last name <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text"
-                                                                            name="last_name"
-                                                                            value="{{ old('last_name') }}"
-                                                                            required></span>
+                                                                        <input type="text" class="input-text" name="last_name" value="{{ old('last_name') }}" required></span>
                                                                 </p>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p
-                                                                    class="form-row form-row-wide validate-required validate-email">
-                                                                    <label>Email address <span class="required"
-                                                                            title="required">*</span></label>
+                                                                <p class="form-row form-row-wide validate-required validate-email">
+                                                                    <label>Email address <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="email" class="input-text"
-                                                                            name="email" value="{{ old('email') }}"
-                                                                            autocomplete="off" required>
+                                                                        <input type="email" class="input-text" name="email" value="{{ old('email') }}" autocomplete="off" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p
-                                                                    class="form-row form-row-wide validate-required validate-phone">
-                                                                    <label>Phone <span class="required"
-                                                                            title="required">*</span></label>
+                                                                <p class="form-row form-row-wide validate-required validate-phone">
+                                                                    <label>Phone <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="number" class="input-text"
-                                                                            name="phone" value="{{ old('phone') }}"
-                                                                            required>
+                                                                        <input type="number" class="input-text" name="phone" value="{{ old('phone') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
                                                         </div>
 
-                                                        <p
-                                                            class="form-row address-field validate-required form-row-wide">
-                                                            <label>Street address <span class="required"
-                                                                    title="required">*</span></label>
+                                                        <p class="form-row address-field validate-required form-row-wide">
+                                                            <label>Street address <span class="required" title="required">*</span></label>
                                                             <span class="input-wrapper">
-                                                                <input type="text" class="input-text"
-                                                                    name="address_1"
-                                                                    placeholder="House number and street name"
-                                                                    value="{{ old('address_1') }}" required>
+                                                                <input type="text" class="input-text" name="address_1" placeholder="House number and street name" value="{{ old('address_1') }}" required>
                                                             </span>
                                                         </p>
                                                         <p class="form-row address-field form-row-wide">
-                                                            <label>Apartment, suite, unit, etc.&nbsp;<span
-                                                                    class="optional">(optional)</span></label>
+                                                            <label>Apartment, suite, unit, etc.&nbsp;<span class="optional">(optional)</span></label>
                                                             <span class="input-wrapper">
-                                                                <input type="text" class="input-text"
-                                                                    name="address_2"
-                                                                    placeholder="Apartment, suite, unit, etc. (optional)"
-                                                                    value="{{ old('address_2') }}">
+                                                                <input type="text" class="input-text" name="address_2" placeholder="Apartment, suite, unit, etc. (optional)" value="{{ old('address_2') }}">
                                                             </span>
                                                         </p>
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <p
-                                                                    class="form-row address-field validate-required form-row-wide">
+                                                                <p class="form-row address-field validate-required form-row-wide">
                                                                     <label for="billing_city" class="">Town / City
-                                                                        <span class="required"
-                                                                            title="required">*</span></label>
+                                                                        <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text"
-                                                                            name="city"
-                                                                            value="{{ old('city') }}" required>
+                                                                        <input type="text" class="input-text" name="city" value="{{ old('city') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p
-                                                                    class="form-row address-field validate-required form-row-wide">
+                                                                <p class="form-row address-field validate-required form-row-wide">
                                                                     <label for="billing_city" class="">Province
-                                                                        <span class="required"
-                                                                            title="required">*</span></label>
+                                                                        <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="text" class="input-text"
-                                                                            name="state"
-                                                                            value="{{ old('state') }}" required>
+                                                                        <input type="text" class="input-text" name="state" value="{{ old('state') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p
-                                                                    class="form-row address-field validate-required validate-state form-row-wide">
-                                                                    <label>Country <span class="required"
-                                                                            title="required">*</span></label>
+                                                                <p class="form-row address-field validate-required validate-state form-row-wide">
+                                                                    <label>Country <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <select id="country" name="country"
-                                                                            class="form-control input-text" required>
+                                                                        <select id="country" name="country" class="form-control input-text" required>
                                                                             <option value="" selected disabled>
                                                                                 Select Country</option>
                                                                             <option value="Afghanistan">Afghanistan
@@ -188,8 +150,7 @@
                                                                             <option value="Bouvet Island">Bouvet Island
                                                                             </option>
                                                                             <option value="Brazil">Brazil</option>
-                                                                            <option
-                                                                                value="British Indian Ocean Territory">
+                                                                            <option value="British Indian Ocean Territory">
                                                                                 British Indian Ocean Territory</option>
                                                                             <option value="Brunei Darussalam">Brunei
                                                                                 Darussalam</option>
@@ -216,8 +177,7 @@
                                                                             <option value="Colombia">Colombia</option>
                                                                             <option value="Comoros">Comoros</option>
                                                                             <option value="Congo">Congo</option>
-                                                                            <option
-                                                                                value="Congo, The Democratic Republic of The">
+                                                                            <option value="Congo, The Democratic Republic of The">
                                                                                 Congo, The Democratic Republic of The
                                                                             </option>
                                                                             <option value="Cook Islands">Cook Islands
@@ -245,8 +205,7 @@
                                                                             <option value="Eritrea">Eritrea</option>
                                                                             <option value="Estonia">Estonia</option>
                                                                             <option value="Ethiopia">Ethiopia</option>
-                                                                            <option
-                                                                                value="Falkland Islands (Malvinas)">
+                                                                            <option value="Falkland Islands (Malvinas)">
                                                                                 Falkland Islands (Malvinas)</option>
                                                                             <option value="Faroe Islands">Faroe Islands
                                                                             </option>
@@ -257,8 +216,7 @@
                                                                             </option>
                                                                             <option value="French Polynesia">French
                                                                                 Polynesia</option>
-                                                                            <option
-                                                                                value="French Southern Territories">
+                                                                            <option value="French Southern Territories">
                                                                                 French Southern Territories</option>
                                                                             <option value="Gabon">Gabon</option>
                                                                             <option value="Gambia">Gambia</option>
@@ -282,12 +240,10 @@
                                                                             </option>
                                                                             <option value="Guyana">Guyana</option>
                                                                             <option value="Haiti">Haiti</option>
-                                                                            <option
-                                                                                value="Heard Island and Mcdonald Islands">
+                                                                            <option value="Heard Island and Mcdonald Islands">
                                                                                 Heard Island and Mcdonald Islands
                                                                             </option>
-                                                                            <option
-                                                                                value="Holy See (Vatican City State)">
+                                                                            <option value="Holy See (Vatican City State)">
                                                                                 Holy See (Vatican City State)</option>
                                                                             <option value="Honduras">Honduras</option>
                                                                             <option value="Hong Kong">Hong Kong
@@ -313,8 +269,7 @@
                                                                             </option>
                                                                             <option value="Kenya">Kenya</option>
                                                                             <option value="Kiribati">Kiribati</option>
-                                                                            <option
-                                                                                value="Korea, Democratic People's Republic of">
+                                                                            <option value="Korea, Democratic People's Republic of">
                                                                                 Korea, Democratic People's Republic of
                                                                             </option>
                                                                             <option value="Korea, Republic of">Korea,
@@ -322,8 +277,7 @@
                                                                             <option value="Kuwait">Kuwait</option>
                                                                             <option value="Kyrgyzstan">Kyrgyzstan
                                                                             </option>
-                                                                            <option
-                                                                                value="Lao People's Democratic Republic">
+                                                                            <option value="Lao People's Democratic Republic">
                                                                                 Lao People's Democratic Republic
                                                                             </option>
                                                                             <option value="Latvia">Latvia</option>
@@ -339,8 +293,7 @@
                                                                             <option value="Luxembourg">Luxembourg
                                                                             </option>
                                                                             <option value="Macao">Macao</option>
-                                                                            <option
-                                                                                value="Macedonia, The Former Yugoslav Republic of">
+                                                                            <option value="Macedonia, The Former Yugoslav Republic of">
                                                                                 Macedonia, The Former Yugoslav Republic
                                                                                 of</option>
                                                                             <option value="Madagascar">Madagascar
@@ -360,8 +313,7 @@
                                                                             </option>
                                                                             <option value="Mayotte">Mayotte</option>
                                                                             <option value="Mexico">Mexico</option>
-                                                                            <option
-                                                                                value="Micronesia, Federated States of">
+                                                                            <option value="Micronesia, Federated States of">
                                                                                 Micronesia, Federated States of</option>
                                                                             <option value="Moldova, Republic of">
                                                                                 Moldova, Republic of</option>
@@ -399,8 +351,7 @@
                                                                             <option value="Oman">Oman</option>
                                                                             <option value="Pakistan">Pakistan</option>
                                                                             <option value="Palau">Palau</option>
-                                                                            <option
-                                                                                value="Palestinian Territory, Occupied">
+                                                                            <option value="Palestinian Territory, Occupied">
                                                                                 Palestinian Territory, Occupied</option>
                                                                             <option value="Panama">Panama</option>
                                                                             <option value="Papua New Guinea">Papua New
@@ -428,8 +379,7 @@
                                                                             </option>
                                                                             <option value="Saint Pierre and Miquelon">
                                                                                 Saint Pierre and Miquelon</option>
-                                                                            <option
-                                                                                value="Saint Vincent and The Grenadines">
+                                                                            <option value="Saint Vincent and The Grenadines">
                                                                                 Saint Vincent and The Grenadines
                                                                             </option>
                                                                             <option value="Samoa">Samoa</option>
@@ -454,8 +404,7 @@
                                                                             <option value="Somalia">Somalia</option>
                                                                             <option value="South Africa">South Africa
                                                                             </option>
-                                                                            <option
-                                                                                value="South Georgia and The South Sandwich Islands">
+                                                                            <option value="South Georgia and The South Sandwich Islands">
                                                                                 South Georgia and The South Sandwich
                                                                                 Islands</option>
                                                                             <option value="Spain">Spain</option>
@@ -475,8 +424,7 @@
                                                                             <option value="Taiwan">Taiwan</option>
                                                                             <option value="Tajikistan">Tajikistan
                                                                             </option>
-                                                                            <option
-                                                                                value="Tanzania, United Republic of">
+                                                                            <option value="Tanzania, United Republic of">
                                                                                 Tanzania, United Republic of</option>
                                                                             <option value="Thailand">Thailand</option>
                                                                             <option value="Timor-leste">Timor-leste
@@ -501,8 +449,7 @@
                                                                                 Kingdom</option>
                                                                             <option value="United States">United States
                                                                             </option>
-                                                                            <option
-                                                                                value="United States Minor Outlying Islands">
+                                                                            <option value="United States Minor Outlying Islands">
                                                                                 United States Minor Outlying Islands
                                                                             </option>
                                                                             <option value="Uruguay">Uruguay</option>
@@ -528,14 +475,10 @@
                                                                 </p>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <p
-                                                                    class="form-row address-field validate-required validate-postcode form-row-wide">
-                                                                    <label>Postcode / ZIP <span class="required"
-                                                                            title="required">*</span></label>
+                                                                <p class="form-row address-field validate-required validate-postcode form-row-wide">
+                                                                    <label>Postcode / ZIP <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="number" class="input-text"
-                                                                            name="postcode"
-                                                                            value="{{ old('postcode') }}" required>
+                                                                        <input type="number" class="input-text" name="postcode" value="{{ old('postcode') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
@@ -557,8 +500,7 @@
                                                 <p class="form-row notes">
                                                     <label>Order notes <span class="optional">(optional)</span></label>
                                                     <span class="input-wrapper">
-                                                        <textarea name="notes" class="input-text" placeholder="Notes about your order, e.g. special notes for delivery."
-                                                            rows="5" cols="5">{{ old('notes') }}</textarea>
+                                                        <textarea name="notes" class="input-text" placeholder="Notes about your order, e.g. special notes for delivery." rows="5" cols="5">{{ old('notes') }}</textarea>
                                                     </span>
                                                 </p>
                                             </div>
@@ -570,38 +512,45 @@
                                                     <div class="cart-items">
 
                                                         @php
-                                                            $totalPrice = 0;
+                                                        $totalPrice = 0;
+                                                        $thickCount = 0;
                                                         @endphp
 
                                                         @foreach ($cart as $item)
-                                                            @php
-                                                                $totalPrice += $item['product']->price * $item['quantity'];
-                                                            @endphp
+                                                        @php
+                                                        $totalPrice += $item['product']->price * $item['quantity'];
+                                                        $totalPrice += $item['style'] === "Thick Designer" ? (15 * $item['quantity']) : 0;
+                                                        $thickCount += $item['style'] === "Thick Designer" ? (1 * $item['quantity']) : 0;
+                                                        @endphp
 
-                                                            <div class="cart-item">
-                                                                <div class="info-product">
-                                                                    <div class="product-thumbnail">
-                                                                        <img width="600" height="600"
-                                                                            src="{{ asset('storage/' . $item['product']->image) }}"
-                                                                            alt="">
-                                                                    </div>
-                                                                    <div class="product-name">
-                                                                        {{ $item['product']->name }}
-                                                                        <strong class="product-quantity">QTY :
-                                                                            {{ $item['quantity'] ?? 1 }}</strong>
-                                                                    </div>
+                                                        <div class="cart-item">
+                                                            <div class="info-product">
+                                                                <div class="product-thumbnail">
+                                                                    <img width="600" height="600" src="{{ asset('storage/' . $item['product']->image) }}" alt="">
                                                                 </div>
-                                                                <div class="product-total">
-                                                                    <span>${{ $item['sub_amount'] ?? $item['product']->price }}</span>
+                                                                <div class="product-name">
+                                                                    {{ $item['product']->name }}
+                                                                    <strong class="product-quantity">QTY :
+                                                                        {{ $item['quantity'] ?? 1 }}</strong>
                                                                 </div>
                                                             </div>
+                                                            <div class="product-total">
+                                                                <span>${{ $item['sub_amount'] ?? $item['product']->price }}</span>
+                                                            </div>
+                                                        </div>
                                                         @endforeach
 
                                                     </div>
                                                     <div class="cart-subtotal">
                                                         <h2>Subtotal</h2>
                                                         <div class="subtotal-price">
-                                                            <span>${{ $totalPrice }}</span>
+                                                            <span>${{ $totalPrice = $totalPrice - ($thickCount * 15) }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart-subtotal">
+                                                        <h2>Additional Cost (Designer Chain)</h2>
+                                                        <div class="subtotal-price">
+                                                            <span>${{ $chainPrice = $thickCount * 15 }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="shipping-totals shipping">
@@ -630,11 +579,8 @@
                                                         <h2>Total</h2>
                                                         <div class="total-price">
                                                             <strong>
-                                                                <span
-                                                                    id="totalAmountText">${{ $tamt = $totalPrice + $shipping }}</span>
-                                                                <input type="hidden" name="sub_amount"
-                                                                    id="totalAmount"
-                                                                    value="{{ $totalPrice + $shipping }}" />
+                                                                <span id="totalAmountText">${{ $tamt = $totalPrice + $shipping + $chainPrice }}</span>
+                                                                <input type="hidden" name="sub_amount" id="totalAmount" value="{{ $totalPrice + $shipping }}" />
                                                             </strong>
                                                         </div>
                                                     </div>
@@ -642,9 +588,7 @@
                                                 <div id="payment" class="checkout-payment">
                                                     <ul class="payment-methods methods custom-radio">
                                                         <li class="payment-method">
-                                                            <input type="radio" class="input-radio"
-                                                                name="payment_method" value="bacs"
-                                                                checked="checked">
+                                                            <input type="radio" class="input-radio" name="payment_method" value="bacs" checked="checked">
                                                             <label for="payment_method_bacs">Pay With Moneris</label>
                                                             {{-- <div class="payment-box" style="">
                                                                 <p>Make your payment directly into our bank account. Be payment ready with moneris.</p>
@@ -720,8 +664,7 @@
                                                         <div class="terms-and-conditions-wrapper">
                                                             <div class="privacy-policy-text"></div>
                                                         </div>
-                                                        <button type="submit" class="button alt" id="checkoutBtn"
-                                                            name="checkout_place_order" value="Place order">Place
+                                                        <button type="submit" class="button alt" id="checkoutBtn" name="checkout_place_order" value="Place order">Place
                                                             order</button>
                                                     </div>
                                                 </div>
@@ -769,9 +712,7 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{{ env('MONERIS_CHECKOUT_SCRIPT') }}"></script>
 <script>
     $(document).ready(function() {
@@ -807,12 +748,12 @@
 
         var totalAmount = parseFloat($('#totalAmount').val()).toFixed(2);
         $.ajax({
-            type: 'POST',
-            url: "{{ route('transaction-api') }}",
-            data: {
+            type: 'POST'
+            , url: "{{ route('transaction-api') }}"
+            , data: {
                 totalAmount: totalAmount
-            },
-            success: function(data) {
+            }
+            , success: function(data) {
                 var myCheckout = new monerisCheckout();
                 myCheckout.setMode("qa");
                 // myCheckout.setMode("prod");
@@ -841,12 +782,13 @@
                         $('#checkOutForm').submit();
                     }, 2000)
                 });
-            },
-            error: function(error) {
+            }
+            , error: function(error) {
                 // console.error(error);
                 $('#monerisCheckout').hide();
                 alert('Something went wrong. Please again after sometime.');
             }
         });
     }
+
 </script>
