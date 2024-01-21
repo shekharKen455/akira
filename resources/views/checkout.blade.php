@@ -755,8 +755,8 @@
             }
             , success: function(data) {
                 var myCheckout = new monerisCheckout();
-                myCheckout.setMode("qa");
-                // myCheckout.setMode("prod");
+                // myCheckout.setMode("qa");
+                myCheckout.setMode("prod");
                 myCheckout.setCheckoutDiv("monerisCheckout");
                 myCheckout.startCheckout(data.response.ticket);
 
