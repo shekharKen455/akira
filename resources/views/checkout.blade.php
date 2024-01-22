@@ -547,34 +547,28 @@
                                                             <span>${{ $totalPrice = $totalPrice - ($thickCount * 15) }}</span>
                                                         </div>
                                                     </div>
+                                                    @if($thickCount > 0)
                                                     <div class="cart-subtotal">
                                                         <h2>Additional Cost (Designer Chain)</h2>
                                                         <div class="subtotal-price">
                                                             <span>${{ $chainPrice = $thickCount * 15 }}</span>
                                                         </div>
                                                     </div>
+                                                    @endif
+
                                                     <div class="shipping-totals shipping">
                                                         <h2>Shipping</h2>
-                                                        {{-- <div data-title="Shipping">
-                                                            <ul class="shipping-methods custom-radio">
-                                                                <li>
-                                                                    <input type="radio" name="shipping_method" data-index="0" value="free_shipping" class="shipping_method" checked="checked"><label>Free shipping</label>
-                                                                </li>
-                                                                <li>
-                                                                    <input type="radio" name="shipping_method" data-index="0" value="flat_rate" class="shipping_method"><label>Flat rate</label>
-                                                                </li>
-                                                            </ul>
-                                                        </div> --}}
-                                                        <div class="Shipping">
-                                                            <span>${{ $shipping = ($totalPrice * 13) / 100 }}</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="shipping-totals shipping">
-                                                        <h2>Taxes & Fees</h2>
                                                         <div class="subtotal-price">
                                                             <span id="taxId"> - </span>
                                                         </div>
                                                     </div>
+                                                    <div class="shipping-totals shipping">
+                                                        <h2>Taxes & Fees</h2>
+                                                        <div class="Shipping">
+                                                            <span>${{ $shipping = ($totalPrice * 13) / 100 }}</span>
+                                                        </div>
+                                                    </div>
+
                                                     <div class="order-total">
                                                         <h2>Total</h2>
                                                         <div class="total-price">

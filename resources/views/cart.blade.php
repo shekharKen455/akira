@@ -102,10 +102,12 @@
                                                     <div class="title">Subtotal</div>
                                                     <div><span>${{ $totalPrice - ($thickCount * 15) }}</span></div>
                                                 </div>
+                                                @if($thickCount > 0)
                                                 <div class="cart-subtotal">
                                                     <div class="title">Additional Cost (Designer Chain)</div>
                                                     <div><span>${{ $thickCount * 15 }}</span></div>
                                                 </div>
+                                                @endif
                                                 <div class="shipping-totals">
                                                     <div class="title">Shipping</div>
                                                     <div>
