@@ -478,7 +478,7 @@
                                                                 <p class="form-row address-field validate-required validate-postcode form-row-wide">
                                                                     <label>Postcode / ZIP <span class="required" title="required">*</span></label>
                                                                     <span class="input-wrapper">
-                                                                        <input type="number" class="input-text" name="postcode" value="{{ old('postcode') }}" required>
+                                                                        <input type="text" class="input-text" name="postcode" value="{{ old('postcode') }}" required>
                                                                     </span>
                                                                 </p>
                                                             </div>
