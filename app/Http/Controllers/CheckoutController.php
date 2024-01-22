@@ -29,7 +29,7 @@ class CheckoutController extends Controller
             'store_id' => env('MONERIS_STORE_ID'),
             'api_token' => env('MONERIS_API_TOKEN'),
             'checkout_id' => env('MONERIS_CHECKOUT_ID'),
-            'environment' => 'prod',
+            'environment' => env('MONERIS_ENV', 'qa'),
             'txn_total' => number_format(floatval(request()->input('totalAmount')), 2),
             'action' => 'preload',
         ];

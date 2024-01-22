@@ -749,8 +749,7 @@
             }
             , success: function(data) {
                 var myCheckout = new monerisCheckout();
-                // myCheckout.setMode("qa");
-                myCheckout.setMode("prod");
+                myCheckout.setMode("{{ env('MONERIS_ENV') }}");
                 myCheckout.setCheckoutDiv("monerisCheckout");
                 myCheckout.startCheckout(data.response.ticket);
 
@@ -780,7 +779,7 @@
             , error: function(error) {
                 // console.error(error);
                 $('#monerisCheckout').hide();
-                alert('Something went wrong. Please again after sometime.');
+                alert('Something went wrong. Please again after sometime!');
             }
         });
     }

@@ -63,6 +63,7 @@ class OrderController extends Controller
             }
 
             Mail::to(env('ADMIN_EMAIL'))->send(new \App\Mail\OrderMail($reqData, $cart));
+            Mail::to($request->email)->send(new \App\Mail\CustomerOrder($reqData, $cart));
             session()->forget('cart');
         }
 
