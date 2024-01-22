@@ -55,7 +55,7 @@
                                             <div class="products-list grid">
                                                 <div class="row">
                                                     @foreach ($products as $pro)
-                                                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
                                                         <div class="products-entry clearfix product-wapper">
                                                             <div class="products-thumb">
                                                                 <div class="product-lable">
@@ -67,9 +67,6 @@
                                                                         <img width="600" height="600" src="{{ asset('storage/' . $pro->image) }}" class="hover-image back" alt="">
                                                                     </a>
                                                                 </div>
-                                                                <style>
-                                                                
-                                                                </style>
                                                                 {{-- <div class="product-button">
                                                                     <div class="btn-add-to-cart" data-title="Add to cart">
                                                                         <a href="{{ route('cart.add', $pro->id) }}" class="product-btn button">Add to cart</a>
