@@ -58,7 +58,10 @@ class CartController extends Controller
         if ($request->has('cart')) {
             return redirect()->route('cart.show');
         } else {
-            return redirect()->back();
+            if(count($cart) > 0) {
+                return redirect()->back();                
+            }
+            return redirect()->route('home');
         }
     }
 

@@ -573,7 +573,7 @@
                                                         <h2>Total</h2>
                                                         <div class="total-price">
                                                             <strong>
-                                                                <span id="totalAmountText">${{ $tamt = $totalPrice + $shipping + $chainPrice }}</span>
+                                                                <span id="totalAmountText">${{ $tamt = $totalPrice + $shipping + ($chainPrice ?? 0) }}</span>
                                                                 <input type="hidden" name="sub_amount" id="totalAmount" value="{{ $totalPrice + $shipping }}" />
                                                             </strong>
                                                         </div>
